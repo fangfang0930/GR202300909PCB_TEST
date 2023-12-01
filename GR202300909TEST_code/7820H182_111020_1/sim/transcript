@@ -1,0 +1,43 @@
+# do temp_simlib_comp.tmp
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:50:53 on Nov 20,2023
+# vlog -work maxii_ver -vlog01compat d:/program files (x86)/altera/13.1/quartus/eda/sim_lib/maxii_atoms.v 
+# -- Compiling UDP MAXII_PRIM_DFFE
+# -- Compiling UDP MAXII_PRIM_DFFEAS
+# -- Compiling UDP MAXII_PRIM_DFFEAS_HIGH
+# -- Compiling module maxii_dffe
+# -- Compiling module maxii_mux21
+# -- Compiling module maxii_mux41
+# -- Compiling module maxii_and1
+# -- Compiling module maxii_and16
+# -- Compiling module maxii_bmux21
+# -- Compiling module maxii_b17mux21
+# -- Compiling module maxii_nmux21
+# -- Compiling module maxii_b5mux21
+# -- Compiling module maxii_jtag
+# -- Compiling module maxii_crcblock
+# -- Compiling module maxii_asynch_lcell
+# -- Compiling module maxii_lcell_register
+# -- Compiling module maxii_lcell
+# -- Compiling module maxii_ufm
+# -- Compiling module maxii_io
+# -- Compiling module maxii_routing_wire
+# 
+# Top level modules:
+# 	maxii_dffe
+# 	maxii_mux21
+# 	maxii_mux41
+# 	maxii_and1
+# 	maxii_and16
+# 	maxii_bmux21
+# 	maxii_b17mux21
+# 	maxii_nmux21
+# 	maxii_b5mux21
+# 	maxii_jtag
+# 	maxii_crcblock
+# 	maxii_lcell
+# 	maxii_ufm
+# 	maxii_io
+# 	maxii_routing_wire
+# End time: 09:50:53 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

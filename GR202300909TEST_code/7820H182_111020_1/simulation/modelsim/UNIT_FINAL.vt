@@ -1,0 +1,124 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "09/07/2023 13:20:07"
+                                                                                
+// Verilog Test Bench template for design : UNIT_FINAL
+// 
+// Simulation tool : ModelSim (Verilog)
+// 
+
+`timescale 1 ps/ 1 ps
+module UNIT_FINAL_vlg_tst();
+// constants                                           
+// general purpose registers
+reg eachvec;
+// test vector input registers
+reg TEM;
+reg ad_in;
+reg clk;
+reg col1;
+reg col2;
+reg col3;
+reg col4;
+reg db;
+reg ov;
+reg rcvd;
+reg tr1;
+reg tr2;
+reg tr3;
+reg tr4;
+reg uv;
+// wires                                               
+wire K_1;
+wire K_2;
+wire K_3;
+wire K_4;
+wire K_5;
+wire LED1;
+wire LED2;
+wire LED3;
+wire LED4;
+wire LED5;
+wire LED6;
+wire LED7;
+wire LED8;
+wire LED9;
+wire LED10;
+wire adclk;
+wire cs_n;
+wire sent;
+
+// assign statements (if any)                          
+UNIT_FINAL i1 (
+// port map - connection between master ports and signals/registers   
+	.K_1(K_1),
+	.K_2(K_2),
+	.K_3(K_3),
+	.K_4(K_4),
+	.K_5(K_5),
+	.LED1(LED1),
+	.LED2(LED2),
+	.LED3(LED3),
+	.LED4(LED4),
+	.LED5(LED5),
+	.LED6(LED6),
+	.LED7(LED7),
+	.LED8(LED8),
+	.LED9(LED9),
+	.LED10(LED10),
+	.TEM(TEM),
+	.ad_in(ad_in),
+	.adclk(adclk),
+	.clk(clk),
+	.col1(col1),
+	.col2(col2),
+	.col3(col3),
+	.col4(col4),
+	.cs_n(cs_n),
+	.db(db),
+	.ov(ov),
+	.rcvd(rcvd),
+	.sent(sent),
+	.tr1(tr1),
+	.tr2(tr2),
+	.tr3(tr3),
+	.tr4(tr4),
+	.uv(uv)
+);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+                                                       
+// --> end                                             
+$display("Running testbench");                       
+end                                                    
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)                  
+begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin                          
+                                                       
+@eachvec;                                              
+// --> end                                             
+end                                                    
+endmodule
+

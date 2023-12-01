@@ -1,0 +1,83 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/STUDY/chenhui_tanliang/7820H182_111020_1/simulation/modelsim
+T_opt
+!s110 1694075385
+VS<h@^SaBOBo7nT2M;I`9Q1
+Z1 04 6 4 work tb_PWM fast 0
+=1-704d7b31ade7-64f989f8-2c8-2140
+Z2 o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
+n@_opt
+Z4 OL;O;10.5;63
+R0
+T_opt1
+!s110 1694075001
+V@Z7=?IC7L>fMoR:^d2=L33
+R1
+=1-704d7b31ade7-64f98879-102-64c
+o-quiet -auto_acc_if_foreign -work work
+R3
+n@_opt1
+R4
+R0
+T_opt2
+!s110 1695020378
+V]D25`dGNaJdQTaVIWPZnP0
+R1
+=1-704d7b31ade7-6507f55a-2e-2368
+R2
+R3
+n@_opt2
+R4
+vPWM
+!s110 1694076242
+!i10b 1
+!s100 ;BVC4W?`g1M@`gKIT]bL52
+II7BbUF7EYm3Ial`eTJ=k>2
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1326255932
+8D:/STUDY/chenhui_tanliang/7820H182_111020_1/PWM.v
+FD:/STUDY/chenhui_tanliang/7820H182_111020_1/PWM.v
+L0 7
+Z6 OL;L;10.5;63
+r1
+!s85 0
+31
+!s108 1694076242.000000
+!s107 D:/STUDY/chenhui_tanliang/7820H182_111020_1/PWM.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/STUDY/chenhui_tanliang/7820H182_111020_1/PWM.v|
+!i113 0
+Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+n@p@w@m
+vtb_PWM
+!s110 1695020361
+!i10b 1
+!s100 hB>8N]@Iah1>OoS=zX@B]3
+IglgMAOZKGPLHH_<DIldSL0
+R5
+R0
+w1695020335
+8D:/STUDY/chenhui_tanliang/7820H182_111020_1/tb_pwm.v
+FD:/STUDY/chenhui_tanliang/7820H182_111020_1/tb_pwm.v
+L0 3
+R6
+r1
+!s85 0
+31
+!s108 1695020361.000000
+!s107 D:/STUDY/chenhui_tanliang/7820H182_111020_1/tb_pwm.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/STUDY/chenhui_tanliang/7820H182_111020_1/tb_pwm.v|
+!i113 0
+R7
+R3
+ntb_@p@w@m

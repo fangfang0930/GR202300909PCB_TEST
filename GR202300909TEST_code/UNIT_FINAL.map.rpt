@@ -1,0 +1,332 @@
+Analysis & Synthesis report for UNIT_FINAL
+Thu Nov 30 16:22:57 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |UNIT_FINAL|DoublePulse:DoublePulse4|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: DoublePulse:DoublePulse4
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++-----------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Nov 30 16:22:57 2023            ;
+; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name               ; UNIT_FINAL                                       ;
+; Top-level Entity Name       ; UNIT_FINAL                                       ;
+; Family                      ; MAX II                                           ;
+; Total logic elements        ; 250                                              ;
+; Total pins                  ; 14                                               ;
+; Total virtual pins          ; 0                                                ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                                    ;
++-----------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EPM1270T144I5      ;                    ;
+; Top-level entity name                                                      ; UNIT_FINAL         ; UNIT_FINAL         ;
+; Family name                                                                ; MAX II             ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; Off                ; Off                ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-20        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                           ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
+; DoublePulse.v                    ; yes             ; User Verilog HDL File  ; D:/temp/hff/GR202300909PCB_TEST/GR202300909PCB_TEST/GR202300909TEST_code/DoublePulse.v ;         ;
+; K1Module.v                       ; yes             ; User Verilog HDL File  ; D:/temp/hff/GR202300909PCB_TEST/GR202300909PCB_TEST/GR202300909TEST_code/K1Module.v    ;         ;
+; ad.v                             ; yes             ; User Verilog HDL File  ; D:/temp/hff/GR202300909PCB_TEST/GR202300909PCB_TEST/GR202300909TEST_code/ad.v          ;         ;
+; UNIT_FINAL.v                     ; yes             ; User Verilog HDL File  ; D:/temp/hff/GR202300909PCB_TEST/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.v  ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 250   ;
+;     -- Combinational with no register       ; 92    ;
+;     -- Register only                        ; 34    ;
+;     -- Combinational with a register        ; 124   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 81    ;
+;     -- 3 input functions                    ; 13    ;
+;     -- 2 input functions                    ; 114   ;
+;     -- 1 input functions                    ; 7     ;
+;     -- 0 input functions                    ; 1     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 145   ;
+;     -- arithmetic mode                      ; 105   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 113   ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 158   ;
+; Total logic cells in carry chains           ; 111   ;
+; I/O pins                                    ; 14    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 158   ;
+; Total fan-out                               ; 991   ;
+; Average fan-out                             ; 3.75  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                      ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------+--------------+
+; Compilation Hierarchy Node    ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                  ; Library Name ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------+--------------+
+; |UNIT_FINAL                   ; 250 (81)    ; 158          ; 0          ; 14   ; 0            ; 92 (40)      ; 34 (0)            ; 124 (41)         ; 111 (36)        ; 0 (0)      ; |UNIT_FINAL                          ; work         ;
+;    |DoublePulse:DoublePulse4| ; 55 (55)     ; 39           ; 0          ; 0    ; 0            ; 16 (16)      ; 2 (2)             ; 37 (37)          ; 32 (32)         ; 0 (0)      ; |UNIT_FINAL|DoublePulse:DoublePulse4 ; work         ;
+;    |K1Module:K1Module|        ; 53 (53)     ; 33           ; 0          ; 0    ; 0            ; 20 (20)      ; 0 (0)             ; 33 (33)          ; 32 (32)         ; 0 (0)      ; |UNIT_FINAL|K1Module:K1Module        ; work         ;
+;    |ad:ad|                    ; 61 (61)     ; 45           ; 0          ; 0    ; 0            ; 16 (16)      ; 32 (32)           ; 13 (13)          ; 11 (11)         ; 0 (0)      ; |UNIT_FINAL|ad:ad                    ; work         ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------+
+; State Machine - |UNIT_FINAL|DoublePulse:DoublePulse4|state                                    ;
++-------------------+-------------------+-----------------+------------------+------------------+
+; Name              ; state.HIGH2_STATE ; state.LOW_STATE ; state.HIGH_STATE ; state.IDLE_STATE ;
++-------------------+-------------------+-----------------+------------------+------------------+
+; state.IDLE_STATE  ; 0                 ; 0               ; 0                ; 0                ;
+; state.HIGH_STATE  ; 0                 ; 0               ; 1                ; 1                ;
+; state.LOW_STATE   ; 0                 ; 1               ; 0                ; 1                ;
+; state.HIGH2_STATE ; 1                 ; 0               ; 0                ; 1                ;
++-------------------+-------------------+-----------------+------------------+------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++---------------------------------------+------------------------------------------------+
+; Register name                         ; Reason for Removal                             ;
++---------------------------------------+------------------------------------------------+
+; DoublePulse:DoublePulse4|K2           ; Stuck at GND due to stuck port data_in         ;
+; K1Module:K1Module|K2                  ; Stuck at GND due to stuck port data_in         ;
+; K1Module:K1Module|TEM_prev            ; Merged with DoublePulse:DoublePulse4|TEM_prev1 ;
+; K1Module:K1Module|startflag           ; Merged with DoublePulse:DoublePulse4|risingflg ;
+; LED5_reg                              ; Stuck at VCC due to stuck port data_in         ;
+; DoublePulse:DoublePulse4|state~6      ; Lost fanout                                    ;
+; DoublePulse:DoublePulse4|state~7      ; Lost fanout                                    ;
+; Total Number of Removed Registers = 7 ;                                                ;
++---------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 158   ;
+; Number of registers using Synchronous Clear  ; 88    ;
+; Number of registers using Synchronous Load   ; 25    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 75    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; ad:ad|adclk                            ; 2       ;
+; ad:ad|cs_n                             ; 22      ;
+; LED1_reg                               ; 1       ;
+; LED2_reg                               ; 2       ;
+; LED3_reg                               ; 1       ;
+; LED4_reg                               ; 1       ;
+; Total number of inverted registers = 6 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |UNIT_FINAL|ad:ad|clk_div[2]                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |UNIT_FINAL|tri_200us[12]                        ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|ad:ad|ad_count[4]                    ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |UNIT_FINAL|DoublePulse:DoublePulse4|dblcount[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DoublePulse:DoublePulse4 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; IDLE_STATE     ; 00    ; Unsigned Binary                              ;
+; HIGH_STATE     ; 01    ; Unsigned Binary                              ;
+; LOW_STATE      ; 10    ; Unsigned Binary                              ;
+; HIGH2_STATE    ; 11    ; Unsigned Binary                              ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Nov 30 16:22:57 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UNIT_FINAL -c UNIT_FINAL
+Info (11104): Parallel Compilation has detected 20 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 14 of the 14 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file doublepulse.v
+    Info (12023): Found entity 1: DoublePulse
+Info (12021): Found 1 design units, including 1 entities, in source file k1module.v
+    Info (12023): Found entity 1: K1Module
+Info (12021): Found 1 design units, including 1 entities, in source file tb_unit_final.v
+    Info (12023): Found entity 1: tb_UNIT_FINAL
+Info (12021): Found 1 design units, including 1 entities, in source file ad.v
+    Info (12023): Found entity 1: ad
+Info (12021): Found 1 design units, including 1 entities, in source file unit_final.v
+    Info (12023): Found entity 1: UNIT_FINAL
+Info (12127): Elaborating entity "UNIT_FINAL" for the top level hierarchy
+Info (12128): Elaborating entity "ad" for hierarchy "ad:ad"
+Info (12128): Elaborating entity "K1Module" for hierarchy "K1Module:K1Module"
+Info (12128): Elaborating entity "DoublePulse" for hierarchy "DoublePulse:DoublePulse4"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "K_2" is stuck at GND
+    Warning (13410): Pin "K_4" is stuck at GND
+    Warning (13410): Pin "LED5" is stuck at VCC
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 264 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 250 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4586 megabytes
+    Info: Processing ended: Thu Nov 30 16:22:57 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

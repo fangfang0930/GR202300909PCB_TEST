@@ -1,0 +1,842 @@
+Classic Timing Analyzer report for UNIT_FINAL
+Thu Oct 20 09:17:19 2011
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. Clock Hold: 'clk'
+  8. tsu
+  9. tco
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                         ;
++------------------------------+----------+----------------------------------+----------------------------------+-------------------------------------+----------------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack    ; Required Time                    ; Actual Time                      ; From                                ; To                                                 ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+----------+----------------------------------+----------------------------------+-------------------------------------+----------------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A      ; None                             ; 7.494 ns                         ; col2                                ; pwm_down:pwm_down|PWM:PWM|K_4                      ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A      ; None                             ; 11.672 ns                        ; ad:ad|cs_n                          ; cs_n                                               ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A      ; None                             ; -0.972 ns                        ; db                                  ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|out   ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; 6.062 ns ; 40.00 MHz ( period = 25.000 ns ) ; 52.80 MHz ( period = 18.938 ns ) ; pwm_down:pwm_down|rcvr:rcvr|tsr[10] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[15] ; clk        ; clk      ; 0            ;
+; Clock Hold: 'clk'            ; 1.375 ns ; 40.00 MHz ( period = 25.000 ns ) ; N/A                              ; pwm_down:pwm_down|rcvr:rcvr|tsr[3]  ; pwm_down:pwm_down|down_deal:down_deal|ref_data[3]  ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;          ;                                  ;                                  ;                                     ;                                                    ;            ;          ; 0            ;
++------------------------------+----------+----------------------------------+----------------------------------+-------------------------------------+----------------------------------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                            ;
++---------------------------------------------------------------------+--------------------+------+-----+-------------+
+; Option                                                              ; Setting            ; From ; To  ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+-----+-------------+
+; Device Name                                                         ; EPM1270T144I5      ;      ;     ;             ;
+; Timing Models                                                       ; Final              ;      ;     ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;     ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;     ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;     ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;     ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;     ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;     ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;     ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;     ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;     ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;     ;             ;
+; Minimum Core Junction Temperature                                   ; -40                ;      ;     ;             ;
+; Maximum Core Junction Temperature                                   ; 100                ;      ;     ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;     ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;     ;             ;
+; Number of paths to report                                           ; 200                ;      ;     ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;     ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;     ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;     ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;     ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;     ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;     ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;     ;             ;
+; Clock Settings                                                      ; clk                ;      ; clk ;             ;
++---------------------------------------------------------------------+--------------------+------+-----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ; clk                ; User Pin ; 40.0 MHz         ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                                              ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------------------+----------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                           ; To                                                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------------------+----------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; 6.062 ns                                ; 52.80 MHz ( period = 18.938 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[15] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 18.229 ns               ;
+; 6.062 ns                                ; 52.80 MHz ( period = 18.938 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[14] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 18.229 ns               ;
+; 6.062 ns                                ; 52.80 MHz ( period = 18.938 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 18.229 ns               ;
+; 6.062 ns                                ; 52.80 MHz ( period = 18.938 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 18.229 ns               ;
+; 6.244 ns                                ; 53.32 MHz ( period = 18.756 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[15] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 18.047 ns               ;
+; 6.244 ns                                ; 53.32 MHz ( period = 18.756 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[14] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 18.047 ns               ;
+; 6.244 ns                                ; 53.32 MHz ( period = 18.756 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 18.047 ns               ;
+; 6.244 ns                                ; 53.32 MHz ( period = 18.756 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 18.047 ns               ;
+; 6.441 ns                                ; 53.88 MHz ( period = 18.559 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.850 ns               ;
+; 6.471 ns                                ; 53.97 MHz ( period = 18.529 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[11] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.820 ns               ;
+; 6.471 ns                                ; 53.97 MHz ( period = 18.529 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[9]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.820 ns               ;
+; 6.471 ns                                ; 53.97 MHz ( period = 18.529 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[4]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.820 ns               ;
+; 6.473 ns                                ; 53.98 MHz ( period = 18.527 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[1]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.818 ns               ;
+; 6.473 ns                                ; 53.98 MHz ( period = 18.527 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.818 ns               ;
+; 6.496 ns                                ; 54.04 MHz ( period = 18.504 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[15] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.795 ns               ;
+; 6.496 ns                                ; 54.04 MHz ( period = 18.504 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[14] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.795 ns               ;
+; 6.496 ns                                ; 54.04 MHz ( period = 18.504 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.795 ns               ;
+; 6.496 ns                                ; 54.04 MHz ( period = 18.504 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.795 ns               ;
+; 6.522 ns                                ; 54.12 MHz ( period = 18.478 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[15] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.769 ns               ;
+; 6.522 ns                                ; 54.12 MHz ( period = 18.478 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[14] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.769 ns               ;
+; 6.522 ns                                ; 54.12 MHz ( period = 18.478 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.769 ns               ;
+; 6.522 ns                                ; 54.12 MHz ( period = 18.478 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.769 ns               ;
+; 6.606 ns                                ; 54.37 MHz ( period = 18.394 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[15] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.685 ns               ;
+; 6.606 ns                                ; 54.37 MHz ( period = 18.394 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[14] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.685 ns               ;
+; 6.606 ns                                ; 54.37 MHz ( period = 18.394 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.685 ns               ;
+; 6.606 ns                                ; 54.37 MHz ( period = 18.394 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.685 ns               ;
+; 6.610 ns                                ; 54.38 MHz ( period = 18.390 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[15] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.681 ns               ;
+; 6.610 ns                                ; 54.38 MHz ( period = 18.390 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[14] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.681 ns               ;
+; 6.610 ns                                ; 54.38 MHz ( period = 18.390 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.681 ns               ;
+; 6.610 ns                                ; 54.38 MHz ( period = 18.390 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.681 ns               ;
+; 6.623 ns                                ; 54.42 MHz ( period = 18.377 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.668 ns               ;
+; 6.651 ns                                ; 54.50 MHz ( period = 18.349 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[15] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.640 ns               ;
+; 6.651 ns                                ; 54.50 MHz ( period = 18.349 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[14] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.640 ns               ;
+; 6.651 ns                                ; 54.50 MHz ( period = 18.349 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.640 ns               ;
+; 6.651 ns                                ; 54.50 MHz ( period = 18.349 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.640 ns               ;
+; 6.653 ns                                ; 54.50 MHz ( period = 18.347 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[11] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.638 ns               ;
+; 6.653 ns                                ; 54.50 MHz ( period = 18.347 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[9]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.638 ns               ;
+; 6.653 ns                                ; 54.50 MHz ( period = 18.347 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[4]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.638 ns               ;
+; 6.655 ns                                ; 54.51 MHz ( period = 18.345 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[1]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.636 ns               ;
+; 6.655 ns                                ; 54.51 MHz ( period = 18.345 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.636 ns               ;
+; 6.770 ns                                ; 54.85 MHz ( period = 18.230 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[15] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.521 ns               ;
+; 6.770 ns                                ; 54.85 MHz ( period = 18.230 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[14] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.521 ns               ;
+; 6.770 ns                                ; 54.85 MHz ( period = 18.230 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.521 ns               ;
+; 6.770 ns                                ; 54.85 MHz ( period = 18.230 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.521 ns               ;
+; 6.811 ns                                ; 54.98 MHz ( period = 18.189 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[3]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.480 ns               ;
+; 6.811 ns                                ; 54.98 MHz ( period = 18.189 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[2]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.480 ns               ;
+; 6.830 ns                                ; 55.04 MHz ( period = 18.170 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[10] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.461 ns               ;
+; 6.830 ns                                ; 55.04 MHz ( period = 18.170 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[7]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.461 ns               ;
+; 6.830 ns                                ; 55.04 MHz ( period = 18.170 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[6]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.461 ns               ;
+; 6.830 ns                                ; 55.04 MHz ( period = 18.170 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.461 ns               ;
+; 6.875 ns                                ; 55.17 MHz ( period = 18.125 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.416 ns               ;
+; 6.883 ns                                ; 55.20 MHz ( period = 18.117 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[2]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.408 ns               ;
+; 6.883 ns                                ; 55.20 MHz ( period = 18.117 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.408 ns               ;
+; 6.883 ns                                ; 55.20 MHz ( period = 18.117 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[16]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.408 ns               ;
+; 6.883 ns                                ; 55.20 MHz ( period = 18.117 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[4]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.408 ns               ;
+; 6.900 ns                                ; 55.25 MHz ( period = 18.100 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[18]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.391 ns               ;
+; 6.900 ns                                ; 55.25 MHz ( period = 18.100 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[19]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.391 ns               ;
+; 6.900 ns                                ; 55.25 MHz ( period = 18.100 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.391 ns               ;
+; 6.900 ns                                ; 55.25 MHz ( period = 18.100 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[1]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.391 ns               ;
+; 6.900 ns                                ; 55.25 MHz ( period = 18.100 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[15]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.391 ns               ;
+; 6.901 ns                                ; 55.25 MHz ( period = 18.099 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.390 ns               ;
+; 6.905 ns                                ; 55.26 MHz ( period = 18.095 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[11] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.386 ns               ;
+; 6.905 ns                                ; 55.26 MHz ( period = 18.095 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[9]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.386 ns               ;
+; 6.905 ns                                ; 55.26 MHz ( period = 18.095 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[4]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.386 ns               ;
+; 6.907 ns                                ; 55.27 MHz ( period = 18.093 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[1]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.384 ns               ;
+; 6.907 ns                                ; 55.27 MHz ( period = 18.093 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.384 ns               ;
+; 6.931 ns                                ; 55.34 MHz ( period = 18.069 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[11] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.360 ns               ;
+; 6.931 ns                                ; 55.34 MHz ( period = 18.069 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[9]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.360 ns               ;
+; 6.931 ns                                ; 55.34 MHz ( period = 18.069 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[4]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.360 ns               ;
+; 6.933 ns                                ; 55.35 MHz ( period = 18.067 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[1]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.358 ns               ;
+; 6.933 ns                                ; 55.35 MHz ( period = 18.067 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.358 ns               ;
+; 6.985 ns                                ; 55.51 MHz ( period = 18.015 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.306 ns               ;
+; 6.989 ns                                ; 55.52 MHz ( period = 18.011 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.302 ns               ;
+; 6.993 ns                                ; 55.53 MHz ( period = 18.007 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[3]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.298 ns               ;
+; 6.993 ns                                ; 55.53 MHz ( period = 18.007 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[2]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.298 ns               ;
+; 7.012 ns                                ; 55.59 MHz ( period = 17.988 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[10] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.279 ns               ;
+; 7.012 ns                                ; 55.59 MHz ( period = 17.988 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[7]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.279 ns               ;
+; 7.012 ns                                ; 55.59 MHz ( period = 17.988 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[6]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.279 ns               ;
+; 7.012 ns                                ; 55.59 MHz ( period = 17.988 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.279 ns               ;
+; 7.015 ns                                ; 55.60 MHz ( period = 17.985 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[11] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.276 ns               ;
+; 7.015 ns                                ; 55.60 MHz ( period = 17.985 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[9]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.276 ns               ;
+; 7.015 ns                                ; 55.60 MHz ( period = 17.985 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[4]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.276 ns               ;
+; 7.017 ns                                ; 55.61 MHz ( period = 17.983 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[1]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.274 ns               ;
+; 7.017 ns                                ; 55.61 MHz ( period = 17.983 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.274 ns               ;
+; 7.019 ns                                ; 55.61 MHz ( period = 17.981 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[11] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.272 ns               ;
+; 7.019 ns                                ; 55.61 MHz ( period = 17.981 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[9]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.272 ns               ;
+; 7.019 ns                                ; 55.61 MHz ( period = 17.981 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[4]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.272 ns               ;
+; 7.021 ns                                ; 55.62 MHz ( period = 17.979 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[1]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.270 ns               ;
+; 7.021 ns                                ; 55.62 MHz ( period = 17.979 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.270 ns               ;
+; 7.030 ns                                ; 55.65 MHz ( period = 17.970 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.261 ns               ;
+; 7.060 ns                                ; 55.74 MHz ( period = 17.940 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[11] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.231 ns               ;
+; 7.060 ns                                ; 55.74 MHz ( period = 17.940 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[9]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.231 ns               ;
+; 7.060 ns                                ; 55.74 MHz ( period = 17.940 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[4]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.231 ns               ;
+; 7.062 ns                                ; 55.75 MHz ( period = 17.938 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[1]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.229 ns               ;
+; 7.062 ns                                ; 55.75 MHz ( period = 17.938 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.229 ns               ;
+; 7.065 ns                                ; 55.76 MHz ( period = 17.935 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[2]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.226 ns               ;
+; 7.065 ns                                ; 55.76 MHz ( period = 17.935 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.226 ns               ;
+; 7.065 ns                                ; 55.76 MHz ( period = 17.935 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[16]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.226 ns               ;
+; 7.065 ns                                ; 55.76 MHz ( period = 17.935 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[4]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.226 ns               ;
+; 7.082 ns                                ; 55.81 MHz ( period = 17.918 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[18]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.209 ns               ;
+; 7.082 ns                                ; 55.81 MHz ( period = 17.918 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[19]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.209 ns               ;
+; 7.082 ns                                ; 55.81 MHz ( period = 17.918 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.209 ns               ;
+; 7.082 ns                                ; 55.81 MHz ( period = 17.918 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[1]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.209 ns               ;
+; 7.082 ns                                ; 55.81 MHz ( period = 17.918 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[15]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.209 ns               ;
+; 7.149 ns                                ; 56.02 MHz ( period = 17.851 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.142 ns               ;
+; 7.163 ns                                ; 56.06 MHz ( period = 17.837 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[6]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.128 ns               ;
+; 7.163 ns                                ; 56.06 MHz ( period = 17.837 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[14] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.128 ns               ;
+; 7.163 ns                                ; 56.06 MHz ( period = 17.837 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[2]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.128 ns               ;
+; 7.163 ns                                ; 56.06 MHz ( period = 17.837 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[10] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.128 ns               ;
+; 7.179 ns                                ; 56.11 MHz ( period = 17.821 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[11] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.112 ns               ;
+; 7.179 ns                                ; 56.11 MHz ( period = 17.821 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[9]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.112 ns               ;
+; 7.179 ns                                ; 56.11 MHz ( period = 17.821 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[4]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.112 ns               ;
+; 7.181 ns                                ; 56.12 MHz ( period = 17.819 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[1]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.110 ns               ;
+; 7.181 ns                                ; 56.12 MHz ( period = 17.819 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.110 ns               ;
+; 7.245 ns                                ; 56.32 MHz ( period = 17.755 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[3]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.046 ns               ;
+; 7.245 ns                                ; 56.32 MHz ( period = 17.755 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[2]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.046 ns               ;
+; 7.253 ns                                ; 56.35 MHz ( period = 17.747 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[0]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[15] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.038 ns               ;
+; 7.253 ns                                ; 56.35 MHz ( period = 17.747 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[0]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[14] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.038 ns               ;
+; 7.253 ns                                ; 56.35 MHz ( period = 17.747 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[0]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.038 ns               ;
+; 7.253 ns                                ; 56.35 MHz ( period = 17.747 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[0]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.038 ns               ;
+; 7.257 ns                                ; 56.36 MHz ( period = 17.743 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[10] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.034 ns               ;
+; 7.257 ns                                ; 56.36 MHz ( period = 17.743 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[9]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.034 ns               ;
+; 7.257 ns                                ; 56.36 MHz ( period = 17.743 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[8]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.034 ns               ;
+; 7.257 ns                                ; 56.36 MHz ( period = 17.743 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[4]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.034 ns               ;
+; 7.257 ns                                ; 56.36 MHz ( period = 17.743 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[2]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.034 ns               ;
+; 7.257 ns                                ; 56.36 MHz ( period = 17.743 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[1]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.034 ns               ;
+; 7.257 ns                                ; 56.36 MHz ( period = 17.743 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[0]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.034 ns               ;
+; 7.264 ns                                ; 56.38 MHz ( period = 17.736 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[10] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.027 ns               ;
+; 7.264 ns                                ; 56.38 MHz ( period = 17.736 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[7]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.027 ns               ;
+; 7.264 ns                                ; 56.38 MHz ( period = 17.736 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[6]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.027 ns               ;
+; 7.264 ns                                ; 56.38 MHz ( period = 17.736 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]             ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.027 ns               ;
+; 7.271 ns                                ; 56.40 MHz ( period = 17.729 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[3]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.020 ns               ;
+; 7.271 ns                                ; 56.40 MHz ( period = 17.729 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[2]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.020 ns               ;
+; 7.290 ns                                ; 56.47 MHz ( period = 17.710 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[10] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.001 ns               ;
+; 7.290 ns                                ; 56.47 MHz ( period = 17.710 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[7]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.001 ns               ;
+; 7.290 ns                                ; 56.47 MHz ( period = 17.710 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[6]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.001 ns               ;
+; 7.290 ns                                ; 56.47 MHz ( period = 17.710 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 17.001 ns               ;
+; 7.297 ns                                ; 56.49 MHz ( period = 17.703 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[10] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[15] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.994 ns               ;
+; 7.297 ns                                ; 56.49 MHz ( period = 17.703 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[10] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[14] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.994 ns               ;
+; 7.297 ns                                ; 56.49 MHz ( period = 17.703 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[10] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.994 ns               ;
+; 7.297 ns                                ; 56.49 MHz ( period = 17.703 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[10] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.994 ns               ;
+; 7.343 ns                                ; 56.63 MHz ( period = 17.657 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[2]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.948 ns               ;
+; 7.343 ns                                ; 56.63 MHz ( period = 17.657 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.948 ns               ;
+; 7.343 ns                                ; 56.63 MHz ( period = 17.657 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[16]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.948 ns               ;
+; 7.343 ns                                ; 56.63 MHz ( period = 17.657 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[4]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.948 ns               ;
+; 7.345 ns                                ; 56.64 MHz ( period = 17.655 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[6]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.946 ns               ;
+; 7.345 ns                                ; 56.64 MHz ( period = 17.655 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[14] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.946 ns               ;
+; 7.345 ns                                ; 56.64 MHz ( period = 17.655 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[2]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.946 ns               ;
+; 7.345 ns                                ; 56.64 MHz ( period = 17.655 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[10] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.946 ns               ;
+; 7.355 ns                                ; 56.67 MHz ( period = 17.645 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[3]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.936 ns               ;
+; 7.355 ns                                ; 56.67 MHz ( period = 17.645 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[2]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.936 ns               ;
+; 7.359 ns                                ; 56.69 MHz ( period = 17.641 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[3]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.932 ns               ;
+; 7.359 ns                                ; 56.69 MHz ( period = 17.641 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[2]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.932 ns               ;
+; 7.360 ns                                ; 56.69 MHz ( period = 17.640 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[18]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.931 ns               ;
+; 7.360 ns                                ; 56.69 MHz ( period = 17.640 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[19]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.931 ns               ;
+; 7.360 ns                                ; 56.69 MHz ( period = 17.640 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.931 ns               ;
+; 7.360 ns                                ; 56.69 MHz ( period = 17.640 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[1]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.931 ns               ;
+; 7.360 ns                                ; 56.69 MHz ( period = 17.640 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17] ; pwm_down:pwm_down|down_deal:down_deal|rsr1[15]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.931 ns               ;
+; 7.374 ns                                ; 56.73 MHz ( period = 17.626 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[10] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.917 ns               ;
+; 7.374 ns                                ; 56.73 MHz ( period = 17.626 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[7]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.917 ns               ;
+; 7.374 ns                                ; 56.73 MHz ( period = 17.626 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[6]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.917 ns               ;
+; 7.374 ns                                ; 56.73 MHz ( period = 17.626 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.917 ns               ;
+; 7.378 ns                                ; 56.75 MHz ( period = 17.622 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[10] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.913 ns               ;
+; 7.378 ns                                ; 56.75 MHz ( period = 17.622 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[7]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.913 ns               ;
+; 7.378 ns                                ; 56.75 MHz ( period = 17.622 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[6]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.913 ns               ;
+; 7.378 ns                                ; 56.75 MHz ( period = 17.622 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.913 ns               ;
+; 7.381 ns                                ; 56.76 MHz ( period = 17.619 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[15] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.910 ns               ;
+; 7.381 ns                                ; 56.76 MHz ( period = 17.619 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[14] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.910 ns               ;
+; 7.381 ns                                ; 56.76 MHz ( period = 17.619 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.910 ns               ;
+; 7.381 ns                                ; 56.76 MHz ( period = 17.619 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.910 ns               ;
+; 7.400 ns                                ; 56.82 MHz ( period = 17.600 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[3]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.891 ns               ;
+; 7.400 ns                                ; 56.82 MHz ( period = 17.600 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[2]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.891 ns               ;
+; 7.419 ns                                ; 56.88 MHz ( period = 17.581 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[10] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.872 ns               ;
+; 7.419 ns                                ; 56.88 MHz ( period = 17.581 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[7]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.872 ns               ;
+; 7.419 ns                                ; 56.88 MHz ( period = 17.581 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[6]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.872 ns               ;
+; 7.419 ns                                ; 56.88 MHz ( period = 17.581 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[14] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.872 ns               ;
+; 7.427 ns                                ; 56.91 MHz ( period = 17.573 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[2]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.864 ns               ;
+; 7.427 ns                                ; 56.91 MHz ( period = 17.573 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.864 ns               ;
+; 7.427 ns                                ; 56.91 MHz ( period = 17.573 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[16]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.864 ns               ;
+; 7.427 ns                                ; 56.91 MHz ( period = 17.573 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[4]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.864 ns               ;
+; 7.431 ns                                ; 56.92 MHz ( period = 17.569 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[2]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.860 ns               ;
+; 7.431 ns                                ; 56.92 MHz ( period = 17.569 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[17]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.860 ns               ;
+; 7.431 ns                                ; 56.92 MHz ( period = 17.569 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[16]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.860 ns               ;
+; 7.431 ns                                ; 56.92 MHz ( period = 17.569 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[4]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.860 ns               ;
+; 7.439 ns                                ; 56.94 MHz ( period = 17.561 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|fre_data[10] ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.852 ns               ;
+; 7.439 ns                                ; 56.94 MHz ( period = 17.561 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|fre_data[9]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.852 ns               ;
+; 7.439 ns                                ; 56.94 MHz ( period = 17.561 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|fre_data[8]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.852 ns               ;
+; 7.439 ns                                ; 56.94 MHz ( period = 17.561 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|fre_data[4]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.852 ns               ;
+; 7.439 ns                                ; 56.94 MHz ( period = 17.561 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|fre_data[2]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.852 ns               ;
+; 7.439 ns                                ; 56.94 MHz ( period = 17.561 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|fre_data[1]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.852 ns               ;
+; 7.439 ns                                ; 56.94 MHz ( period = 17.561 ns )                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11] ; pwm_down:pwm_down|down_deal:down_deal|fre_data[0]  ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.852 ns               ;
+; 7.444 ns                                ; 56.96 MHz ( period = 17.556 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[18]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.847 ns               ;
+; 7.444 ns                                ; 56.96 MHz ( period = 17.556 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[19]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.847 ns               ;
+; 7.444 ns                                ; 56.96 MHz ( period = 17.556 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.847 ns               ;
+; 7.444 ns                                ; 56.96 MHz ( period = 17.556 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[1]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.847 ns               ;
+; 7.444 ns                                ; 56.96 MHz ( period = 17.556 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[15]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.847 ns               ;
+; 7.448 ns                                ; 56.97 MHz ( period = 17.552 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[18]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.843 ns               ;
+; 7.448 ns                                ; 56.97 MHz ( period = 17.552 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[19]     ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.843 ns               ;
+; 7.448 ns                                ; 56.97 MHz ( period = 17.552 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.843 ns               ;
+; 7.448 ns                                ; 56.97 MHz ( period = 17.552 ns )                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]            ; pwm_down:pwm_down|down_deal:down_deal|rsr1[1]      ; clk        ; clk      ; 25.000 ns                   ; 24.291 ns                 ; 16.843 ns               ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                                ;                                                    ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------------------+----------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'clk'                                                                                                                                                                                                                                                      ;
++-----------------------------------------+--------------------------------------------------------+--------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                           ; From                                                   ; To                                                     ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++-----------------------------------------+--------------------------------------------------------+--------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; 1.375 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tsr[3]                     ; pwm_down:pwm_down|down_deal:down_deal|ref_data[3]      ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.220 ns                 ;
+; 1.397 ns                                ; ad:ad|rsr[14]                                          ; ad:ad|volt[14]                                         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.242 ns                 ;
+; 1.398 ns                                ; ad:ad|rsr[4]                                           ; ad:ad|volt[4]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.243 ns                 ;
+; 1.398 ns                                ; ad:ad|rsr[14]                                          ; ad:ad|rsr[15]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.243 ns                 ;
+; 1.402 ns                                ; ad:ad|rsr[4]                                           ; ad:ad|rsr[5]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.247 ns                 ;
+; 1.411 ns                                ; ad:ad|rsr[9]                                           ; ad:ad|volt[9]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.256 ns                 ;
+; 1.414 ns                                ; ad:ad|rsr[6]                                           ; ad:ad|rsr[7]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.259 ns                 ;
+; 1.417 ns                                ; ad:ad|rsr[0]                                           ; ad:ad|volt[0]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.262 ns                 ;
+; 1.418 ns                                ; ad:ad|rsr[0]                                           ; ad:ad|rsr[1]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.263 ns                 ;
+; 1.418 ns                                ; ad:ad|rsr[6]                                           ; ad:ad|volt[6]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.263 ns                 ;
+; 1.418 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]                    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.263 ns                 ;
+; 1.421 ns                                ; ad:ad|rsr[9]                                           ; ad:ad|rsr[10]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.266 ns                 ;
+; 1.421 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]                     ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]                    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.266 ns                 ;
+; 1.422 ns                                ; ad:ad|rsr[1]                                           ; ad:ad|rsr[2]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.267 ns                 ;
+; 1.423 ns                                ; ad:ad|rsr[1]                                           ; ad:ad|volt[1]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.268 ns                 ;
+; 1.430 ns                                ; ad:ad|rsr[13]                                          ; ad:ad|volt[13]                                         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.275 ns                 ;
+; 1.436 ns                                ; ad:ad|rsr[13]                                          ; ad:ad|rsr[14]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.281 ns                 ;
+; 1.639 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|count[0]  ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|count[0]  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.484 ns                 ;
+; 1.642 ns                                ; ad:ad|rsr[2]                                           ; ad:ad|rsr[3]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.487 ns                 ;
+; 1.644 ns                                ; ad:ad|rsr[10]                                          ; ad:ad|rsr[11]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.489 ns                 ;
+; 1.649 ns                                ; pwm_up:pwm_up|up_sign:up_sign|state_en                 ; pwm_up:pwm_up|up_sign:up_sign|state_en                 ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.494 ns                 ;
+; 1.658 ns                                ; pwm_up:pwm_up|up_sign:up_sign|fre_en_delay             ; pwm_up:pwm_up|up_sign:up_sign|fre_en_delay             ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.503 ns                 ;
+; 1.658 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|state[6]             ; pwm_up:pwm_up|sign_deal:sign_deal|state[6]             ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.503 ns                 ;
+; 1.659 ns                                ; t[19]                                                  ; t[19]                                                  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.504 ns                 ;
+; 1.659 ns                                ; pwm_down:pwm_down|PWM:PWM|d_data2[9]                   ; pwm_down:pwm_down|PWM:PWM|d_data2[9]                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.504 ns                 ;
+; 1.659 ns                                ; pwm_down:pwm_down|PWM:PWM|d_data1[9]                   ; pwm_down:pwm_down|PWM:PWM|d_data1[9]                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.504 ns                 ;
+; 1.660 ns                                ; pwm_up:pwm_up|send:send|tsr[6]                         ; pwm_up:pwm_up|send:send|tsr[7]                         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.505 ns                 ;
+; 1.664 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]                    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.509 ns                 ;
+; 1.666 ns                                ; ad:ad|rsr[3]                                           ; ad:ad|rsr[4]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.511 ns                 ;
+; 1.666 ns                                ; ad:ad|rsr[12]                                          ; ad:ad|volt[12]                                         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.511 ns                 ;
+; 1.666 ns                                ; pwm_up:pwm_up|up_sign:up_sign|fault_delay1             ; pwm_up:pwm_up|up_sign:up_sign|fault_en                 ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.511 ns                 ;
+; 1.667 ns                                ; ad:ad|rsr[3]                                           ; ad:ad|volt[3]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.512 ns                 ;
+; 1.667 ns                                ; pwm_up:pwm_up|up_sign:up_sign|fault_delay1             ; pwm_up:pwm_up|up_sign:up_sign|fault_delay2             ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.512 ns                 ;
+; 1.668 ns                                ; ad:ad|rsr[12]                                          ; ad:ad|rsr[13]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.513 ns                 ;
+; 1.668 ns                                ; pwm_down:pwm_down|rcvr:rcvr|over                       ; pwm_down:pwm_down|rcvr:rcvr|over                       ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.513 ns                 ;
+; 1.668 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tsr[6]                     ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]                     ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.513 ns                 ;
+; 1.669 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]                     ; pwm_down:pwm_down|down_deal:down_deal|rsr1[7]          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.514 ns                 ;
+; 1.671 ns                                ; pwm_up:pwm_up|send:send|clk1x_en                       ; pwm_up:pwm_up|up_sign:up_sign|volt_en                  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.516 ns                 ;
+; 1.674 ns                                ; pwm_down:pwm_down|down_deal:down_deal|start            ; pwm_down:pwm_down|down_deal:down_deal|rst              ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.519 ns                 ;
+; 1.677 ns                                ; pwm_down:pwm_down|down_deal:down_deal|syn_error[0]     ; pwm_down:pwm_down|down_deal:down_deal|syn_error[0]     ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.522 ns                 ;
+; 1.677 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[11]         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.522 ns                 ;
+; 1.681 ns                                ; pwm_down:pwm_down|down_deal:down_deal|syn_error[0]     ; pwm_down:pwm_down|down_deal:down_deal|syn_error[1]     ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.526 ns                 ;
+; 1.683 ns                                ; pwm_down:pwm_down|rcvr:rcvr|parity                     ; pwm_down:pwm_down|rcvr:rcvr|parity                     ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.528 ns                 ;
+; 1.683 ns                                ; pwm_down:pwm_down|down_deal:down_deal|cs.00            ; pwm_down:pwm_down|down_deal:down_deal|cs.00            ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.528 ns                 ;
+; 1.684 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[0]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[1]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.529 ns                 ;
+; 1.696 ns                                ; pwm_down:pwm_down|down_deal:down_deal|cs.00            ; pwm_down:pwm_down|down_deal:down_deal|cs.01            ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.541 ns                 ;
+; 1.701 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[2]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[2]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.546 ns                 ;
+; 1.702 ns                                ; ad:ad|ad_count[4]                                      ; ad:ad|ad_count[4]                                      ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.547 ns                 ;
+; 1.703 ns                                ; pwm_down:pwm_down|down_deal:down_deal|Lockn            ; pwm_down:pwm_down|down_deal:down_deal|Lockn            ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.548 ns                 ;
+; 1.710 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[2]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[3]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.555 ns                 ;
+; 1.713 ns                                ; pwm_down:pwm_down|down_deal:down_deal|Lockn            ; pwm_down:pwm_down|down_deal:down_deal|lock_delay       ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.558 ns                 ;
+; 1.716 ns                                ; pwm_down:pwm_down|rcvr:rcvr|clk_div[1]                 ; pwm_down:pwm_down|rcvr:rcvr|clk_div[1]                 ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.561 ns                 ;
+; 1.718 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[0]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[0]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.563 ns                 ;
+; 1.730 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[3]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[3]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.575 ns                 ;
+; 1.735 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[3]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[1]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.580 ns                 ;
+; 1.738 ns                                ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[0]            ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[0]            ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.583 ns                 ;
+; 1.738 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[3]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[3]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.583 ns                 ;
+; 1.740 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[3]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[2]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.585 ns                 ;
+; 1.742 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[3]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[1]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.587 ns                 ;
+; 1.745 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[2]       ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[2]       ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.590 ns                 ;
+; 1.752 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[3]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[1]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.597 ns                 ;
+; 1.752 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[3]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[2]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.597 ns                 ;
+; 1.754 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[2]       ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[0]       ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.599 ns                 ;
+; 1.754 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[2]       ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[1]       ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.599 ns                 ;
+; 1.761 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|ready                ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[0]       ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.606 ns                 ;
+; 1.769 ns                                ; ad:ad|rsr[15]                                          ; ad:ad|volt[15]                                         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.614 ns                 ;
+; 1.782 ns                                ; ad:ad|rsr[8]                                           ; ad:ad|rsr[9]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.627 ns                 ;
+; 1.786 ns                                ; ad:ad|rsr[8]                                           ; ad:ad|volt[8]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.631 ns                 ;
+; 1.787 ns                                ; ad:ad|rsr[11]                                          ; ad:ad|volt[11]                                         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.632 ns                 ;
+; 1.792 ns                                ; ad:ad|rsr[11]                                          ; ad:ad|rsr[12]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.637 ns                 ;
+; 1.822 ns                                ; pwm_up:pwm_up|send:send|clk_div[1]                     ; pwm_up:pwm_up|send:send|no_bits_sent[0]                ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.667 ns                 ;
+; 1.822 ns                                ; pwm_up:pwm_up|send:send|clk_div[0]                     ; pwm_up:pwm_up|send:send|clk_div[0]                     ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.667 ns                 ;
+; 1.823 ns                                ; pwm_up:pwm_up|send:send|clk_div[0]                     ; pwm_up:pwm_up|send:send|clk_div[2]                     ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.668 ns                 ;
+; 1.830 ns                                ; pwm_up:pwm_up|send:send|clk_div[0]                     ; pwm_up:pwm_up|send:send|clk_div[1]                     ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.675 ns                 ;
+; 1.838 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tsr[15]                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[16]                    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.683 ns                 ;
+; 1.839 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]                     ; pwm_down:pwm_down|down_deal:down_deal|ref_data[2]      ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.684 ns                 ;
+; 1.845 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]                     ; pwm_down:pwm_down|rcvr:rcvr|tsr[3]                     ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.690 ns                 ;
+; 1.852 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tsr[16]                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]                    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.697 ns                 ;
+; 1.898 ns                                ; pwm_up:pwm_up|send:send|tsr[0]                         ; pwm_up:pwm_up|send:send|tsr[0]                         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.743 ns                 ;
+; 1.898 ns                                ; pwm_up:pwm_up|up_sign:up_sign|fre_en                   ; pwm_up:pwm_up|up_sign:up_sign|fre_en                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.743 ns                 ;
+; 1.899 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|out         ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|out         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.744 ns                 ;
+; 1.904 ns                                ; pwm_up:pwm_up|send:send|tsr[5]                         ; pwm_up:pwm_up|send:send|tsr[6]                         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.749 ns                 ;
+; 1.904 ns                                ; pwm_down:pwm_down|down_deal:down_deal|ref_data[15]     ; pwm_down:pwm_down|down_deal:down_deal|nege[15]         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.749 ns                 ;
+; 1.908 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|state[4]             ; pwm_up:pwm_up|sign_deal:sign_deal|state[4]             ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.753 ns                 ;
+; 1.910 ns                                ; pwm_up:pwm_up|send:send|tsr[4]                         ; pwm_up:pwm_up|send:send|tsr[5]                         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.755 ns                 ;
+; 1.910 ns                                ; pwm_up:pwm_up|up_sign:up_sign|fault_delay2             ; pwm_up:pwm_up|up_sign:up_sign|fault_en                 ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.755 ns                 ;
+; 1.916 ns                                ; pwm_up:pwm_up|send:send|tsr[1]                         ; pwm_up:pwm_up|send:send|tsr[2]                         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.761 ns                 ;
+; 1.917 ns                                ; pwm_up:pwm_up|send:send|tsr[14]                        ; pwm_up:pwm_up|send:send|tsr[15]                        ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.762 ns                 ;
+; 1.918 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[1]       ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[1]       ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.763 ns                 ;
+; 1.918 ns                                ; pwm_up:pwm_up|send:send|tsr[18]                        ; pwm_up:pwm_up|send:send|tsr[19]                        ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.763 ns                 ;
+; 1.919 ns                                ; pwm_up:pwm_up|send:send|tsr[15]                        ; pwm_up:pwm_up|send:send|tsr[16]                        ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.764 ns                 ;
+; 1.923 ns                                ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12]     ; pwm_down:pwm_down|down_deal:down_deal|nege[12]         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.768 ns                 ;
+; 1.926 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[1]       ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[2]       ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.771 ns                 ;
+; 1.928 ns                                ; pwm_down:pwm_down|down_deal:down_deal|syn_error[1]     ; pwm_down:pwm_down|down_deal:down_deal|syn_error[1]     ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.773 ns                 ;
+; 1.938 ns                                ; pwm_down:pwm_down|down_deal:down_deal|lock_delay       ; pwm_down:pwm_down|down_deal:down_deal|Lockn            ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.783 ns                 ;
+; 1.942 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|out         ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|out         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.787 ns                 ;
+; 1.951 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|out      ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|out      ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.796 ns                 ;
+; 1.952 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[1]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[1]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.797 ns                 ;
+; 1.952 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[1] ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[1] ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.797 ns                 ;
+; 1.956 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|out      ; LED7~reg0                                              ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.801 ns                 ;
+; 1.959 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[2]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[2]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.804 ns                 ;
+; 1.970 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[0]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[0]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.815 ns                 ;
+; 1.972 ns                                ; pwm_up:pwm_up|send:send|clk_div[2]                     ; pwm_up:pwm_up|send:send|clk_div[2]                     ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.817 ns                 ;
+; 1.973 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[0]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[1]    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.818 ns                 ;
+; 1.974 ns                                ; pwm_up:pwm_up|send:send|cs.10                          ; pwm_up:pwm_up|send:send|cs.10                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.819 ns                 ;
+; 1.976 ns                                ; pwm_up:pwm_up|send:send|clk_div[2]                     ; pwm_up:pwm_up|send:send|no_bits_sent[0]                ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.821 ns                 ;
+; 1.995 ns                                ; pwm_down:pwm_down|rcvr:rcvr|clk_div[0]                 ; pwm_down:pwm_down|rcvr:rcvr|clk_div[0]                 ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.840 ns                 ;
+; 1.996 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[3]  ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|out       ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.841 ns                 ;
+; 1.998 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[3]  ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[1]  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.843 ns                 ;
+; 2.010 ns                                ; pwm_down:pwm_down|rcvr:rcvr|clk_div[0]                 ; pwm_down:pwm_down|rcvr:rcvr|clk_div[1]                 ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.855 ns                 ;
+; 2.046 ns                                ; pwm_up:pwm_up|send:send|en                             ; pwm_up:pwm_up|send:send|tsr[0]                         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.891 ns                 ;
+; 2.049 ns                                ; pwm_up:pwm_up|send:send|tsr[8]                         ; pwm_up:pwm_up|send:send|tsr[9]                         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.894 ns                 ;
+; 2.107 ns                                ; pwm_down:pwm_down|PWM:PWM|comp_tri[0]                  ; pwm_down:pwm_down|PWM:PWM|comp_tri[0]                  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.952 ns                 ;
+; 2.107 ns                                ; pwm_down:pwm_down|PWM:PWM|bypass[8]                    ; pwm_down:pwm_down|PWM:PWM|bypass[8]                    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.952 ns                 ;
+; 2.107 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|out       ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|out       ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.952 ns                 ;
+; 2.107 ns                                ; pwm_down:pwm_down|down_deal:down_deal|pass             ; pwm_down:pwm_down|down_deal:down_deal|pass             ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.952 ns                 ;
+; 2.108 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tt[4]                      ; pwm_down:pwm_down|rcvr:rcvr|tt[4]                      ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.953 ns                 ;
+; 2.108 ns                                ; pwm_down:pwm_down|down_deal:down_deal|cnt[5]           ; pwm_down:pwm_down|down_deal:down_deal|cnt[5]           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.953 ns                 ;
+; 2.108 ns                                ; tri_count[4]                                           ; tri_count[4]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.953 ns                 ;
+; 2.108 ns                                ; pwm_down:pwm_down|PWM:PWM|check_data[5]                ; pwm_down:pwm_down|PWM:PWM|check_data[5]                ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.953 ns                 ;
+; 2.116 ns                                ; t[10]                                                  ; t[10]                                                  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.961 ns                 ;
+; 2.116 ns                                ; t[0]                                                   ; t[0]                                                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.961 ns                 ;
+; 2.116 ns                                ; pwm_down:pwm_down|PWM:PWM|d_data2[0]                   ; pwm_down:pwm_down|PWM:PWM|d_data2[0]                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.961 ns                 ;
+; 2.116 ns                                ; pwm_down:pwm_down|PWM:PWM|d_data1[0]                   ; pwm_down:pwm_down|PWM:PWM|d_data1[0]                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.961 ns                 ;
+; 2.116 ns                                ; pwm_up:pwm_up|send:send|sent                           ; pwm_up:pwm_up|send:send|sent                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.961 ns                 ;
+; 2.117 ns                                ; pwm_down:pwm_down|down_deal:down_deal|cnt[0]           ; pwm_down:pwm_down|down_deal:down_deal|cnt[0]           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.962 ns                 ;
+; 2.117 ns                                ; pwm_down:pwm_down|down_deal:down_deal|cnt[7]           ; pwm_down:pwm_down|down_deal:down_deal|cnt[7]           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.962 ns                 ;
+; 2.117 ns                                ; t[17]                                                  ; t[17]                                                  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.962 ns                 ;
+; 2.117 ns                                ; t[7]                                                   ; t[7]                                                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.962 ns                 ;
+; 2.117 ns                                ; ad:ad|ad_count[2]                                      ; ad:ad|ad_count[2]                                      ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.962 ns                 ;
+; 2.117 ns                                ; pwm_up:pwm_up|send:send|no_bits_sent[0]                ; pwm_up:pwm_up|send:send|no_bits_sent[0]                ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.962 ns                 ;
+; 2.117 ns                                ; pwm_down:pwm_down|PWM:PWM|d_data2[7]                   ; pwm_down:pwm_down|PWM:PWM|d_data2[7]                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.962 ns                 ;
+; 2.117 ns                                ; pwm_down:pwm_down|PWM:PWM|d_data1[7]                   ; pwm_down:pwm_down|PWM:PWM|d_data1[7]                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.962 ns                 ;
+; 2.117 ns                                ; pwm_down:pwm_down|PWM:PWM|bypass[9]                    ; pwm_down:pwm_down|PWM:PWM|bypass[9]                    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.962 ns                 ;
+; 2.117 ns                                ; pwm_down:pwm_down|PWM:PWM|bypass[10]                   ; pwm_down:pwm_down|PWM:PWM|bypass[10]                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.962 ns                 ;
+; 2.117 ns                                ; tri_200us[9]                                           ; tri_200us[9]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.962 ns                 ;
+; 2.117 ns                                ; tri_200us[10]                                          ; tri_200us[10]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.962 ns                 ;
+; 2.118 ns                                ; pwm_down:pwm_down|down_deal:down_deal|ref_data[6]      ; pwm_down:pwm_down|down_deal:down_deal|nege[6]          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.963 ns                 ;
+; 2.125 ns                                ; pwm_down:pwm_down|PWM:PWM|comp_tri[8]                  ; pwm_down:pwm_down|PWM:PWM|comp_tri[8]                  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.970 ns                 ;
+; 2.125 ns                                ; pwm_down:pwm_down|down_deal:down_deal|cnt[8]           ; pwm_down:pwm_down|down_deal:down_deal|cnt[8]           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.970 ns                 ;
+; 2.125 ns                                ; pwm_down:pwm_down|PWM:PWM|check_data[8]                ; pwm_down:pwm_down|PWM:PWM|check_data[8]                ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.970 ns                 ;
+; 2.126 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tt[16]                     ; pwm_down:pwm_down|rcvr:rcvr|tt[16]                     ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.126 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tt[9]                      ; pwm_down:pwm_down|rcvr:rcvr|tt[9]                      ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.126 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tt[8]                      ; pwm_down:pwm_down|rcvr:rcvr|tt[8]                      ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.126 ns                                ; pwm_down:pwm_down|PWM:PWM|comp_tri[9]                  ; pwm_down:pwm_down|PWM:PWM|comp_tri[9]                  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.126 ns                                ; t[12]                                                  ; t[12]                                                  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.126 ns                                ; t[11]                                                  ; t[11]                                                  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.126 ns                                ; t[9]                                                   ; t[9]                                                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.126 ns                                ; t[2]                                                   ; t[2]                                                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.126 ns                                ; t[1]                                                   ; t[1]                                                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.126 ns                                ; pwm_down:pwm_down|PWM:PWM|d_data2[1]                   ; pwm_down:pwm_down|PWM:PWM|d_data2[1]                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.126 ns                                ; pwm_down:pwm_down|PWM:PWM|d_data2[2]                   ; pwm_down:pwm_down|PWM:PWM|d_data2[2]                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.126 ns                                ; pwm_down:pwm_down|PWM:PWM|d_data1[1]                   ; pwm_down:pwm_down|PWM:PWM|d_data1[1]                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.126 ns                                ; pwm_down:pwm_down|PWM:PWM|d_data1[2]                   ; pwm_down:pwm_down|PWM:PWM|d_data1[2]                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.126 ns                                ; tri_200us[0]                                           ; tri_200us[0]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.126 ns                                ; tri_200us[5]                                           ; tri_200us[5]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.971 ns                 ;
+; 2.127 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tt[6]                      ; pwm_down:pwm_down|rcvr:rcvr|tt[6]                      ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.972 ns                 ;
+; 2.127 ns                                ; pwm_down:pwm_down|PWM:PWM|comp_tri[15]                 ; pwm_down:pwm_down|PWM:PWM|comp_tri[15]                 ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.972 ns                 ;
+; 2.127 ns                                ; pwm_up:pwm_up|send:send|no_bits_sent[7]                ; pwm_up:pwm_up|send:send|no_bits_sent[7]                ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.972 ns                 ;
+; 2.127 ns                                ; pwm_down:pwm_down|PWM:PWM|bypass[5]                    ; pwm_down:pwm_down|PWM:PWM|bypass[5]                    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.972 ns                 ;
+; 2.128 ns                                ; tri_count[6]                                           ; tri_count[6]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.973 ns                 ;
+; 2.129 ns                                ; pwm_up:pwm_up|send:send|tsr[9]                         ; pwm_up:pwm_up|send:send|tsr[10]                        ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.974 ns                 ;
+; 2.129 ns                                ; pwm_up:pwm_up|send:send|tsr[13]                        ; pwm_up:pwm_up|send:send|tsr[14]                        ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.974 ns                 ;
+; 2.129 ns                                ; pwm_up:pwm_up|send:send|tsr[17]                        ; pwm_up:pwm_up|send:send|tsr[18]                        ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.974 ns                 ;
+; 2.132 ns                                ; pwm_up:pwm_up|send:send|tsr[11]                        ; pwm_up:pwm_up|send:send|tsr[12]                        ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.977 ns                 ;
+; 2.133 ns                                ; pwm_up:pwm_up|send:send|tsr[3]                         ; pwm_up:pwm_up|send:send|tsr[4]                         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.978 ns                 ;
+; 2.133 ns                                ; tri_200us[8]                                           ; tri_200us[8]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.978 ns                 ;
+; 2.134 ns                                ; pwm_up:pwm_up|send:send|tsr[7]                         ; pwm_up:pwm_up|send:send|tsr[8]                         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.979 ns                 ;
+; 2.134 ns                                ; tri_count[8]                                           ; tri_count[8]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.979 ns                 ;
+; 2.135 ns                                ; pwm_up:pwm_up|send:send|rsr[17]                        ; pwm_up:pwm_up|send:send|rsr[17]                        ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.980 ns                 ;
+; 2.135 ns                                ; pwm_up:pwm_up|up_sign:up_sign|fre_en_delay             ; pwm_up:pwm_up|up_sign:up_sign|fre_en                   ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.980 ns                 ;
+; 2.135 ns                                ; pwm_down:pwm_down|PWM:PWM|check_data[10]               ; pwm_down:pwm_down|PWM:PWM|check_data[10]               ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.980 ns                 ;
+; 2.135 ns                                ; pwm_down:pwm_down|PWM:PWM|check_data[7]                ; pwm_down:pwm_down|PWM:PWM|check_data[7]                ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.980 ns                 ;
+; 2.135 ns                                ; tri_200us[7]                                           ; tri_200us[7]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.980 ns                 ;
+; 2.135 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|out       ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|out       ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.980 ns                 ;
+; 2.136 ns                                ; pwm_down:pwm_down|down_deal:down_deal|cnt[15]          ; pwm_down:pwm_down|down_deal:down_deal|cnt[15]          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.981 ns                 ;
+; 2.137 ns                                ; pwm_down:pwm_down|PWM:PWM|comp_tri[10]                 ; pwm_down:pwm_down|PWM:PWM|comp_tri[10]                 ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.982 ns                 ;
+; 2.137 ns                                ; pwm_down:pwm_down|PWM:PWM|check_data[15]               ; pwm_down:pwm_down|PWM:PWM|check_data[15]               ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.982 ns                 ;
+; 2.141 ns                                ; tri_count[7]                                           ; tri_count[7]                                           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.986 ns                 ;
+; 2.143 ns                                ; pwm_down:pwm_down|PWM:PWM|check_data[9]                ; pwm_down:pwm_down|PWM:PWM|check_data[9]                ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.988 ns                 ;
+; 2.144 ns                                ; pwm_down:pwm_down|down_deal:down_deal|cnt[10]          ; pwm_down:pwm_down|down_deal:down_deal|cnt[10]          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.989 ns                 ;
+; 2.144 ns                                ; pwm_down:pwm_down|down_deal:down_deal|cnt[9]           ; pwm_down:pwm_down|down_deal:down_deal|cnt[9]           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.989 ns                 ;
+; 2.144 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[2]  ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[2]  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.989 ns                 ;
+; 2.144 ns                                ; pwm_up:pwm_up|up_sign:up_sign|state_en_delay           ; pwm_up:pwm_up|up_sign:up_sign|state_en_delay           ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.989 ns                 ;
+; 2.144 ns                                ; pwm_down:pwm_down|PWM:PWM|bypass[7]                    ; pwm_down:pwm_down|PWM:PWM|bypass[7]                    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.989 ns                 ;
+; 2.145 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[0]  ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[0]  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.990 ns                 ;
+; 2.145 ns                                ; pwm_down:pwm_down|PWM:PWM|bypass[0]                    ; pwm_down:pwm_down|PWM:PWM|bypass[0]                    ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.990 ns                 ;
+; 2.146 ns                                ; pwm_up:pwm_up|send:send|cs.01                          ; pwm_up:pwm_up|send:send|cs.01                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.991 ns                 ;
+; 2.147 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[0]  ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[1]  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.992 ns                 ;
+; 2.147 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[2]  ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[3]  ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.992 ns                 ;
+; 2.150 ns                                ; pwm_up:pwm_up|up_sign:up_sign|state_en_delay           ; pwm_up:pwm_up|up_sign:up_sign|state_en                 ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.995 ns                 ;
+; 2.151 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tt[18]                     ; pwm_down:pwm_down|rcvr:rcvr|tt[18]                     ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.996 ns                 ;
+; 2.153 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tt[19]                     ; pwm_down:pwm_down|rcvr:rcvr|tt[19]                     ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.998 ns                 ;
+; 2.153 ns                                ; pwm_down:pwm_down|rcvr:rcvr|tsr[19]                    ; pwm_down:pwm_down|down_deal:down_deal|rsr1[19]         ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.998 ns                 ;
+; 2.153 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[2] ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[2] ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.998 ns                 ;
+; 2.153 ns                                ; pwm_down:pwm_down|PWM:PWM|check_data[0]                ; pwm_down:pwm_down|PWM:PWM|check_data[0]                ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.998 ns                 ;
+; 2.153 ns                                ; tri_200us[15]                                          ; tri_200us[15]                                          ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.998 ns                 ;
+; 2.154 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[2] ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[3] ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 1.999 ns                 ;
+; 2.160 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[0] ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[0] ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 2.005 ns                 ;
+; 2.165 ns                                ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[0] ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[1] ; clk        ; clk      ; 0.000 ns                   ; -0.155 ns                  ; 2.010 ns                 ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu)    ;                                                        ;            ;          ;                            ;                            ;                          ;
++-----------------------------------------+--------------------------------------------------------+--------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                           ;
++-------+--------------+------------+-------+--------------------------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To                                                     ; To Clock ;
++-------+--------------+------------+-------+--------------------------------------------------------+----------+
+; N/A   ; None         ; 7.494 ns   ; col2  ; pwm_down:pwm_down|PWM:PWM|K_4                          ; clk      ;
+; N/A   ; None         ; 6.767 ns   ; col4  ; pwm_down:pwm_down|PWM:PWM|K_4                          ; clk      ;
+; N/A   ; None         ; 6.720 ns   ; col2  ; pwm_down:pwm_down|PWM:PWM|K_2                          ; clk      ;
+; N/A   ; None         ; 6.264 ns   ; uv    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|count[3]  ; clk      ;
+; N/A   ; None         ; 5.993 ns   ; col4  ; pwm_down:pwm_down|PWM:PWM|K_2                          ; clk      ;
+; N/A   ; None         ; 5.971 ns   ; rcvd  ; pwm_down:pwm_down|rcvr:rcvr|error                      ; clk      ;
+; N/A   ; None         ; 5.805 ns   ; uv    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|count[1]  ; clk      ;
+; N/A   ; None         ; 5.795 ns   ; col2  ; pwm_up:pwm_up|sign_deal:sign_deal|state[6]             ; clk      ;
+; N/A   ; None         ; 5.753 ns   ; col3  ; pwm_down:pwm_down|PWM:PWM|K_2                          ; clk      ;
+; N/A   ; None         ; 5.748 ns   ; uv    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|count[0]  ; clk      ;
+; N/A   ; None         ; 5.678 ns   ; col3  ; pwm_down:pwm_down|PWM:PWM|K_4                          ; clk      ;
+; N/A   ; None         ; 5.598 ns   ; col1  ; pwm_up:pwm_up|sign_deal:sign_deal|state[6]             ; clk      ;
+; N/A   ; None         ; 5.561 ns   ; uv    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|count[2]  ; clk      ;
+; N/A   ; None         ; 5.479 ns   ; tr3   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[1]    ; clk      ;
+; N/A   ; None         ; 5.238 ns   ; rcvd  ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en                   ; clk      ;
+; N/A   ; None         ; 5.170 ns   ; col2  ; pwm_down:pwm_down|PWM:PWM|K_3                          ; clk      ;
+; N/A   ; None         ; 5.162 ns   ; col2  ; pwm_down:pwm_down|PWM:PWM|K_1                          ; clk      ;
+; N/A   ; None         ; 5.156 ns   ; tr3   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[3]    ; clk      ;
+; N/A   ; None         ; 4.921 ns   ; rcvd  ; pwm_down:pwm_down|rcvr:rcvr|parity                     ; clk      ;
+; N/A   ; None         ; 4.834 ns   ; col1  ; pwm_down:pwm_down|PWM:PWM|K_2                          ; clk      ;
+; N/A   ; None         ; 4.761 ns   ; tr4   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[2]    ; clk      ;
+; N/A   ; None         ; 4.760 ns   ; tr4   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[1]    ; clk      ;
+; N/A   ; None         ; 4.751 ns   ; tr4   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[3]    ; clk      ;
+; N/A   ; None         ; 4.708 ns   ; TEM   ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[3] ; clk      ;
+; N/A   ; None         ; 4.707 ns   ; TEM   ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[2] ; clk      ;
+; N/A   ; None         ; 4.642 ns   ; db    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|count[3]  ; clk      ;
+; N/A   ; None         ; 4.624 ns   ; db    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|count[1]  ; clk      ;
+; N/A   ; None         ; 4.443 ns   ; col4  ; pwm_down:pwm_down|PWM:PWM|K_3                          ; clk      ;
+; N/A   ; None         ; 4.435 ns   ; col4  ; pwm_down:pwm_down|PWM:PWM|K_1                          ; clk      ;
+; N/A   ; None         ; 4.425 ns   ; tr3   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[2]    ; clk      ;
+; N/A   ; None         ; 4.388 ns   ; tr2   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[1]    ; clk      ;
+; N/A   ; None         ; 4.292 ns   ; col1  ; pwm_down:pwm_down|PWM:PWM|K_4                          ; clk      ;
+; N/A   ; None         ; 4.276 ns   ; col4  ; pwm_up:pwm_up|sign_deal:sign_deal|state[5]             ; clk      ;
+; N/A   ; None         ; 4.235 ns   ; TEM   ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[1] ; clk      ;
+; N/A   ; None         ; 4.185 ns   ; tr2   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[3]    ; clk      ;
+; N/A   ; None         ; 4.180 ns   ; tr2   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[2]    ; clk      ;
+; N/A   ; None         ; 4.149 ns   ; col3  ; pwm_up:pwm_up|sign_deal:sign_deal|state[4]             ; clk      ;
+; N/A   ; None         ; 4.040 ns   ; col3  ; pwm_up:pwm_up|sign_deal:sign_deal|state[5]             ; clk      ;
+; N/A   ; None         ; 4.002 ns   ; db    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|count[2]  ; clk      ;
+; N/A   ; None         ; 3.957 ns   ; ov    ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[1]  ; clk      ;
+; N/A   ; None         ; 3.878 ns   ; ov    ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[2]  ; clk      ;
+; N/A   ; None         ; 3.876 ns   ; ov    ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[3]  ; clk      ;
+; N/A   ; None         ; 3.848 ns   ; tr1   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[2]    ; clk      ;
+; N/A   ; None         ; 3.846 ns   ; tr1   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[1]    ; clk      ;
+; N/A   ; None         ; 3.843 ns   ; tr1   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[3]    ; clk      ;
+; N/A   ; None         ; 3.843 ns   ; col4  ; pwm_up:pwm_up|sign_deal:sign_deal|state[4]             ; clk      ;
+; N/A   ; None         ; 3.841 ns   ; col1  ; pwm_up:pwm_up|sign_deal:sign_deal|state[7]             ; clk      ;
+; N/A   ; None         ; 3.797 ns   ; tr3   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|out         ; clk      ;
+; N/A   ; None         ; 3.791 ns   ; tr3   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[0]    ; clk      ;
+; N/A   ; None         ; 3.763 ns   ; col2  ; pwm_up:pwm_up|sign_deal:sign_deal|state[7]             ; clk      ;
+; N/A   ; None         ; 3.730 ns   ; TEM   ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[0] ; clk      ;
+; N/A   ; None         ; 3.725 ns   ; TEM   ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|out      ; clk      ;
+; N/A   ; None         ; 3.702 ns   ; ad_in ; ad:ad|rsr[0]                                           ; clk      ;
+; N/A   ; None         ; 3.483 ns   ; db    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|count[0]  ; clk      ;
+; N/A   ; None         ; 3.388 ns   ; tr4   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[0]    ; clk      ;
+; N/A   ; None         ; 3.345 ns   ; rcvd  ; pwm_down:pwm_down|rcvr:rcvr|tsr[0]                     ; clk      ;
+; N/A   ; None         ; 3.256 ns   ; uv    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|out       ; clk      ;
+; N/A   ; None         ; 3.063 ns   ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[0]       ; clk      ;
+; N/A   ; None         ; 3.060 ns   ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[1]       ; clk      ;
+; N/A   ; None         ; 2.980 ns   ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[6]       ; clk      ;
+; N/A   ; None         ; 2.978 ns   ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[9]       ; clk      ;
+; N/A   ; None         ; 2.977 ns   ; tr2   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[0]    ; clk      ;
+; N/A   ; None         ; 2.973 ns   ; tr2   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|out         ; clk      ;
+; N/A   ; None         ; 2.966 ns   ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[8]       ; clk      ;
+; N/A   ; None         ; 2.815 ns   ; tr4   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|out         ; clk      ;
+; N/A   ; None         ; 2.673 ns   ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[3]       ; clk      ;
+; N/A   ; None         ; 2.670 ns   ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[4]       ; clk      ;
+; N/A   ; None         ; 2.667 ns   ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[7]       ; clk      ;
+; N/A   ; None         ; 2.659 ns   ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[2]       ; clk      ;
+; N/A   ; None         ; 2.658 ns   ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[5]       ; clk      ;
+; N/A   ; None         ; 2.636 ns   ; ov    ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[0]  ; clk      ;
+; N/A   ; None         ; 2.634 ns   ; ov    ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|out       ; clk      ;
+; N/A   ; None         ; 2.535 ns   ; tr1   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|out         ; clk      ;
+; N/A   ; None         ; 2.232 ns   ; tr1   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[0]    ; clk      ;
+; N/A   ; None         ; 1.526 ns   ; db    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|out       ; clk      ;
++-------+--------------+------------+-------+--------------------------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------+
+; tco                                                                                    ;
++-------+--------------+------------+-------------------------------+-------+------------+
+; Slack ; Required tco ; Actual tco ; From                          ; To    ; From Clock ;
++-------+--------------+------------+-------------------------------+-------+------------+
+; N/A   ; None         ; 11.672 ns  ; ad:ad|cs_n                    ; cs_n  ; clk        ;
+; N/A   ; None         ; 9.637 ns   ; LED1~reg0                     ; LED1  ; clk        ;
+; N/A   ; None         ; 9.561 ns   ; pwm_down:pwm_down|PWM:PWM|K_2 ; K_2   ; clk        ;
+; N/A   ; None         ; 9.488 ns   ; pwm_down:pwm_down|PWM:PWM|K_1 ; K_1   ; clk        ;
+; N/A   ; None         ; 9.161 ns   ; LED2~reg0                     ; LED2  ; clk        ;
+; N/A   ; None         ; 9.149 ns   ; LED4~reg0                     ; LED4  ; clk        ;
+; N/A   ; None         ; 9.127 ns   ; LED5~reg0                     ; LED5  ; clk        ;
+; N/A   ; None         ; 9.123 ns   ; LED3~reg0                     ; LED3  ; clk        ;
+; N/A   ; None         ; 9.105 ns   ; ad:ad|adclk                   ; adclk ; clk        ;
+; N/A   ; None         ; 9.059 ns   ; LED10~reg0                    ; LED10 ; clk        ;
+; N/A   ; None         ; 8.931 ns   ; pwm_down:pwm_down|PWM:PWM|K_4 ; K_4   ; clk        ;
+; N/A   ; None         ; 8.896 ns   ; pwm_down:pwm_down|PWM:PWM|K_3 ; K_3   ; clk        ;
+; N/A   ; None         ; 8.566 ns   ; LED8~reg0                     ; LED8  ; clk        ;
+; N/A   ; None         ; 8.559 ns   ; LED9~reg0                     ; LED9  ; clk        ;
+; N/A   ; None         ; 8.553 ns   ; LED7~reg0                     ; LED7  ; clk        ;
+; N/A   ; None         ; 8.552 ns   ; LED6~reg0                     ; LED6  ; clk        ;
+; N/A   ; None         ; 8.504 ns   ; pwm_up:pwm_up|send:send|sent  ; sent  ; clk        ;
++-------+--------------+------------+-------------------------------+-------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                  ;
++---------------+-------------+-----------+-------+--------------------------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From  ; To                                                     ; To Clock ;
++---------------+-------------+-----------+-------+--------------------------------------------------------+----------+
+; N/A           ; None        ; -0.972 ns ; db    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|out       ; clk      ;
+; N/A           ; None        ; -1.479 ns ; db    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|count[3]  ; clk      ;
+; N/A           ; None        ; -1.678 ns ; tr1   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[0]    ; clk      ;
+; N/A           ; None        ; -1.781 ns ; col4  ; pwm_up:pwm_up|sign_deal:sign_deal|state[4]             ; clk      ;
+; N/A           ; None        ; -1.981 ns ; tr1   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|out         ; clk      ;
+; N/A           ; None        ; -2.000 ns ; col3  ; pwm_up:pwm_up|sign_deal:sign_deal|state[5]             ; clk      ;
+; N/A           ; None        ; -2.080 ns ; ov    ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|out       ; clk      ;
+; N/A           ; None        ; -2.082 ns ; ov    ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[0]  ; clk      ;
+; N/A           ; None        ; -2.104 ns ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[5]       ; clk      ;
+; N/A           ; None        ; -2.105 ns ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[2]       ; clk      ;
+; N/A           ; None        ; -2.113 ns ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[7]       ; clk      ;
+; N/A           ; None        ; -2.116 ns ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[4]       ; clk      ;
+; N/A           ; None        ; -2.119 ns ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[3]       ; clk      ;
+; N/A           ; None        ; -2.261 ns ; tr4   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|out         ; clk      ;
+; N/A           ; None        ; -2.358 ns ; db    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|count[2]  ; clk      ;
+; N/A           ; None        ; -2.412 ns ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[8]       ; clk      ;
+; N/A           ; None        ; -2.419 ns ; tr2   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|out         ; clk      ;
+; N/A           ; None        ; -2.423 ns ; tr2   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[0]    ; clk      ;
+; N/A           ; None        ; -2.424 ns ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[9]       ; clk      ;
+; N/A           ; None        ; -2.426 ns ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[6]       ; clk      ;
+; N/A           ; None        ; -2.506 ns ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[1]       ; clk      ;
+; N/A           ; None        ; -2.509 ns ; rcvd  ; pwm_up:pwm_up|sign_deal:sign_deal|call_count1[0]       ; clk      ;
+; N/A           ; None        ; -2.590 ns ; col2  ; pwm_down:pwm_down|PWM:PWM|K_1                          ; clk      ;
+; N/A           ; None        ; -2.610 ns ; col4  ; pwm_down:pwm_down|PWM:PWM|K_3                          ; clk      ;
+; N/A           ; None        ; -2.702 ns ; uv    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|out       ; clk      ;
+; N/A           ; None        ; -2.791 ns ; rcvd  ; pwm_down:pwm_down|rcvr:rcvr|tsr[0]                     ; clk      ;
+; N/A           ; None        ; -2.834 ns ; tr4   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[0]    ; clk      ;
+; N/A           ; None        ; -2.929 ns ; db    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|count[0]  ; clk      ;
+; N/A           ; None        ; -2.936 ns ; db    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|count[1]  ; clk      ;
+; N/A           ; None        ; -2.942 ns ; col2  ; pwm_up:pwm_up|sign_deal:sign_deal|state[6]             ; clk      ;
+; N/A           ; None        ; -3.012 ns ; col1  ; pwm_up:pwm_up|sign_deal:sign_deal|state[7]             ; clk      ;
+; N/A           ; None        ; -3.120 ns ; col3  ; pwm_down:pwm_down|PWM:PWM|K_4                          ; clk      ;
+; N/A           ; None        ; -3.148 ns ; ad_in ; ad:ad|rsr[0]                                           ; clk      ;
+; N/A           ; None        ; -3.171 ns ; TEM   ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|out      ; clk      ;
+; N/A           ; None        ; -3.176 ns ; TEM   ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[0] ; clk      ;
+; N/A           ; None        ; -3.209 ns ; col2  ; pwm_up:pwm_up|sign_deal:sign_deal|state[7]             ; clk      ;
+; N/A           ; None        ; -3.237 ns ; tr3   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[0]    ; clk      ;
+; N/A           ; None        ; -3.243 ns ; tr3   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|out         ; clk      ;
+; N/A           ; None        ; -3.289 ns ; tr1   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[3]    ; clk      ;
+; N/A           ; None        ; -3.292 ns ; tr1   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[1]    ; clk      ;
+; N/A           ; None        ; -3.294 ns ; tr1   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[2]    ; clk      ;
+; N/A           ; None        ; -3.322 ns ; ov    ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[3]  ; clk      ;
+; N/A           ; None        ; -3.324 ns ; ov    ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[2]  ; clk      ;
+; N/A           ; None        ; -3.403 ns ; ov    ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[1]  ; clk      ;
+; N/A           ; None        ; -3.595 ns ; col3  ; pwm_up:pwm_up|sign_deal:sign_deal|state[4]             ; clk      ;
+; N/A           ; None        ; -3.626 ns ; tr2   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[2]    ; clk      ;
+; N/A           ; None        ; -3.631 ns ; tr2   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[3]    ; clk      ;
+; N/A           ; None        ; -3.643 ns ; uv    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|count[3]  ; clk      ;
+; N/A           ; None        ; -3.681 ns ; TEM   ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[1] ; clk      ;
+; N/A           ; None        ; -3.722 ns ; col4  ; pwm_up:pwm_up|sign_deal:sign_deal|state[5]             ; clk      ;
+; N/A           ; None        ; -3.738 ns ; col1  ; pwm_down:pwm_down|PWM:PWM|K_4                          ; clk      ;
+; N/A           ; None        ; -3.834 ns ; tr2   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[1]    ; clk      ;
+; N/A           ; None        ; -3.871 ns ; tr3   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[2]    ; clk      ;
+; N/A           ; None        ; -3.881 ns ; col4  ; pwm_down:pwm_down|PWM:PWM|K_1                          ; clk      ;
+; N/A           ; None        ; -4.153 ns ; TEM   ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[2] ; clk      ;
+; N/A           ; None        ; -4.154 ns ; TEM   ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[3] ; clk      ;
+; N/A           ; None        ; -4.182 ns ; uv    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|count[2]  ; clk      ;
+; N/A           ; None        ; -4.191 ns ; col1  ; pwm_down:pwm_down|PWM:PWM|K_2                          ; clk      ;
+; N/A           ; None        ; -4.197 ns ; tr4   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[3]    ; clk      ;
+; N/A           ; None        ; -4.206 ns ; tr4   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[1]    ; clk      ;
+; N/A           ; None        ; -4.207 ns ; tr4   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[2]    ; clk      ;
+; N/A           ; None        ; -4.367 ns ; rcvd  ; pwm_down:pwm_down|rcvr:rcvr|parity                     ; clk      ;
+; N/A           ; None        ; -4.374 ns ; rcvd  ; pwm_down:pwm_down|rcvr:rcvr|error                      ; clk      ;
+; N/A           ; None        ; -4.602 ns ; tr3   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[3]    ; clk      ;
+; N/A           ; None        ; -4.616 ns ; col2  ; pwm_down:pwm_down|PWM:PWM|K_3                          ; clk      ;
+; N/A           ; None        ; -4.684 ns ; rcvd  ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en                   ; clk      ;
+; N/A           ; None        ; -4.925 ns ; tr3   ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[1]    ; clk      ;
+; N/A           ; None        ; -5.044 ns ; col1  ; pwm_up:pwm_up|sign_deal:sign_deal|state[6]             ; clk      ;
+; N/A           ; None        ; -5.194 ns ; uv    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|count[0]  ; clk      ;
+; N/A           ; None        ; -5.195 ns ; uv    ; pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|count[1]  ; clk      ;
+; N/A           ; None        ; -5.199 ns ; col3  ; pwm_down:pwm_down|PWM:PWM|K_2                          ; clk      ;
+; N/A           ; None        ; -5.439 ns ; col4  ; pwm_down:pwm_down|PWM:PWM|K_2                          ; clk      ;
+; N/A           ; None        ; -6.166 ns ; col2  ; pwm_down:pwm_down|PWM:PWM|K_2                          ; clk      ;
+; N/A           ; None        ; -6.213 ns ; col4  ; pwm_down:pwm_down|PWM:PWM|K_4                          ; clk      ;
+; N/A           ; None        ; -6.940 ns ; col2  ; pwm_down:pwm_down|PWM:PWM|K_4                          ; clk      ;
++---------------+-------------+-----------+-------+--------------------------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Thu Oct 20 09:17:17 2011
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off UNIT_FINAL -c UNIT_FINAL
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Info: Slack time is 6.062 ns for clock "clk" between source register "pwm_down:pwm_down|rcvr:rcvr|tsr[10]" and destination register "pwm_down:pwm_down|down_deal:down_deal|ref_data[15]"
+    Info: Fmax is 52.8 MHz (period= 18.938 ns)
+    Info: + Largest register to register requirement is 24.291 ns
+        Info: + Setup relationship between source and destination is 25.000 ns
+            Info: + Latch edge is 25.000 ns
+                Info: Clock period of Destination clock "clk" is 25.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Destination register is 1
+            Info: - Launch edge is 0.000 ns
+                Info: Clock period of Source clock "clk" is 25.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Source register is 1
+        Info: + Largest clock skew is 0.000 ns
+            Info: + Shortest clock path from clock "clk" to destination register is 3.819 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_20; Fanout = 512; CLK Node = 'clk'
+                Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X14_Y7_N7; Fanout = 3; REG Node = 'pwm_down:pwm_down|down_deal:down_deal|ref_data[15]'
+                Info: Total cell delay = 2.081 ns ( 54.49 % )
+                Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+            Info: - Longest clock path from clock "clk" to source register is 3.819 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_20; Fanout = 512; CLK Node = 'clk'
+                Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X15_Y3_N4; Fanout = 7; REG Node = 'pwm_down:pwm_down|rcvr:rcvr|tsr[10]'
+                Info: Total cell delay = 2.081 ns ( 54.49 % )
+                Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+        Info: - Micro clock to output delay of source is 0.376 ns
+        Info: - Micro setup delay of destination is 0.333 ns
+    Info: - Longest register to register delay is 18.229 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X15_Y3_N4; Fanout = 7; REG Node = 'pwm_down:pwm_down|rcvr:rcvr|tsr[10]'
+        Info: 2: + IC(0.916 ns) + CELL(0.914 ns) = 1.830 ns; Loc. = LC_X15_Y3_N0; Fanout = 1; COMB Node = 'pwm_down:pwm_down|down_deal:down_deal|Equal5~6'
+        Info: 3: + IC(3.340 ns) + CELL(0.914 ns) = 6.084 ns; Loc. = LC_X13_Y4_N5; Fanout = 1; COMB Node = 'pwm_down:pwm_down|down_deal:down_deal|Equal5~9'
+        Info: 4: + IC(3.013 ns) + CELL(0.740 ns) = 9.837 ns; Loc. = LC_X14_Y2_N1; Fanout = 3; COMB Node = 'pwm_down:pwm_down|down_deal:down_deal|Equal5~12'
+        Info: 5: + IC(0.762 ns) + CELL(0.200 ns) = 10.799 ns; Loc. = LC_X14_Y2_N8; Fanout = 4; COMB Node = 'pwm_down:pwm_down|down_deal:down_deal|fre_data[15]~67'
+        Info: 6: + IC(0.748 ns) + CELL(0.914 ns) = 12.461 ns; Loc. = LC_X14_Y2_N2; Fanout = 16; COMB Node = 'pwm_down:pwm_down|down_deal:down_deal|ref_data[15]~32'
+        Info: 7: + IC(4.525 ns) + CELL(1.243 ns) = 18.229 ns; Loc. = LC_X14_Y7_N7; Fanout = 3; REG Node = 'pwm_down:pwm_down|down_deal:down_deal|ref_data[15]'
+        Info: Total cell delay = 4.925 ns ( 27.02 % )
+        Info: Total interconnect delay = 13.304 ns ( 72.98 % )
+Info: Minimum slack time is 1.375 ns for clock "clk" between source register "pwm_down:pwm_down|rcvr:rcvr|tsr[3]" and destination register "pwm_down:pwm_down|down_deal:down_deal|ref_data[3]"
+    Info: + Shortest register to register delay is 1.220 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X14_Y4_N5; Fanout = 9; REG Node = 'pwm_down:pwm_down|rcvr:rcvr|tsr[3]'
+        Info: 2: + IC(0.940 ns) + CELL(0.280 ns) = 1.220 ns; Loc. = LC_X14_Y4_N6; Fanout = 6; REG Node = 'pwm_down:pwm_down|down_deal:down_deal|ref_data[3]'
+        Info: Total cell delay = 0.280 ns ( 22.95 % )
+        Info: Total interconnect delay = 0.940 ns ( 77.05 % )
+    Info: - Smallest register to register requirement is -0.155 ns
+        Info: + Hold relationship between source and destination is 0.000 ns
+            Info: + Latch edge is 0.000 ns
+                Info: Clock period of Destination clock "clk" is 25.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Destination register is 1
+                Info: Multicycle Hold factor for Destination register is 1
+            Info: - Launch edge is 0.000 ns
+                Info: Clock period of Source clock "clk" is 25.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Source register is 1
+                Info: Multicycle Hold factor for Source register is 1
+        Info: + Smallest clock skew is 0.000 ns
+            Info: + Longest clock path from clock "clk" to destination register is 3.819 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_20; Fanout = 512; CLK Node = 'clk'
+                Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X14_Y4_N6; Fanout = 6; REG Node = 'pwm_down:pwm_down|down_deal:down_deal|ref_data[3]'
+                Info: Total cell delay = 2.081 ns ( 54.49 % )
+                Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+            Info: - Shortest clock path from clock "clk" to source register is 3.819 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_20; Fanout = 512; CLK Node = 'clk'
+                Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X14_Y4_N5; Fanout = 9; REG Node = 'pwm_down:pwm_down|rcvr:rcvr|tsr[3]'
+                Info: Total cell delay = 2.081 ns ( 54.49 % )
+                Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+        Info: - Micro clock to output delay of source is 0.376 ns
+        Info: + Micro hold delay of destination is 0.221 ns
+Info: tsu for register "pwm_down:pwm_down|PWM:PWM|K_4" (data pin = "col2", clock pin = "clk") is 7.494 ns
+    Info: + Longest pin to register delay is 10.980 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_129; Fanout = 4; PIN Node = 'col2'
+        Info: 2: + IC(4.515 ns) + CELL(0.740 ns) = 6.387 ns; Loc. = LC_X8_Y10_N2; Fanout = 3; COMB Node = 'pwm_down:pwm_down|PWM:PWM|K_1~3'
+        Info: 3: + IC(0.720 ns) + CELL(0.740 ns) = 7.847 ns; Loc. = LC_X8_Y10_N9; Fanout = 2; COMB Node = 'pwm_down:pwm_down|PWM:PWM|K_2~6'
+        Info: 4: + IC(1.890 ns) + CELL(1.243 ns) = 10.980 ns; Loc. = LC_X6_Y10_N3; Fanout = 1; REG Node = 'pwm_down:pwm_down|PWM:PWM|K_4'
+        Info: Total cell delay = 3.855 ns ( 35.11 % )
+        Info: Total interconnect delay = 7.125 ns ( 64.89 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 3.819 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_20; Fanout = 512; CLK Node = 'clk'
+        Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X6_Y10_N3; Fanout = 1; REG Node = 'pwm_down:pwm_down|PWM:PWM|K_4'
+        Info: Total cell delay = 2.081 ns ( 54.49 % )
+        Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+Info: tco from clock "clk" to destination pin "cs_n" through register "ad:ad|cs_n" is 11.672 ns
+    Info: + Longest clock path from clock "clk" to source register is 3.819 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_20; Fanout = 512; CLK Node = 'clk'
+        Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X2_Y6_N8; Fanout = 22; REG Node = 'ad:ad|cs_n'
+        Info: Total cell delay = 2.081 ns ( 54.49 % )
+        Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 7.477 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X2_Y6_N8; Fanout = 22; REG Node = 'ad:ad|cs_n'
+        Info: 2: + IC(5.155 ns) + CELL(2.322 ns) = 7.477 ns; Loc. = PIN_88; Fanout = 0; PIN Node = 'cs_n'
+        Info: Total cell delay = 2.322 ns ( 31.06 % )
+        Info: Total interconnect delay = 5.155 ns ( 68.94 % )
+Info: th for register "pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|out" (data pin = "db", clock pin = "clk") is -0.972 ns
+    Info: + Longest clock path from clock "clk" to destination register is 3.819 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_20; Fanout = 512; CLK Node = 'clk'
+        Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X16_Y8_N2; Fanout = 2; REG Node = 'pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|out'
+        Info: Total cell delay = 2.081 ns ( 54.49 % )
+        Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 5.012 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_105; Fanout = 10; PIN Node = 'db'
+        Info: 2: + IC(3.289 ns) + CELL(0.591 ns) = 5.012 ns; Loc. = LC_X16_Y8_N2; Fanout = 2; REG Node = 'pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|out'
+        Info: Total cell delay = 1.723 ns ( 34.38 % )
+        Info: Total interconnect delay = 3.289 ns ( 65.62 % )
+Info: All timing requirements were met for slow timing model timing analysis. See Report window for more details.
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 136 megabytes
+    Info: Processing ended: Thu Oct 20 09:17:19 2011
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

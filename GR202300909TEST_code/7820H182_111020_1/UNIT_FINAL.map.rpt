@@ -1,0 +1,424 @@
+Analysis & Synthesis report for UNIT_FINAL
+Thu Nov 23 08:11:18 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |UNIT_FINAL|pwm_up:pwm_up|send:send|cs
+  9. State Machine - |UNIT_FINAL|pwm_down:pwm_down|down_deal:down_deal|cs
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Port Connectivity Checks: "pwm_up:pwm_up"
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++-----------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Nov 23 08:11:18 2023            ;
+; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name               ; UNIT_FINAL                                       ;
+; Top-level Entity Name       ; UNIT_FINAL                                       ;
+; Family                      ; MAX II                                           ;
+; Total logic elements        ; 1,086                                            ;
+; Total pins                  ; 33                                               ;
+; Total virtual pins          ; 0                                                ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                                    ;
++-----------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EPM1270T144I5      ;                    ;
+; Top-level entity name                                                      ; UNIT_FINAL         ; UNIT_FINAL         ;
+; Family name                                                                ; MAX II             ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; Off                ; Off                ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-20        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                           ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
+; ad.v                             ; yes             ; User Verilog HDL File  ; D:/temp/hff/GR202300909/7820H182_111020_1/ad.v         ;         ;
+; rcvr.v                           ; yes             ; User Verilog HDL File  ; D:/temp/hff/GR202300909/7820H182_111020_1/rcvr.v       ;         ;
+; down_deal.v                      ; yes             ; User Verilog HDL File  ; D:/temp/hff/GR202300909/7820H182_111020_1/down_deal.v  ;         ;
+; PWM.v                            ; yes             ; User Verilog HDL File  ; D:/temp/hff/GR202300909/7820H182_111020_1/PWM.v        ;         ;
+; pwm_down.v                       ; yes             ; User Verilog HDL File  ; D:/temp/hff/GR202300909/7820H182_111020_1/pwm_down.v   ;         ;
+; UNIT_FINAL.v                     ; yes             ; User Verilog HDL File  ; D:/temp/hff/GR202300909/7820H182_111020_1/UNIT_FINAL.v ;         ;
+; pwm_up.v                         ; yes             ; User Verilog HDL File  ; D:/temp/hff/GR202300909/7820H182_111020_1/pwm_up.v     ;         ;
+; sign_deal.v                      ; yes             ; User Verilog HDL File  ; D:/temp/hff/GR202300909/7820H182_111020_1/sign_deal.v  ;         ;
+; up_sign.v                        ; yes             ; User Verilog HDL File  ; D:/temp/hff/GR202300909/7820H182_111020_1/up_sign.v    ;         ;
+; send.v                           ; yes             ; User Verilog HDL File  ; D:/temp/hff/GR202300909/7820H182_111020_1/send.v       ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 1086  ;
+;     -- Combinational with no register       ; 574   ;
+;     -- Register only                        ; 136   ;
+;     -- Combinational with a register        ; 376   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 320   ;
+;     -- 3 input functions                    ; 289   ;
+;     -- 2 input functions                    ; 313   ;
+;     -- 1 input functions                    ; 27    ;
+;     -- 0 input functions                    ; 1     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 764   ;
+;     -- arithmetic mode                      ; 322   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 232   ;
+;     -- asynchronous clear/load mode         ; 46    ;
+;                                             ;       ;
+; Total registers                             ; 512   ;
+; Total logic cells in carry chains           ; 348   ;
+; I/O pins                                    ; 33    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 512   ;
+; Total fan-out                               ; 4135  ;
+; Average fan-out                             ; 3.70  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                         ;
++-----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------+--------------+
+; Compilation Hierarchy Node  ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                       ; Library Name ;
++-----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------+--------------+
+; |UNIT_FINAL                 ; 1086 (91)   ; 512          ; 0          ; 33   ; 0            ; 574 (31)     ; 136 (0)           ; 376 (60)         ; 348 (50)        ; 0 (0)      ; |UNIT_FINAL                                               ; work         ;
+;    |ad:ad|                  ; 63 (63)     ; 45           ; 0          ; 0    ; 0            ; 18 (18)      ; 32 (32)           ; 13 (13)          ; 11 (11)         ; 0 (0)      ; |UNIT_FINAL|ad:ad                                         ; work         ;
+;    |pwm_down:pwm_down|      ; 663 (0)     ; 281          ; 0          ; 0    ; 0            ; 382 (0)      ; 102 (0)           ; 179 (0)          ; 270 (0)         ; 0 (0)      ; |UNIT_FINAL|pwm_down:pwm_down                             ; work         ;
+;       |PWM:PWM|             ; 318 (318)   ; 75           ; 0          ; 0    ; 0            ; 243 (243)    ; 0 (0)             ; 75 (75)          ; 194 (194)       ; 0 (0)      ; |UNIT_FINAL|pwm_down:pwm_down|PWM:PWM                     ; work         ;
+;       |down_deal:down_deal| ; 266 (266)   ; 151          ; 0          ; 0    ; 0            ; 115 (115)    ; 83 (83)           ; 68 (68)          ; 48 (48)         ; 0 (0)      ; |UNIT_FINAL|pwm_down:pwm_down|down_deal:down_deal         ; work         ;
+;       |rcvr:rcvr|           ; 79 (79)     ; 55           ; 0          ; 0    ; 0            ; 24 (24)      ; 19 (19)           ; 36 (36)          ; 28 (28)         ; 0 (0)      ; |UNIT_FINAL|pwm_down:pwm_down|rcvr:rcvr                   ; work         ;
+;    |pwm_up:pwm_up|          ; 269 (0)     ; 126          ; 0          ; 0    ; 0            ; 143 (0)      ; 2 (0)             ; 124 (0)          ; 17 (0)          ; 0 (0)      ; |UNIT_FINAL|pwm_up:pwm_up                                 ; work         ;
+;       |send:send|           ; 117 (117)   ; 57           ; 0          ; 0    ; 0            ; 60 (60)      ; 0 (0)             ; 57 (57)          ; 7 (7)           ; 0 (0)      ; |UNIT_FINAL|pwm_up:pwm_up|send:send                       ; work         ;
+;       |sign_deal:sign_deal| ; 136 (70)    ; 60           ; 0          ; 0    ; 0            ; 76 (50)      ; 0 (0)             ; 60 (20)          ; 10 (10)         ; 0 (0)      ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal             ; work         ;
+;          |alarm:db_f|       ; 12 (12)     ; 5            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f  ; work         ;
+;          |alarm:uv_f|       ; 12 (12)     ; 5            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f  ; work         ;
+;          |error:TEM_f|      ; 7 (7)       ; 5            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f ; work         ;
+;          |error:ov_f|       ; 7 (7)       ; 5            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f  ; work         ;
+;          |error:t1|         ; 7 (7)       ; 5            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|error:t1    ; work         ;
+;          |error:t2|         ; 7 (7)       ; 5            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|error:t2    ; work         ;
+;          |error:t3|         ; 7 (7)       ; 5            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|error:t3    ; work         ;
+;          |error:t4|         ; 7 (7)       ; 5            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|error:t4    ; work         ;
+;       |up_sign:up_sign|     ; 16 (16)     ; 9            ; 0          ; 0    ; 0            ; 7 (7)        ; 2 (2)             ; 7 (7)            ; 0 (0)           ; 0 (0)      ; |UNIT_FINAL|pwm_up:pwm_up|up_sign:up_sign                 ; work         ;
++-----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------+
+; State Machine - |UNIT_FINAL|pwm_up:pwm_up|send:send|cs ;
++-------+-------+-------+--------------------------------+
+; Name  ; cs.00 ; cs.10 ; cs.01                          ;
++-------+-------+-------+--------------------------------+
+; cs.01 ; 0     ; 0     ; 0                              ;
+; cs.00 ; 1     ; 0     ; 1                              ;
+; cs.10 ; 0     ; 1     ; 1                              ;
++-------+-------+-------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------+
+; State Machine - |UNIT_FINAL|pwm_down:pwm_down|down_deal:down_deal|cs ;
++-------+-------+-------+----------------------------------------------+
+; Name  ; cs.00 ; cs.10 ; cs.01                                        ;
++-------+-------+-------+----------------------------------------------+
+; cs.00 ; 0     ; 0     ; 0                                            ;
+; cs.01 ; 1     ; 0     ; 1                                            ;
+; cs.10 ; 1     ; 1     ; 0                                            ;
++-------+-------+-------+----------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                             ;
++--------------------------------------------------+---------------------------------------------+
+; Register name                                    ; Reason for Removal                          ;
++--------------------------------------------------+---------------------------------------------+
+; pwm_up:pwm_up|send:send|rsr[20]                  ; Merged with pwm_up:pwm_up|send:send|rsr[19] ;
+; pwm_up:pwm_up|send:send|rsr[19]                  ; Stuck at GND due to stuck port data_in      ;
+; pwm_up:pwm_up|send:send|cs.00                    ; Lost fanout                                 ;
+; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[3] ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 4            ;                                             ;
++--------------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 512   ;
+; Number of registers using Synchronous Clear  ; 101   ;
+; Number of registers using Synchronous Load   ; 157   ;
+; Number of registers using Asynchronous Clear ; 46    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 251   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------+
+; Inverted Register Statistics                                 ;
++----------------------------------------------------+---------+
+; Inverted Register                                  ; Fan out ;
++----------------------------------------------------+---------+
+; ad:ad|adclk                                        ; 2       ;
+; ad:ad|cs_n                                         ; 22      ;
+; pwm_up:pwm_up|send:send|sent                       ; 2       ;
+; pwm_up:pwm_up|send:send|parity                     ; 2       ;
+; pwm_down:pwm_down|down_deal:down_deal|Lockn        ; 7       ;
+; pwm_down:pwm_down|down_deal:down_deal|fre_data[6]  ; 6       ;
+; pwm_down:pwm_down|down_deal:down_deal|fre_data[10] ; 6       ;
+; pwm_down:pwm_down|down_deal:down_deal|fre_data[11] ; 6       ;
+; pwm_down:pwm_down|down_deal:down_deal|fre_data[12] ; 6       ;
+; pwm_down:pwm_down|down_deal:down_deal|fre_data[15] ; 6       ;
+; pwm_down:pwm_down|rcvr:rcvr|parity                 ; 2       ;
+; Total number of inverted registers = 11            ;         ;
++----------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_down:pwm_down|PWM:PWM|K_3                          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_down:pwm_down|down_deal:down_deal|cnt[1]           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_down:pwm_down|PWM:PWM|bypass[0]                    ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |UNIT_FINAL|ad:ad|clk_div[0]                                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |UNIT_FINAL|tri_200us[3]                                           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_down:pwm_down|PWM:PWM|check_data[6]                ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_down:pwm_down|rcvr:rcvr|tt[14]                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|send:send|tsr[19]                        ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|send:send|tsr[13]                        ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|call_count1[6]       ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|ad:ad|ad_count[4]                                      ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_down:pwm_down|PWM:PWM|d_data1[9]                   ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_down:pwm_down|PWM:PWM|d_data2[9]                   ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |UNIT_FINAL|pwm_down:pwm_down|down_deal:down_deal|pose[13]         ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[3]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[2] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[3]    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[3]    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[0]    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[3]    ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|send:send|rsr[18]                        ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|send:send|rsr[1]                         ;
+; 5:1                ; 13 bits   ; 39 LEs        ; 26 LEs               ; 13 LEs                 ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|send:send|rsr[0]                         ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |UNIT_FINAL|pwm_down:pwm_down|PWM:PWM|K_4                          ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |UNIT_FINAL|pwm_down:pwm_down|PWM:PWM|comp_tri[12]                 ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f|count[3]  ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|alarm:db_f|count[1]  ;
+; 5:1                ; 20 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |UNIT_FINAL|pwm_down:pwm_down|rcvr:rcvr|tsr[14]                    ;
+; 6:1                ; 20 bits   ; 80 LEs        ; 20 LEs               ; 60 LEs                 ; Yes        ; |UNIT_FINAL|pwm_down:pwm_down|down_deal:down_deal|rsr2[12]         ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |UNIT_FINAL|pwm_up:pwm_up|sign_deal:sign_deal|call_count2[3]       ;
+; 7:1                ; 20 bits   ; 80 LEs        ; 20 LEs               ; 60 LEs                 ; Yes        ; |UNIT_FINAL|pwm_down:pwm_down|down_deal:down_deal|rsr1[16]         ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |UNIT_FINAL|pwm_up:pwm_up|send:send|cs                             ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |UNIT_FINAL|pwm_down:pwm_down|down_deal:down_deal|cs               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pwm_up:pwm_up"                                                                          ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; db_fault ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Nov 23 08:11:17 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UNIT_FINAL -c UNIT_FINAL
+Info (11104): Parallel Compilation has detected 20 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 14 of the 14 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file tb_pwm.v
+    Info (12023): Found entity 1: tb_PWM
+Info (12021): Found 1 design units, including 1 entities, in source file rect_up.v
+    Info (12023): Found entity 1: rect_up
+Info (12021): Found 1 design units, including 1 entities, in source file ad.v
+    Info (12023): Found entity 1: ad
+Info (12021): Found 1 design units, including 1 entities, in source file rcvr.v
+    Info (12023): Found entity 1: rcvr
+Info (12021): Found 1 design units, including 1 entities, in source file down_deal.v
+    Info (12023): Found entity 1: down_deal
+Info (12021): Found 1 design units, including 1 entities, in source file pwm.v
+    Info (12023): Found entity 1: PWM
+Info (12021): Found 1 design units, including 1 entities, in source file pwm_down.v
+    Info (12023): Found entity 1: pwm_down
+Info (12021): Found 1 design units, including 1 entities, in source file unit_final.v
+    Info (12023): Found entity 1: UNIT_FINAL
+Info (12021): Found 1 design units, including 1 entities, in source file pwm_up.v
+    Info (12023): Found entity 1: pwm_up
+Info (12021): Found 3 design units, including 3 entities, in source file sign_deal.v
+    Info (12023): Found entity 1: sign_deal
+    Info (12023): Found entity 2: error
+    Info (12023): Found entity 3: alarm
+Info (12021): Found 1 design units, including 1 entities, in source file up_sign.v
+    Info (12023): Found entity 1: up_sign
+Info (12021): Found 1 design units, including 1 entities, in source file send.v
+    Info (12023): Found entity 1: send
+Info (12021): Found 1 design units, including 1 entities, in source file rect_down.v
+    Info (12023): Found entity 1: rect_down
+Info (12127): Elaborating entity "UNIT_FINAL" for the top level hierarchy
+Info (12128): Elaborating entity "ad" for hierarchy "ad:ad"
+Info (12128): Elaborating entity "pwm_down" for hierarchy "pwm_down:pwm_down"
+Info (12128): Elaborating entity "rcvr" for hierarchy "pwm_down:pwm_down|rcvr:rcvr"
+Info (12128): Elaborating entity "down_deal" for hierarchy "pwm_down:pwm_down|down_deal:down_deal"
+Info (12128): Elaborating entity "PWM" for hierarchy "pwm_down:pwm_down|PWM:PWM"
+Info (12128): Elaborating entity "pwm_up" for hierarchy "pwm_up:pwm_up"
+Info (12128): Elaborating entity "sign_deal" for hierarchy "pwm_up:pwm_up|sign_deal:sign_deal"
+Info (12128): Elaborating entity "error" for hierarchy "pwm_up:pwm_up|sign_deal:sign_deal|error:t1"
+Info (12128): Elaborating entity "alarm" for hierarchy "pwm_up:pwm_up|sign_deal:sign_deal|alarm:uv_f"
+Info (12128): Elaborating entity "up_sign" for hierarchy "pwm_up:pwm_up|up_sign:up_sign"
+Info (12128): Elaborating entity "send" for hierarchy "pwm_up:pwm_up|send:send"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "K_5" is stuck at GND
+Info (18000): Registers with preset signals will power-up high
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 1119 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 18 output pins
+    Info (21061): Implemented 1086 logic cells
+Info (144001): Generated suppressed messages file D:/temp/hff/GR202300909/7820H182_111020_1/UNIT_FINAL.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4586 megabytes
+    Info: Processing ended: Thu Nov 23 08:11:18 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/temp/hff/GR202300909/7820H182_111020_1/UNIT_FINAL.map.smsg.
+
+

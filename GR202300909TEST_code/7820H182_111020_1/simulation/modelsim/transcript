@@ -1,0 +1,93 @@
+# Compile of tb_pwm.v was successful.
+# Compile of PWM.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb_PWM
+# vsim -voptargs="+acc" work.tb_PWM 
+# Start time: 14:35:13 on Sep 07,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.tb_PWM(fast)
+# Loading work.PWM(fast)
+# ** Warning: (vsim-3015) D:/STUDY/chenhui_tanliang/7820H182_111020_1/tb_pwm.v(19): [PCDPC] - Port size (1) does not match connection size (16) for port 'K_1'. The port definition is at: D:/STUDY/chenhui_tanliang/7820H182_111020_1/PWM.v(10).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_PWM/uut File: D:/STUDY/chenhui_tanliang/7820H182_111020_1/PWM.v
+# ** Warning: (vsim-3015) D:/STUDY/chenhui_tanliang/7820H182_111020_1/tb_pwm.v(19): [PCDPC] - Port size (1) does not match connection size (16) for port 'K_2'. The port definition is at: D:/STUDY/chenhui_tanliang/7820H182_111020_1/PWM.v(10).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_PWM/uut File: D:/STUDY/chenhui_tanliang/7820H182_111020_1/PWM.v
+# ** Warning: (vsim-3015) D:/STUDY/chenhui_tanliang/7820H182_111020_1/tb_pwm.v(19): [PCDPC] - Port size (1) does not match connection size (16) for port 'K_3'. The port definition is at: D:/STUDY/chenhui_tanliang/7820H182_111020_1/PWM.v(10).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_PWM/uut File: D:/STUDY/chenhui_tanliang/7820H182_111020_1/PWM.v
+# ** Warning: (vsim-3015) D:/STUDY/chenhui_tanliang/7820H182_111020_1/tb_pwm.v(19): [PCDPC] - Port size (1) does not match connection size (16) for port 'K_4'. The port definition is at: D:/STUDY/chenhui_tanliang/7820H182_111020_1/PWM.v(10).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_PWM/uut File: D:/STUDY/chenhui_tanliang/7820H182_111020_1/PWM.v
+add wave  \
+sim:/tb_PWM/clk
+run
+# Time=20000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=20000 comp_tri=0000 check_data=0000
+# Time=60000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=60000 comp_tri=0001 check_data=0000
+# Time=100000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=100000 comp_tri=0002 check_data=0000
+# Time=140000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=140000 comp_tri=0003 check_data=0000
+# Time=180000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=180000 comp_tri=0004 check_data=0000
+# Time=220000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=220000 comp_tri=0005 check_data=0000
+# Time=260000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=260000 comp_tri=0006 check_data=0001
+# Time=300000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=300000 comp_tri=0007 check_data=0002
+# Time=340000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=340000 comp_tri=0008 check_data=0003
+# Time=380000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=380000 comp_tri=0009 check_data=0004
+# Time=420000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=420000 comp_tri=000a check_data=0005
+# Time=460000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=460000 comp_tri=000b check_data=0006
+# Time=500000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=500000 comp_tri=000c check_data=0007
+# Time=540000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=540000 comp_tri=000d check_data=0008
+# Time=580000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=580000 comp_tri=000e check_data=0009
+# Time=620000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=620000 comp_tri=000f check_data=000a
+# Time=660000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=660000 comp_tri=0010 check_data=000b
+# Time=700000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=700000 comp_tri=0011 check_data=000c
+# Time=740000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=740000 comp_tri=0012 check_data=000d
+# Time=780000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=780000 comp_tri=0013 check_data=000e
+# Time=820000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=820000 comp_tri=0014 check_data=000f
+# Time=860000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=860000 comp_tri=0015 check_data=0010
+# Time=900000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=900000 comp_tri=0016 check_data=0011
+# Time=940000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=940000 comp_tri=0017 check_data=0012
+# Time=980000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=980000 comp_tri=0018 check_data=0013
+add wave  \
+sim:/tb_PWM/start
+add wave -position insertpoint  \
+sim:/tb_PWM/K_1
+run
+# Time=1020000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=1020000 comp_tri=0019 check_data=0014
+# Time=1060000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=1060000 comp_tri=001a check_data=0015
+# Time=1100000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=1100000 comp_tri=001b check_data=0016
+# Time=1140000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=1140000 comp_tri=001c check_data=0017
+# Time=1180000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=1180000 comp_tri=001d check_data=0018
+# Time=1220000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=1220000 comp_tri=001e check_data=0019
+# Time=1260000 K_1=zzzZ K_2=zzzZ K_3=zzzZ K_4=zzzZ
+# Time=1260000 comp_tri=001f check_data=001a
+# ** Note: $finish    : D:/STUDY/chenhui_tanliang/7820H182_111020_1/tb_pwm.v(77)
+#    Time: 1300 ns  Iteration: 0  Instance: /tb_PWM
+# End time: 14:45:05 on Sep 07,2023, Elapsed time: 0:09:52
+# Errors: 1, Warnings: 4

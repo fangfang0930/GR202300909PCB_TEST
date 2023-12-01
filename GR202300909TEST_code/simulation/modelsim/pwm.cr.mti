@@ -1,0 +1,15 @@
+D:/STUDY/chenhui_tanliang/7820H182_111020_1/PWM.v {1 {vlog -work work -vopt -stats=none D:/STUDY/chenhui_tanliang/7820H182_111020_1/PWM.v
+Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+-- Compiling module PWM
+
+Top level modules:
+	PWM
+
+} {} {}} D:/STUDY/chenhui_tanliang/7820H182_111020_1/tb_pwm.v {1 {vlog -work work -vopt -stats=none D:/STUDY/chenhui_tanliang/7820H182_111020_1/tb_pwm.v
+Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+-- Compiling module tb_PWM
+
+Top level modules:
+	tb_PWM
+
+} {} {}}

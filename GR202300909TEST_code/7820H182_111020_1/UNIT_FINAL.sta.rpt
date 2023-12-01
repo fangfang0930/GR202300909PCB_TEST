@@ -1,0 +1,793 @@
+TimeQuest Timing Analyzer report for UNIT_FINAL
+Thu Nov 23 08:11:23 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Hold: 'clk'
+ 13. Recovery: 'clk'
+ 14. Removal: 'clk'
+ 15. Minimum Pulse Width: 'clk'
+ 16. Setup Times
+ 17. Hold Times
+ 18. Clock to Output Times
+ 19. Minimum Clock to Output Times
+ 20. Setup Transfers
+ 21. Hold Transfers
+ 22. Recovery Transfers
+ 23. Removal Transfers
+ 24. Report TCCS
+ 25. Report RSKM
+ 26. Unconstrained Paths
+ 27. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                       ;
++--------------------+--------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version ;
+; Revision Name      ; UNIT_FINAL                                                         ;
+; Device Family      ; MAX II                                                             ;
+; Device Name        ; EPM1270T144I5                                                      ;
+; Timing Models      ; Final                                                              ;
+; Delay Model        ; Slow Model                                                         ;
+; Rise/Fall Delays   ; Unavailable                                                        ;
++--------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-20        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 77.07 MHz ; 77.07 MHz       ; clk        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Setup Summary                   ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clk   ; -11.975 ; -4307.443     ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 1.392 ; 0.000         ;
++-------+-------+---------------+
+
+
++--------------------------------+
+; Recovery Summary               ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -4.686 ; -215.506      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Removal Summary               ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 5.127 ; 0.000         ;
++-------+-------+---------------+
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                                                       ;
++---------+-----------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                     ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -11.975 ; pwm_down:pwm_down|down_deal:down_deal|rsr2[6] ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.642     ;
+; -11.975 ; pwm_down:pwm_down|down_deal:down_deal|rsr2[6] ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.642     ;
+; -11.975 ; pwm_down:pwm_down|down_deal:down_deal|rsr2[6] ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.642     ;
+; -11.950 ; pwm_down:pwm_down|down_deal:down_deal|rsr2[6] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.617     ;
+; -11.938 ; pwm_down:pwm_down|down_deal:down_deal|rsr2[6] ; pwm_down:pwm_down|down_deal:down_deal|fre_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.605     ;
+; -11.936 ; pwm_down:pwm_down|down_deal:down_deal|rsr2[6] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.603     ;
+; -11.929 ; pwm_down:pwm_down|down_deal:down_deal|rsr2[6] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.596     ;
+; -11.925 ; pwm_down:pwm_down|down_deal:down_deal|rsr2[6] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.592     ;
+; -11.907 ; pwm_down:pwm_down|down_deal:down_deal|rsr2[6] ; pwm_down:pwm_down|down_deal:down_deal|fre_data[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.574     ;
+; -11.907 ; pwm_down:pwm_down|down_deal:down_deal|rsr2[6] ; pwm_down:pwm_down|down_deal:down_deal|fre_data[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.574     ;
+; -11.827 ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]            ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.494     ;
+; -11.827 ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]            ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.494     ;
+; -11.827 ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]            ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.494     ;
+; -11.802 ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.469     ;
+; -11.790 ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.457     ;
+; -11.788 ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.455     ;
+; -11.781 ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.448     ;
+; -11.779 ; pwm_down:pwm_down|down_deal:down_deal|rsr2[6] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.446     ;
+; -11.779 ; pwm_down:pwm_down|down_deal:down_deal|rsr2[6] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.446     ;
+; -11.779 ; pwm_down:pwm_down|down_deal:down_deal|rsr2[6] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.446     ;
+; -11.777 ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.444     ;
+; -11.766 ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.433     ;
+; -11.766 ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.433     ;
+; -11.766 ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.433     ;
+; -11.759 ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.426     ;
+; -11.759 ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.426     ;
+; -11.741 ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.408     ;
+; -11.729 ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]           ; pwm_down:pwm_down|down_deal:down_deal|fre_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.396     ;
+; -11.727 ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.394     ;
+; -11.720 ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.387     ;
+; -11.716 ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.383     ;
+; -11.711 ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8] ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.378     ;
+; -11.711 ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8] ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.378     ;
+; -11.711 ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8] ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.378     ;
+; -11.701 ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]            ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.368     ;
+; -11.701 ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]            ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.368     ;
+; -11.701 ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]            ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.368     ;
+; -11.698 ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]           ; pwm_down:pwm_down|down_deal:down_deal|fre_data[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.365     ;
+; -11.698 ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]           ; pwm_down:pwm_down|down_deal:down_deal|fre_data[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.365     ;
+; -11.686 ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.353     ;
+; -11.676 ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.343     ;
+; -11.674 ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8] ; pwm_down:pwm_down|down_deal:down_deal|fre_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.341     ;
+; -11.672 ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.339     ;
+; -11.672 ; pwm_down:pwm_down|rcvr:rcvr|tsr[15]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.339     ;
+; -11.672 ; pwm_down:pwm_down|rcvr:rcvr|tsr[15]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.339     ;
+; -11.672 ; pwm_down:pwm_down|rcvr:rcvr|tsr[15]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.339     ;
+; -11.665 ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.332     ;
+; -11.664 ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.331     ;
+; -11.662 ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.329     ;
+; -11.661 ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.328     ;
+; -11.655 ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.322     ;
+; -11.651 ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.318     ;
+; -11.647 ; pwm_down:pwm_down|rcvr:rcvr|tsr[15]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.314     ;
+; -11.643 ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8] ; pwm_down:pwm_down|down_deal:down_deal|fre_data[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.310     ;
+; -11.643 ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8] ; pwm_down:pwm_down|down_deal:down_deal|fre_data[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.310     ;
+; -11.635 ; pwm_down:pwm_down|rcvr:rcvr|tsr[15]           ; pwm_down:pwm_down|down_deal:down_deal|fre_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.302     ;
+; -11.633 ; pwm_down:pwm_down|rcvr:rcvr|tsr[15]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.300     ;
+; -11.633 ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.300     ;
+; -11.633 ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.300     ;
+; -11.631 ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.298     ;
+; -11.631 ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.298     ;
+; -11.631 ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.298     ;
+; -11.631 ; pwm_down:pwm_down|rcvr:rcvr|tsr[8]            ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.298     ;
+; -11.631 ; pwm_down:pwm_down|rcvr:rcvr|tsr[8]            ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.298     ;
+; -11.631 ; pwm_down:pwm_down|rcvr:rcvr|tsr[8]            ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.298     ;
+; -11.626 ; pwm_down:pwm_down|rcvr:rcvr|tsr[15]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.293     ;
+; -11.622 ; pwm_down:pwm_down|rcvr:rcvr|tsr[15]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.289     ;
+; -11.606 ; pwm_down:pwm_down|rcvr:rcvr|tsr[8]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.273     ;
+; -11.604 ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.271     ;
+; -11.604 ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.271     ;
+; -11.604 ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.271     ;
+; -11.604 ; pwm_down:pwm_down|rcvr:rcvr|tsr[15]           ; pwm_down:pwm_down|down_deal:down_deal|fre_data[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.271     ;
+; -11.604 ; pwm_down:pwm_down|rcvr:rcvr|tsr[15]           ; pwm_down:pwm_down|down_deal:down_deal|fre_data[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.271     ;
+; -11.594 ; pwm_down:pwm_down|rcvr:rcvr|tsr[8]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.261     ;
+; -11.592 ; pwm_down:pwm_down|rcvr:rcvr|tsr[8]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.259     ;
+; -11.585 ; pwm_down:pwm_down|rcvr:rcvr|tsr[8]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.252     ;
+; -11.581 ; pwm_down:pwm_down|rcvr:rcvr|tsr[8]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.248     ;
+; -11.579 ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.246     ;
+; -11.570 ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.237     ;
+; -11.570 ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.237     ;
+; -11.570 ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.237     ;
+; -11.567 ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]           ; pwm_down:pwm_down|down_deal:down_deal|fre_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.234     ;
+; -11.565 ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.232     ;
+; -11.563 ; pwm_down:pwm_down|rcvr:rcvr|tsr[8]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.230     ;
+; -11.563 ; pwm_down:pwm_down|rcvr:rcvr|tsr[8]            ; pwm_down:pwm_down|down_deal:down_deal|fre_data[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.230     ;
+; -11.558 ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.225     ;
+; -11.554 ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]           ; pwm_down:pwm_down|down_deal:down_deal|ref_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.221     ;
+; -11.536 ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]           ; pwm_down:pwm_down|down_deal:down_deal|fre_data[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.203     ;
+; -11.536 ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]           ; pwm_down:pwm_down|down_deal:down_deal|fre_data[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.203     ;
+; -11.515 ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.182     ;
+; -11.515 ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.182     ;
+; -11.515 ; pwm_down:pwm_down|down_deal:down_deal|rsr1[8] ; pwm_down:pwm_down|down_deal:down_deal|ref_data[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.182     ;
+; -11.509 ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.176     ;
+; -11.509 ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.176     ;
+; -11.509 ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.176     ;
+; -11.505 ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.172     ;
+; -11.505 ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.172     ;
+; -11.505 ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]           ; pwm_down:pwm_down|down_deal:down_deal|cmd_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.172     ;
+; -11.505 ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.172     ;
+; -11.505 ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]            ; pwm_down:pwm_down|down_deal:down_deal|ref_data[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.172     ;
++---------+-----------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                                                   ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                              ; To Node                                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.392 ; ad:ad|rsr[9]                                           ; ad:ad|rsr[10]                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.613      ;
+; 1.396 ; ad:ad|rsr[15]                                          ; ad:ad|volt[15]                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.617      ;
+; 1.396 ; ad:ad|rsr[2]                                           ; ad:ad|rsr[3]                                           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.617      ;
+; 1.397 ; pwm_down:pwm_down|rcvr:rcvr|tsr[12]                    ; pwm_down:pwm_down|down_deal:down_deal|ref_data[12]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.618      ;
+; 1.397 ; ad:ad|rsr[6]                                           ; ad:ad|volt[6]                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.618      ;
+; 1.400 ; ad:ad|rsr[6]                                           ; ad:ad|rsr[7]                                           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.621      ;
+; 1.401 ; ad:ad|rsr[2]                                           ; ad:ad|volt[2]                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.622      ;
+; 1.402 ; pwm_down:pwm_down|rcvr:rcvr|tsr[12]                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.623      ;
+; 1.406 ; ad:ad|rsr[13]                                          ; ad:ad|volt[13]                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.627      ;
+; 1.412 ; ad:ad|rsr[13]                                          ; ad:ad|rsr[14]                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.633      ;
+; 1.427 ; pwm_down:pwm_down|rcvr:rcvr|tsr[0]                     ; pwm_down:pwm_down|rcvr:rcvr|tsr[1]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.648      ;
+; 1.427 ; ad:ad|rsr[3]                                           ; ad:ad|rsr[4]                                           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.648      ;
+; 1.430 ; pwm_down:pwm_down|rcvr:rcvr|tsr[4]                     ; pwm_down:pwm_down|rcvr:rcvr|tsr[5]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.651      ;
+; 1.431 ; ad:ad|rsr[1]                                           ; ad:ad|volt[1]                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.652      ;
+; 1.433 ; ad:ad|rsr[4]                                           ; ad:ad|volt[4]                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.654      ;
+; 1.434 ; ad:ad|rsr[4]                                           ; ad:ad|rsr[5]                                           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.655      ;
+; 1.435 ; ad:ad|rsr[1]                                           ; ad:ad|rsr[2]                                           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.656      ;
+; 1.438 ; ad:ad|rsr[3]                                           ; ad:ad|volt[3]                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.659      ;
+; 1.640 ; ad:ad|adclk                                            ; ad:ad|adclk                                            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.861      ;
+; 1.642 ; ad:ad|rsr[14]                                          ; ad:ad|rsr[15]                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.863      ;
+; 1.645 ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]                    ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.866      ;
+; 1.651 ; ad:ad|rsr[8]                                           ; ad:ad|rsr[9]                                           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.872      ;
+; 1.652 ; pwm_up:pwm_up|send:send|tsr[11]                        ; pwm_up:pwm_up|send:send|tsr[12]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.873      ;
+; 1.654 ; pwm_up:pwm_up|send:send|tsr[19]                        ; pwm_up:pwm_up|send:send|tsr[20]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.875      ;
+; 1.654 ; ad:ad|rsr[7]                                           ; ad:ad|rsr[8]                                           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.875      ;
+; 1.655 ; pwm_up:pwm_up|send:send|tsr[17]                        ; pwm_up:pwm_up|send:send|tsr[18]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.876      ;
+; 1.658 ; pwm_up:pwm_up|send:send|parity                         ; pwm_up:pwm_up|send:send|parity                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.879      ;
+; 1.659 ; pwm_down:pwm_down|PWM:PWM|d_data1[9]                   ; pwm_down:pwm_down|PWM:PWM|d_data1[9]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.880      ;
+; 1.659 ; pwm_down:pwm_down|PWM:PWM|d_data2[9]                   ; pwm_down:pwm_down|PWM:PWM|d_data2[9]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.880      ;
+; 1.659 ; t[19]                                                  ; t[19]                                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.880      ;
+; 1.661 ; pwm_up:pwm_up|up_sign:up_sign|fault_delay1             ; pwm_up:pwm_up|up_sign:up_sign|fault_en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.882      ;
+; 1.661 ; pwm_up:pwm_up|send:send|tsr[15]                        ; pwm_up:pwm_up|send:send|tsr[16]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.882      ;
+; 1.663 ; pwm_up:pwm_up|send:send|tsr[14]                        ; pwm_up:pwm_up|send:send|tsr[15]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.884      ;
+; 1.663 ; pwm_up:pwm_up|send:send|tsr[6]                         ; pwm_up:pwm_up|send:send|tsr[7]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.884      ;
+; 1.664 ; pwm_up:pwm_up|up_sign:up_sign|fault_delay1             ; pwm_up:pwm_up|up_sign:up_sign|fault_delay2             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.885      ;
+; 1.666 ; pwm_up:pwm_up|send:send|tsr[4]                         ; pwm_up:pwm_up|send:send|tsr[5]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.887      ;
+; 1.676 ; pwm_down:pwm_down|rcvr:rcvr|parity                     ; pwm_down:pwm_down|rcvr:rcvr|parity                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.897      ;
+; 1.678 ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]                     ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.899      ;
+; 1.680 ; ad:ad|rsr[11]                                          ; ad:ad|volt[11]                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.901      ;
+; 1.682 ; ad:ad|rsr[11]                                          ; ad:ad|rsr[12]                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.903      ;
+; 1.684 ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[4]            ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[4]            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.905      ;
+; 1.684 ; ad:ad|rsr[12]                                          ; ad:ad|volt[12]                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.905      ;
+; 1.685 ; ad:ad|rsr[12]                                          ; ad:ad|rsr[13]                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.906      ;
+; 1.694 ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[0]            ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[0]            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.915      ;
+; 1.703 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[2]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.924      ;
+; 1.709 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[2]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.930      ;
+; 1.710 ; pwm_up:pwm_up|send:send|no_bits_sent[0]                ; pwm_up:pwm_up|send:send|no_bits_sent[0]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.931      ;
+; 1.718 ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[3] ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.939      ;
+; 1.719 ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[3] ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.728 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[2]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.949      ;
+; 1.731 ; pwm_down:pwm_down|rcvr:rcvr|clk_div[1]                 ; pwm_down:pwm_down|rcvr:rcvr|clk_div[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.952      ;
+; 1.737 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[2]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.958      ;
+; 1.739 ; pwm_up:pwm_up|send:send|clk_div[0]                     ; pwm_up:pwm_up|send:send|clk_div[0]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.960      ;
+; 1.743 ; pwm_up:pwm_up|send:send|clk_div[0]                     ; pwm_up:pwm_up|send:send|clk_div[2]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.964      ;
+; 1.747 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[0]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.968      ;
+; 1.749 ; pwm_up:pwm_up|send:send|clk_div[0]                     ; pwm_up:pwm_up|send:send|clk_div[1]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.970      ;
+; 1.762 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[3]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|out         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.983      ;
+; 1.764 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[3]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.985      ;
+; 1.765 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[3]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.986      ;
+; 1.766 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[3]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|out         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.987      ;
+; 1.781 ; ad:ad|rsr[5]                                           ; ad:ad|rsr[6]                                           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.002      ;
+; 1.784 ; ad:ad|rsr[5]                                           ; ad:ad|volt[5]                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.005      ;
+; 1.809 ; ad:ad|rsr[14]                                          ; ad:ad|volt[14]                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.030      ;
+; 1.814 ; ad:ad|rsr[8]                                           ; ad:ad|volt[8]                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.035      ;
+; 1.827 ; pwm_down:pwm_down|rcvr:rcvr|tsr[6]                     ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.048      ;
+; 1.833 ; pwm_down:pwm_down|rcvr:rcvr|tsr[8]                     ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.054      ;
+; 1.899 ; pwm_up:pwm_up|sign_deal:sign_deal|state[0]             ; pwm_up:pwm_up|sign_deal:sign_deal|state[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.120      ;
+; 1.899 ; pwm_down:pwm_down|down_deal:down_deal|rst              ; pwm_down:pwm_down|down_deal:down_deal|rst              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.120      ;
+; 1.908 ; pwm_down:pwm_down|down_deal:down_deal|syn_error[0]     ; pwm_down:pwm_down|down_deal:down_deal|syn_error[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.129      ;
+; 1.916 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|out         ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|out         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.137      ;
+; 1.918 ; pwm_up:pwm_up|up_sign:up_sign|volt_en_delay            ; pwm_up:pwm_up|up_sign:up_sign|volt_en_delay            ; clk          ; clk         ; 0.000        ; 0.000      ; 2.139      ;
+; 1.918 ; pwm_down:pwm_down|down_deal:down_deal|cs.00            ; pwm_down:pwm_down|down_deal:down_deal|cs.00            ; clk          ; clk         ; 0.000        ; 0.000      ; 2.139      ;
+; 1.920 ; pwm_up:pwm_up|up_sign:up_sign|state_en_delay           ; pwm_up:pwm_up|up_sign:up_sign|state_en_delay           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.141      ;
+; 1.920 ; pwm_up:pwm_up|up_sign:up_sign|fre_en_delay             ; pwm_up:pwm_up|up_sign:up_sign|fre_en_delay             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.141      ;
+; 1.922 ; pwm_up:pwm_up|up_sign:up_sign|fre_en_delay             ; pwm_up:pwm_up|up_sign:up_sign|fre_en                   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.143      ;
+; 1.922 ; pwm_up:pwm_up|up_sign:up_sign|state_en_delay           ; pwm_up:pwm_up|up_sign:up_sign|state_en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.143      ;
+; 1.923 ; pwm_up:pwm_up|up_sign:up_sign|volt_en_delay            ; pwm_up:pwm_up|up_sign:up_sign|volt_en                  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.144      ;
+; 1.928 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[2]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.149      ;
+; 1.931 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[2]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.152      ;
+; 1.937 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[1]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t2|count[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.158      ;
+; 1.942 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[1]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t1|count[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.163      ;
+; 1.943 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|out         ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|out         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.164      ;
+; 1.952 ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[2]       ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.173      ;
+; 1.952 ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[1] ; pwm_up:pwm_up|sign_deal:sign_deal|error:TEM_f|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.173      ;
+; 1.952 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[1]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t3|count[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.173      ;
+; 1.952 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[2]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.173      ;
+; 1.955 ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[2]       ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.176      ;
+; 1.957 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[2]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.178      ;
+; 1.961 ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[0]  ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.182      ;
+; 1.961 ; pwm_down:pwm_down|rcvr:rcvr|tsr[4]                     ; pwm_down:pwm_down|down_deal:down_deal|rsr1[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.182      ;
+; 1.963 ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[2]       ; pwm_up:pwm_up|sign_deal:sign_deal|call_count2[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.184      ;
+; 1.968 ; pwm_down:pwm_down|down_deal:down_deal|Lockn            ; pwm_down:pwm_down|down_deal:down_deal|lock_delay       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.189      ;
+; 1.968 ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[2]  ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.189      ;
+; 1.972 ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[0]  ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.193      ;
+; 1.973 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[3]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|out         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.194      ;
+; 1.975 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[3]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.196      ;
+; 1.978 ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[2]  ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.199      ;
+; 1.978 ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[3]    ; pwm_up:pwm_up|sign_deal:sign_deal|error:t4|count[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.199      ;
+; 2.012 ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|count[3]  ; pwm_up:pwm_up|sign_deal:sign_deal|error:ov_f|out       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.233      ;
+; 2.027 ; pwm_up:pwm_up|send:send|tsr[9]                         ; pwm_up:pwm_up|send:send|tsr[10]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.248      ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'clk'                                                                                                                                                        ;
++--------+-------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                 ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -4.686 ; pwm_down:pwm_down|down_deal:down_deal|rst ; pwm_up:pwm_up|sign_deal:sign_deal|state[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|down_deal:down_deal|rst ; pwm_up:pwm_up|sign_deal:sign_deal|state[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[15]         ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]         ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]         ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[12]         ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]         ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]         ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]          ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[8]          ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]          ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[6]          ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[5]          ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[4]          ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[3]          ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]          ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[0]          ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[1]          ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|down_deal:down_deal|rst ; pwm_up:pwm_up|sign_deal:sign_deal|state[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|down_deal:down_deal|rst ; pwm_up:pwm_up|sign_deal:sign_deal|state[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[16]         ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]         ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|down_deal:down_deal|rst ; pwm_down:pwm_down|down_deal:down_deal|Lockn ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|down_deal:down_deal|rst ; pwm_up:pwm_up|sign_deal:sign_deal|ready     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|clk_div[0]      ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|clk_div[1]      ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]         ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[19]         ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|over            ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|error           ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.686 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|parity          ; clk          ; clk         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.681 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|sent                ; clk          ; clk         ; 1.000        ; 0.000      ; 5.348      ;
+; -4.681 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[3]     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.348      ;
+; -4.681 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|parity              ; clk          ; clk         ; 1.000        ; 0.000      ; 5.348      ;
+; -4.681 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.348      ;
+; -4.681 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[5]     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.348      ;
+; -4.681 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.348      ;
+; -4.681 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.348      ;
+; -4.681 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[7]     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.348      ;
+; -4.681 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[6]     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.348      ;
+; -4.681 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[4]     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.348      ;
++--------+-------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'clk'                                                                                                                                                        ;
++-------+-------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 5.127 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|sent                ; clk          ; clk         ; 0.000        ; 0.000      ; 5.348      ;
+; 5.127 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 5.348      ;
+; 5.127 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|parity              ; clk          ; clk         ; 0.000        ; 0.000      ; 5.348      ;
+; 5.127 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 5.348      ;
+; 5.127 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 5.348      ;
+; 5.127 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 5.348      ;
+; 5.127 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 5.348      ;
+; 5.127 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[7]     ; clk          ; clk         ; 0.000        ; 0.000      ; 5.348      ;
+; 5.127 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[6]     ; clk          ; clk         ; 0.000        ; 0.000      ; 5.348      ;
+; 5.127 ; pwm_up:pwm_up|send:send|clk1x_en          ; pwm_up:pwm_up|send:send|no_bits_sent[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 5.348      ;
+; 5.132 ; pwm_down:pwm_down|down_deal:down_deal|rst ; pwm_up:pwm_up|sign_deal:sign_deal|state[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|down_deal:down_deal|rst ; pwm_up:pwm_up|sign_deal:sign_deal|state[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[15]         ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[14]         ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[13]         ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[12]         ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[11]         ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[10]         ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[9]          ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[8]          ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[7]          ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[2]          ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[1]          ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|down_deal:down_deal|rst ; pwm_up:pwm_up|sign_deal:sign_deal|state[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|down_deal:down_deal|rst ; pwm_up:pwm_up|sign_deal:sign_deal|state[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[16]         ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[17]         ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|down_deal:down_deal|rst ; pwm_down:pwm_down|down_deal:down_deal|Lockn ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|down_deal:down_deal|rst ; pwm_up:pwm_up|sign_deal:sign_deal|ready     ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|clk_div[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|clk_div[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|no_bits_rcvd[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[18]         ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|tsr[19]         ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|over            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|error           ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
+; 5.132 ; pwm_down:pwm_down|rcvr:rcvr|clk1x_en      ; pwm_down:pwm_down|rcvr:rcvr|parity          ; clk          ; clk         ; 0.000        ; 0.000      ; 5.353      ;
++-------+-------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                         ;
++--------+--------------+----------------+------------------+-------+------------+-------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target            ;
++--------+--------------+----------------+------------------+-------+------------+-------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; clk   ; Rise       ; clk               ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; LED10~reg0        ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; LED10~reg0        ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; LED1~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; LED1~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; LED2~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; LED2~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; LED3~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; LED3~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; LED4~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; LED4~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; LED5~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; LED5~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; LED6~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; LED6~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; LED7~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; LED7~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; LED8~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; LED8~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; LED9~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; LED9~reg0         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|ad_count[0] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|ad_count[0] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|ad_count[1] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|ad_count[1] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|ad_count[2] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|ad_count[2] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|ad_count[3] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|ad_count[3] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|ad_count[4] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|ad_count[4] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|adclk       ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|adclk       ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|clk_div[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|clk_div[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|clk_div[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|clk_div[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|clk_div[2]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|clk_div[2]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|clk_div[3]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|clk_div[3]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|clk_div[4]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|clk_div[4]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|clk_div[5]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|clk_div[5]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|cs_n        ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|cs_n        ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[0]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[0]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[10]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[10]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[11]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[11]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[12]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[12]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[13]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[13]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[14]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[14]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[15]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[15]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[1]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[1]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[2]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[2]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[3]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[3]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[4]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[4]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[5]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[5]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[6]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[6]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[7]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[7]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[8]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[8]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|rsr[9]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|rsr[9]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|volt[0]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|volt[0]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|volt[10]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|volt[10]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|volt[11]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|volt[11]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|volt[12]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|volt[12]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|volt[13]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|volt[13]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|volt[14]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|volt[14]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|volt[15]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|volt[15]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|volt[1]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|volt[1]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|volt[2]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|volt[2]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|volt[3]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ad:ad|volt[3]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ad:ad|volt[4]     ;
++--------+--------------+----------------+------------------+-------+------------+-------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; TEM       ; clk        ; 4.160 ; 4.160 ; Rise       ; clk             ;
+; ad_in     ; clk        ; 2.115 ; 2.115 ; Rise       ; clk             ;
+; col1      ; clk        ; 6.111 ; 6.111 ; Rise       ; clk             ;
+; col2      ; clk        ; 7.182 ; 7.182 ; Rise       ; clk             ;
+; col3      ; clk        ; 5.847 ; 5.847 ; Rise       ; clk             ;
+; col4      ; clk        ; 7.208 ; 7.208 ; Rise       ; clk             ;
+; db        ; clk        ; 2.269 ; 2.269 ; Rise       ; clk             ;
+; ov        ; clk        ; 3.633 ; 3.633 ; Rise       ; clk             ;
+; rcvd      ; clk        ; 7.136 ; 7.136 ; Rise       ; clk             ;
+; tr1       ; clk        ; 4.919 ; 4.919 ; Rise       ; clk             ;
+; tr2       ; clk        ; 5.093 ; 5.093 ; Rise       ; clk             ;
+; tr3       ; clk        ; 4.938 ; 4.938 ; Rise       ; clk             ;
+; tr4       ; clk        ; 4.428 ; 4.428 ; Rise       ; clk             ;
+; uv        ; clk        ; 3.490 ; 3.490 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; TEM       ; clk        ; -1.953 ; -1.953 ; Rise       ; clk             ;
+; ad_in     ; clk        ; -1.561 ; -1.561 ; Rise       ; clk             ;
+; col1      ; clk        ; -3.584 ; -3.584 ; Rise       ; clk             ;
+; col2      ; clk        ; -4.589 ; -4.589 ; Rise       ; clk             ;
+; col3      ; clk        ; -3.535 ; -3.535 ; Rise       ; clk             ;
+; col4      ; clk        ; -2.772 ; -2.772 ; Rise       ; clk             ;
+; db        ; clk        ; -1.695 ; -1.695 ; Rise       ; clk             ;
+; ov        ; clk        ; -2.135 ; -2.135 ; Rise       ; clk             ;
+; rcvd      ; clk        ; -2.233 ; -2.233 ; Rise       ; clk             ;
+; tr1       ; clk        ; -3.041 ; -3.041 ; Rise       ; clk             ;
+; tr2       ; clk        ; -3.242 ; -3.242 ; Rise       ; clk             ;
+; tr3       ; clk        ; -3.297 ; -3.297 ; Rise       ; clk             ;
+; tr4       ; clk        ; -2.883 ; -2.883 ; Rise       ; clk             ;
+; uv        ; clk        ; -2.142 ; -2.142 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; K_1       ; clk        ; 8.908  ; 8.908  ; Rise       ; clk             ;
+; K_2       ; clk        ; 9.422  ; 9.422  ; Rise       ; clk             ;
+; K_3       ; clk        ; 7.291  ; 7.291  ; Rise       ; clk             ;
+; K_4       ; clk        ; 8.372  ; 8.372  ; Rise       ; clk             ;
+; LED1      ; clk        ; 10.075 ; 10.075 ; Rise       ; clk             ;
+; LED2      ; clk        ; 10.325 ; 10.325 ; Rise       ; clk             ;
+; LED3      ; clk        ; 9.725  ; 9.725  ; Rise       ; clk             ;
+; LED4      ; clk        ; 9.610  ; 9.610  ; Rise       ; clk             ;
+; LED5      ; clk        ; 9.748  ; 9.748  ; Rise       ; clk             ;
+; LED6      ; clk        ; 9.722  ; 9.722  ; Rise       ; clk             ;
+; LED7      ; clk        ; 9.720  ; 9.720  ; Rise       ; clk             ;
+; LED8      ; clk        ; 9.698  ; 9.698  ; Rise       ; clk             ;
+; LED9      ; clk        ; 9.115  ; 9.115  ; Rise       ; clk             ;
+; LED10     ; clk        ; 9.162  ; 9.162  ; Rise       ; clk             ;
+; adclk     ; clk        ; 9.286  ; 9.286  ; Rise       ; clk             ;
+; cs_n      ; clk        ; 9.218  ; 9.218  ; Rise       ; clk             ;
+; sent      ; clk        ; 9.370  ; 9.370  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; K_1       ; clk        ; 8.908  ; 8.908  ; Rise       ; clk             ;
+; K_2       ; clk        ; 9.422  ; 9.422  ; Rise       ; clk             ;
+; K_3       ; clk        ; 7.291  ; 7.291  ; Rise       ; clk             ;
+; K_4       ; clk        ; 8.372  ; 8.372  ; Rise       ; clk             ;
+; LED1      ; clk        ; 10.075 ; 10.075 ; Rise       ; clk             ;
+; LED2      ; clk        ; 10.325 ; 10.325 ; Rise       ; clk             ;
+; LED3      ; clk        ; 9.725  ; 9.725  ; Rise       ; clk             ;
+; LED4      ; clk        ; 9.610  ; 9.610  ; Rise       ; clk             ;
+; LED5      ; clk        ; 9.748  ; 9.748  ; Rise       ; clk             ;
+; LED6      ; clk        ; 9.722  ; 9.722  ; Rise       ; clk             ;
+; LED7      ; clk        ; 9.720  ; 9.720  ; Rise       ; clk             ;
+; LED8      ; clk        ; 9.698  ; 9.698  ; Rise       ; clk             ;
+; LED9      ; clk        ; 9.115  ; 9.115  ; Rise       ; clk             ;
+; LED10     ; clk        ; 9.162  ; 9.162  ; Rise       ; clk             ;
+; adclk     ; clk        ; 9.286  ; 9.286  ; Rise       ; clk             ;
+; cs_n      ; clk        ; 9.218  ; 9.218  ; Rise       ; clk             ;
+; sent      ; clk        ; 9.370  ; 9.370  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 25455    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 25455    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 46       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 46       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 14    ; 14   ;
+; Unconstrained Input Port Paths  ; 75    ; 75   ;
+; Unconstrained Output Ports      ; 17    ; 17   ;
+; Unconstrained Output Port Paths ; 17    ; 17   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Nov 23 08:11:22 2023
+Info: Command: quartus_sta UNIT_FINAL -c UNIT_FINAL
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 20 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 14 of the 14 physical processors detected instead.
+Info (21077): Low junction temperature is -40 degrees C
+Info (21077): High junction temperature is 100 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'UNIT_FINAL.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -11.975
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -11.975     -4307.443 clk 
+Info (332146): Worst-case hold slack is 1.392
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.392         0.000 clk 
+Info (332146): Worst-case recovery slack is -4.686
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.686      -215.506 clk 
+Info (332146): Worst-case removal slack is 5.127
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     5.127         0.000 clk 
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.289        -2.289 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4583 megabytes
+    Info: Processing ended: Thu Nov 23 08:11:23 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

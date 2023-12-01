@@ -1,0 +1,299 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/cpldworks/7820H182_111020_1/7820H182_111020_1/simulation/modelsim
+vad
+Z1 !s110 1700635194
+!i10b 1
+!s100 MG1V69SLS@YE1fM9fB?oj2
+IABbX8nkM<aA6<CI:5Cn>`1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1693978936
+8D:/cpldworks/7820H182_111020_1/7820H182_111020_1/ad.v
+FD:/cpldworks/7820H182_111020_1/7820H182_111020_1/ad.v
+L0 7
+Z3 OL;L;10.5;63
+r1
+!s85 0
+31
+Z4 !s108 1700635194.000000
+!s107 D:/cpldworks/7820H182_111020_1/7820H182_111020_1/ad.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/cpldworks/7820H182_111020_1/7820H182_111020_1|D:/cpldworks/7820H182_111020_1/7820H182_111020_1/ad.v|
+!i113 0
+Z5 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 !s92 -vlog01compat -work work +incdir+D:/cpldworks/7820H182_111020_1/7820H182_111020_1 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z7 tCvgOpt 0
+valarm
+R1
+!i10b 1
+!s100 KRdQV3aiIH26k<[fLTZSZ0
+IzDf1Eb4fLW1E22cRHLbIL1
+R2
+R0
+Z8 w1693818286
+Z9 8D:/cpldworks/7820H182_111020_1/7820H182_111020_1/sign_deal.v
+Z10 FD:/cpldworks/7820H182_111020_1/7820H182_111020_1/sign_deal.v
+L0 226
+R3
+r1
+!s85 0
+31
+R4
+Z11 !s107 D:/cpldworks/7820H182_111020_1/7820H182_111020_1/sign_deal.v|
+Z12 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/cpldworks/7820H182_111020_1/7820H182_111020_1|D:/cpldworks/7820H182_111020_1/7820H182_111020_1/sign_deal.v|
+!i113 0
+R5
+R6
+R7
+vdown_deal
+R1
+!i10b 1
+!s100 7T`3Q7^c8]Q1>7[GbRXAS0
+IUbFWoF9g>VU3PRRfi_C_<3
+R2
+R0
+Z13 w1326255932
+8D:/cpldworks/7820H182_111020_1/7820H182_111020_1/down_deal.v
+FD:/cpldworks/7820H182_111020_1/7820H182_111020_1/down_deal.v
+L0 7
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/cpldworks/7820H182_111020_1/7820H182_111020_1/down_deal.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/cpldworks/7820H182_111020_1/7820H182_111020_1|D:/cpldworks/7820H182_111020_1/7820H182_111020_1/down_deal.v|
+!i113 0
+R5
+R6
+R7
+verror
+R1
+!i10b 1
+!s100 AWZUVL`NO<F=3T=kl5H:c0
+Im9Ll@9`mCC;=]NlE6mb9k2
+R2
+R0
+R8
+R9
+R10
+L0 192
+R3
+r1
+!s85 0
+31
+R4
+R11
+R12
+!i113 0
+R5
+R6
+R7
+vPWM
+R1
+!i10b 1
+!s100 ;BVC4W?`g1M@`gKIT]bL52
+I]9U7GLNRH;W9_UEa1J;hO2
+R2
+R0
+R13
+8D:/cpldworks/7820H182_111020_1/7820H182_111020_1/PWM.v
+FD:/cpldworks/7820H182_111020_1/7820H182_111020_1/PWM.v
+L0 7
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/cpldworks/7820H182_111020_1/7820H182_111020_1/PWM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/cpldworks/7820H182_111020_1/7820H182_111020_1|D:/cpldworks/7820H182_111020_1/7820H182_111020_1/PWM.v|
+!i113 0
+R5
+R6
+R7
+n@p@w@m
+vpwm_down
+R1
+!i10b 1
+!s100 58mGZSPzKX8<PIkNSg8R70
+I5k?4R3G7HJ2W;f7fS87lS2
+R2
+R0
+Z14 w1326255934
+8D:/cpldworks/7820H182_111020_1/7820H182_111020_1/pwm_down.v
+FD:/cpldworks/7820H182_111020_1/7820H182_111020_1/pwm_down.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/cpldworks/7820H182_111020_1/7820H182_111020_1/pwm_down.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/cpldworks/7820H182_111020_1/7820H182_111020_1|D:/cpldworks/7820H182_111020_1/7820H182_111020_1/pwm_down.v|
+!i113 0
+R5
+R6
+R7
+vpwm_up
+R1
+!i10b 1
+!s100 :`^eZImDiUNT1073D`dk13
+IX4Y0W=f==Ml>fX2P^>W=A1
+R2
+R0
+R14
+8D:/cpldworks/7820H182_111020_1/7820H182_111020_1/pwm_up.v
+FD:/cpldworks/7820H182_111020_1/7820H182_111020_1/pwm_up.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/cpldworks/7820H182_111020_1/7820H182_111020_1/pwm_up.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/cpldworks/7820H182_111020_1/7820H182_111020_1|D:/cpldworks/7820H182_111020_1/7820H182_111020_1/pwm_up.v|
+!i113 0
+R5
+R6
+R7
+vrcvr
+R1
+!i10b 1
+!s100 PSGPCf_m;:0]PGji`8o7E0
+IDd5RQgbGiZj[mIRj]5h672
+R2
+R0
+w1326255936
+8D:/cpldworks/7820H182_111020_1/7820H182_111020_1/rcvr.v
+FD:/cpldworks/7820H182_111020_1/7820H182_111020_1/rcvr.v
+L0 7
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/cpldworks/7820H182_111020_1/7820H182_111020_1/rcvr.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/cpldworks/7820H182_111020_1/7820H182_111020_1|D:/cpldworks/7820H182_111020_1/7820H182_111020_1/rcvr.v|
+!i113 0
+R5
+R6
+R7
+vsend
+R1
+!i10b 1
+!s100 2XkcUiNNzjmB3SMzg=AzD2
+IBEz]27P^37fDlU0jfRm:20
+R2
+R0
+w1326255940
+8D:/cpldworks/7820H182_111020_1/7820H182_111020_1/send.v
+FD:/cpldworks/7820H182_111020_1/7820H182_111020_1/send.v
+L0 7
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/cpldworks/7820H182_111020_1/7820H182_111020_1/send.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/cpldworks/7820H182_111020_1/7820H182_111020_1|D:/cpldworks/7820H182_111020_1/7820H182_111020_1/send.v|
+!i113 0
+R5
+R6
+R7
+vsign_deal
+R1
+!i10b 1
+!s100 AhD^>`Fa1A2_onm@9d2c20
+ID6POXM3KU0<:S7XfFM1=z3
+R2
+R0
+R8
+R9
+R10
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R11
+R12
+!i113 0
+R5
+R6
+R7
+vtb_PWM
+!s110 1700635195
+!i10b 1
+!s100 hB>8N]@Iah1>OoS=zX@B]3
+I@DBIPLMzgIIh?TFVJS2n^0
+R2
+R0
+w1695020336
+8D:/cpldworks/7820H182_111020_1/7820H182_111020_1/tb_pwm.v
+FD:/cpldworks/7820H182_111020_1/7820H182_111020_1/tb_pwm.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/cpldworks/7820H182_111020_1/7820H182_111020_1/tb_pwm.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/cpldworks/7820H182_111020_1/7820H182_111020_1|D:/cpldworks/7820H182_111020_1/7820H182_111020_1/tb_pwm.v|
+!i113 0
+R5
+R6
+R7
+ntb_@p@w@m
+vUNIT_FINAL
+R1
+!i10b 1
+!s100 PJHLgVQzdk357Q9_lK?l[3
+ImHiJSGeH0JJ@PDXBDHm?j0
+R2
+R0
+w1694076020
+8D:/cpldworks/7820H182_111020_1/7820H182_111020_1/UNIT_FINAL.v
+FD:/cpldworks/7820H182_111020_1/7820H182_111020_1/UNIT_FINAL.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/cpldworks/7820H182_111020_1/7820H182_111020_1/UNIT_FINAL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/cpldworks/7820H182_111020_1/7820H182_111020_1|D:/cpldworks/7820H182_111020_1/7820H182_111020_1/UNIT_FINAL.v|
+!i113 0
+R5
+R6
+R7
+n@u@n@i@t_@f@i@n@a@l
+vup_sign
+R1
+!i10b 1
+!s100 :RY=VXGH8PHDc6hC=]L0h0
+IimcbI961h318ifzoWH03a1
+R2
+R0
+w1326255958
+8D:/cpldworks/7820H182_111020_1/7820H182_111020_1/up_sign.v
+FD:/cpldworks/7820H182_111020_1/7820H182_111020_1/up_sign.v
+L0 7
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/cpldworks/7820H182_111020_1/7820H182_111020_1/up_sign.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/cpldworks/7820H182_111020_1/7820H182_111020_1|D:/cpldworks/7820H182_111020_1/7820H182_111020_1/up_sign.v|
+!i113 0
+R5
+R6
+R7
