@@ -42,9 +42,9 @@ module K1Module(
 	  if(enable) begin
 			if(	startflag==1)
 			  K1 <= 1;
-			else if (K1 &&(k1count < 31'd800)) // 20us pulse duration
+			else if (K1 &&(k1count < 31'd2000)) // 20us pulse duration
 				  K1 <= 1;
-			else if (K1 && (k1count >= 31'd800)) // Ensure K1 is 0 after pulse
+			else if (K1 && (k1count >= 31'd2000)) // Ensure K1 is 0 after pulse
 				  K1 <= 0;
 			else  K1 <= 0;
 	   end
