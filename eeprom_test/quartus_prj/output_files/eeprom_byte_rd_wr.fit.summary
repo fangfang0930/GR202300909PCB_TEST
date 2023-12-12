@@ -1,0 +1,11 @@
+Fitter Status : Successful - Tue Dec 12 10:18:39 2023
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : eeprom_byte_rd_wr
+Top-level Entity Name : eeprom_byte_rd_wr
+Family : MAX II
+Device : EPM1270T144I5
+Timing Models : Final
+Total logic elements : 247 / 1,270 ( 19 % )
+Total pins : 6 / 116 ( 5 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

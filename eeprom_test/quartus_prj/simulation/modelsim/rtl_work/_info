@@ -1,0 +1,158 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/temp/hff/eeprom_test/quartus_prj/simulation/modelsim
+veeprom_byte_rd_wr
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 3h]PVlDnj1`IEilC:_X842
+I9^HMd6>`JjBbP[`_QB^7Z2
+R0
+w1702343369
+8D:/temp/hff/eeprom_test/rtl/eeprom_byte_rd_wr.v
+FD:/temp/hff/eeprom_test/rtl/eeprom_byte_rd_wr.v
+Z2 L0 20
+Z3 OL;L;10.5;63
+Z4 !s108 1702343481.000000
+!s107 D:/temp/hff/eeprom_test/rtl/eeprom_byte_rd_wr.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/temp/hff/eeprom_test/rtl|D:/temp/hff/eeprom_test/rtl/eeprom_byte_rd_wr.v|
+!i113 0
+Z5 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 !s92 -vlog01compat -work work +incdir+D:/temp/hff/eeprom_test/rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z7 tCvgOpt 0
+vfifo_data
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 @CL14?QkQje0bCVQMI3^Y1
+Igkl]`if]egWcPnSh?=kbP2
+R0
+Z8 w1640252100
+8D:/temp/hff/eeprom_test/quartus_prj/ip_core/fifo_data/fifo_data.v
+FD:/temp/hff/eeprom_test/quartus_prj/ip_core/fifo_data/fifo_data.v
+L0 39
+R3
+!s108 1702343480.000000
+!s107 D:/temp/hff/eeprom_test/quartus_prj/ip_core/fifo_data/fifo_data.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/temp/hff/eeprom_test/quartus_prj/ip_core/fifo_data|D:/temp/hff/eeprom_test/quartus_prj/ip_core/fifo_data/fifo_data.v|
+!i113 0
+R5
+!s92 -vlog01compat -work work +incdir+D:/temp/hff/eeprom_test/quartus_prj/ip_core/fifo_data -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R7
+vi2c_ctrl
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 O1F[F@Vdf6HeI?7h^6T_]1
+InUoZO^mZhm^>TQ04P;D=83
+R0
+w1702274600
+8D:/temp/hff/eeprom_test/rtl/i2c_ctrl.v
+FD:/temp/hff/eeprom_test/rtl/i2c_ctrl.v
+R2
+R3
+R4
+!s107 D:/temp/hff/eeprom_test/rtl/i2c_ctrl.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/temp/hff/eeprom_test/rtl|D:/temp/hff/eeprom_test/rtl/i2c_ctrl.v|
+!i113 0
+R5
+R6
+R7
+vi2c_rw_data
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 5JXX`T`4FnXm4i_FiHjMM0
+I=CgZUezoViFLSR2L=2kTI3
+R0
+w1701939814
+8D:/temp/hff/eeprom_test/rtl/i2c_rw_data.v
+FD:/temp/hff/eeprom_test/rtl/i2c_rw_data.v
+R2
+R3
+R4
+!s107 D:/temp/hff/eeprom_test/rtl/i2c_rw_data.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/temp/hff/eeprom_test/rtl|D:/temp/hff/eeprom_test/rtl/i2c_rw_data.v|
+!i113 0
+R5
+R6
+R7
+vkey_filter
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 JdLMiGj@oJio6@ffZNm_]2
+I8A[HVMEU]MHLiBRSS02J:3
+R0
+R8
+8D:/temp/hff/eeprom_test/rtl/key_filter.v
+FD:/temp/hff/eeprom_test/rtl/key_filter.v
+R2
+R3
+R4
+!s107 D:/temp/hff/eeprom_test/rtl/key_filter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/temp/hff/eeprom_test/rtl|D:/temp/hff/eeprom_test/rtl/key_filter.v|
+!i113 0
+R5
+R6
+R7
+vM24LC64
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 bUSN5RN30cFc?aOh^1ILl3
+IMdjck;8eeUGbCEliSZTmj1
+R0
+R8
+8D:/temp/hff/eeprom_test/quartus_prj/../sim/M24LC64.v
+FD:/temp/hff/eeprom_test/quartus_prj/../sim/M24LC64.v
+L0 87
+R3
+R4
+!s107 D:/temp/hff/eeprom_test/quartus_prj/../sim/M24LC64.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/temp/hff/eeprom_test/quartus_prj/../sim|D:/temp/hff/eeprom_test/quartus_prj/../sim/M24LC64.v|
+!i113 0
+R5
+Z9 !s92 -vlog01compat -work work +incdir+D:/temp/hff/eeprom_test/quartus_prj/../sim -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R7
+n@m24@l@c64
+vtb_eeprom_byte_rd_wr
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 JjMC]H>7DPIiX78VmdKdn2
+ID]?Qe=5icUV9dd>XOZ1WP0
+R0
+w1702011529
+8D:/temp/hff/eeprom_test/quartus_prj/../sim/tb_eeprom_byte_rd_wr.v
+FD:/temp/hff/eeprom_test/quartus_prj/../sim/tb_eeprom_byte_rd_wr.v
+R2
+R3
+R4
+!s107 D:/temp/hff/eeprom_test/quartus_prj/../sim/tb_eeprom_byte_rd_wr.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/temp/hff/eeprom_test/quartus_prj/../sim|D:/temp/hff/eeprom_test/quartus_prj/../sim/tb_eeprom_byte_rd_wr.v|
+!i113 0
+R5
+R9
+R7

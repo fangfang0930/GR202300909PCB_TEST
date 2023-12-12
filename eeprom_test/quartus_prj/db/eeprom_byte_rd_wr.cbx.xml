@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="eeprom_byte_rd_wr">
+		<CBX_INST_ENTRY INSTANCE_NAME="|eeprom_byte_rd_wr|i2c_rw_data:i2c_rw_data_inst|fifo_data:fifo_read_inst|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare" CBX_FILE_NAME="cmpr_ktf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|eeprom_byte_rd_wr|i2c_rw_data:i2c_rw_data_inst|fifo_data:fifo_read_inst|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|lpm_compare:is_almost_full_compare" CBX_FILE_NAME="cmpr_ktf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|eeprom_byte_rd_wr|i2c_rw_data:i2c_rw_data_inst|fifo_data:fifo_read_inst|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr" CBX_FILE_NAME="cntr_epe.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|eeprom_byte_rd_wr|i2c_rw_data:i2c_rw_data_inst|fifo_data:fifo_read_inst|scfifo:scfifo_component|a_fffifo:subfifo|lpm_mux:last_row_data_out_mux" CBX_FILE_NAME="mux_7dc.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

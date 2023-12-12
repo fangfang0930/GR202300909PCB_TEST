@@ -1,0 +1,1213 @@
+TimeQuest Timing Analyzer report for eeprom_byte_rd_wr
+Tue Dec 12 10:18:41 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'i2c_ctrl:i2c_ctrl_inst|state.RD_DATA'
+ 12. Setup: 'sys_clk'
+ 13. Setup: 'i2c_ctrl:i2c_ctrl_inst|i2c_clk'
+ 14. Hold: 'sys_clk'
+ 15. Hold: 'i2c_ctrl:i2c_ctrl_inst|i2c_clk'
+ 16. Hold: 'i2c_ctrl:i2c_ctrl_inst|state.RD_DATA'
+ 17. Recovery: 'i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]'
+ 18. Removal: 'i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]'
+ 19. Minimum Pulse Width: 'sys_clk'
+ 20. Minimum Pulse Width: 'i2c_ctrl:i2c_ctrl_inst|i2c_clk'
+ 21. Minimum Pulse Width: 'i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]'
+ 22. Minimum Pulse Width: 'i2c_ctrl:i2c_ctrl_inst|state.RD_DATA'
+ 23. Setup Times
+ 24. Hold Times
+ 25. Clock to Output Times
+ 26. Minimum Clock to Output Times
+ 27. Output Enable Times
+ 28. Minimum Output Enable Times
+ 29. Output Disable Times
+ 30. Minimum Output Disable Times
+ 31. Setup Transfers
+ 32. Hold Transfers
+ 33. Recovery Transfers
+ 34. Removal Transfers
+ 35. Report TCCS
+ 36. Report RSKM
+ 37. Unconstrained Paths
+ 38. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                       ;
++--------------------+--------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version ;
+; Revision Name      ; eeprom_byte_rd_wr                                                  ;
+; Device Family      ; MAX II                                                             ;
+; Device Name        ; EPM1270T144I5                                                      ;
+; Timing Models      ; Final                                                              ;
+; Delay Model        ; Slow Model                                                         ;
+; Rise/Fall Delays   ; Unavailable                                                        ;
++--------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-20        ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                       ;
++---------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------------------+
+; Clock Name                            ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                   ;
++---------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------------------+
+; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] } ;
+; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { i2c_ctrl:i2c_ctrl_inst|i2c_clk }        ;
+; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { i2c_ctrl:i2c_ctrl_inst|state.RD_DATA }  ;
+; sys_clk                               ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { sys_clk }                               ;
++---------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Fmax Summary                                                         ;
++------------+-----------------+--------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                     ; Note ;
++------------+-----------------+--------------------------------+------+
+; 98.01 MHz  ; 98.01 MHz       ; sys_clk                        ;      ;
+; 112.38 MHz ; 112.38 MHz      ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ;      ;
++------------+-----------------+--------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------------------------+
+; Setup Summary                                                  ;
++--------------------------------------+---------+---------------+
+; Clock                                ; Slack   ; End Point TNS ;
++--------------------------------------+---------+---------------+
+; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -11.901 ; -11.901       ;
+; sys_clk                              ; -9.203  ; -445.511      ;
+; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ; -7.898  ; -531.777      ;
++--------------------------------------+---------+---------------+
+
+
++---------------------------------------------------------------+
+; Hold Summary                                                  ;
++--------------------------------------+--------+---------------+
+; Clock                                ; Slack  ; End Point TNS ;
++--------------------------------------+--------+---------------+
+; sys_clk                              ; -2.589 ; -2.589        ;
+; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ; -2.379 ; -14.122       ;
+; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 4.105  ; 0.000         ;
++--------------------------------------+--------+---------------+
+
+
++----------------------------------------------------------------+
+; Recovery Summary                                               ;
++---------------------------------------+--------+---------------+
+; Clock                                 ; Slack  ; End Point TNS ;
++---------------------------------------+--------+---------------+
+; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; -4.188 ; -4.188        ;
++---------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------+
+; Removal Summary                                               ;
++---------------------------------------+-------+---------------+
+; Clock                                 ; Slack ; End Point TNS ;
++---------------------------------------+-------+---------------+
+; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; 2.802 ; 0.000         ;
++---------------------------------------+-------+---------------+
+
+
++----------------------------------------------------------------+
+; Minimum Pulse Width Summary                                    ;
++---------------------------------------+--------+---------------+
+; Clock                                 ; Slack  ; End Point TNS ;
++---------------------------------------+--------+---------------+
+; sys_clk                               ; -3.545 ; -3.545        ;
+; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; 0.234  ; 0.000         ;
+; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; 0.500  ; 0.000         ;
+; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; 0.500  ; 0.000         ;
++---------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'i2c_ctrl:i2c_ctrl_inst|state.RD_DATA'                                                                                                                                                                     ;
++---------+--------------------------------------------+------------------------------------+---------------------------------------+--------------------------------------+--------------+------------+------------+
+; Slack   ; From Node                                  ; To Node                            ; Launch Clock                          ; Latch Clock                          ; Relationship ; Clock Skew ; Data Delay ;
++---------+--------------------------------------------+------------------------------------+---------------------------------------+--------------------------------------+--------------+------------+------------+
+; -11.901 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[5]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 8.489      ;
+; -11.848 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[7]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 8.436      ;
+; -11.760 ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[1]          ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 8.348      ;
+; -11.515 ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[0]          ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 8.103      ;
+; -11.444 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[1]      ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 8.032      ;
+; -11.155 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_1         ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.743      ;
+; -11.101 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_3         ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.689      ;
+; -11.077 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[1]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.665      ;
+; -11.067 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[4]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.655      ;
+; -11.017 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[6]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.605      ;
+; -10.988 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[2]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.576      ;
+; -10.975 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_4         ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.563      ;
+; -10.832 ; i2c_ctrl:i2c_ctrl_inst|state.STOP          ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.420      ;
+; -10.822 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_5         ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.410      ;
+; -10.775 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_2         ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.363      ;
+; -10.719 ; i2c_ctrl:i2c_ctrl_inst|state.SEND_RD_ADDR  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.307      ;
+; -10.640 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[3]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.228      ;
+; -10.629 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[0]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.217      ;
+; -10.615 ; i2c_ctrl:i2c_ctrl_inst|state.START_1       ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.203      ;
+; -10.542 ; i2c_ctrl:i2c_ctrl_inst|state.SEND_D_ADDR   ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.130      ;
+; -10.503 ; i2c_rw_data:i2c_rw_data_inst|wr_data[3]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.091      ;
+; -10.435 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[10] ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 7.023      ;
+; -10.343 ; i2c_rw_data:i2c_rw_data_inst|wr_data[2]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.931      ;
+; -10.272 ; i2c_ctrl:i2c_ctrl_inst|state.SEND_B_ADDR_L ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.860      ;
+; -10.251 ; i2c_rw_data:i2c_rw_data_inst|wr_data[0]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.839      ;
+; -10.164 ; i2c_rw_data:i2c_rw_data_inst|wr_data[7]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.752      ;
+; -10.143 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[9]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.731      ;
+; -10.003 ; i2c_rw_data:i2c_rw_data_inst|wr_data[6]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.591      ;
+; -9.987  ; i2c_rw_data:i2c_rw_data_inst|wr_data[1]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.575      ;
+; -9.972  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[11] ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.560      ;
+; -9.948  ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[2]          ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.536      ;
+; -9.933  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[8]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.521      ;
+; -9.871  ; i2c_ctrl:i2c_ctrl_inst|state.IDLE          ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.459      ;
+; -9.750  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[13] ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.338      ;
+; -9.715  ; i2c_rw_data:i2c_rw_data_inst|wr_data[5]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.303      ;
+; -9.556  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[15] ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.144      ;
+; -9.493  ; i2c_rw_data:i2c_rw_data_inst|wr_data[4]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 6.081      ;
+; -9.385  ; i2c_ctrl:i2c_ctrl_inst|state.WR_DATA       ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 5.973      ;
+; -9.245  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[14] ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 5.833      ;
+; -9.234  ; i2c_ctrl:i2c_ctrl_inst|state.START_2       ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 5.822      ;
+; -9.045  ; i2c_ctrl:i2c_ctrl_inst|state.N_ACK         ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 5.633      ;
+; -8.965  ; i2c_ctrl:i2c_ctrl_inst|state.SEND_B_ADDR_H ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 5.553      ;
+; -8.901  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[12] ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; -1.896     ; 5.489      ;
+; -5.988  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]      ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.500        ; 2.050      ; 6.898      ;
+; -5.488  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]      ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 1.000        ; 2.050      ; 6.898      ;
++---------+--------------------------------------------+------------------------------------+---------------------------------------+--------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'sys_clk'                                                                                                                                         ;
++--------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                           ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; -9.203 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[0]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.870      ;
+; -9.203 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[1]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.870      ;
+; -9.203 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[2]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.870      ;
+; -9.203 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[3]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.870      ;
+; -9.203 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[4]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.870      ;
+; -9.203 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[5]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.870      ;
+; -9.203 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[6]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.870      ;
+; -9.203 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[7]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.870      ;
+; -9.203 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[8]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.870      ;
+; -9.203 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[9]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.870      ;
+; -8.939 ; key_filter:key_rd_inst|cnt_20ms[3]  ; key_filter:key_rd_inst|cnt_20ms[0]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.606      ;
+; -8.939 ; key_filter:key_rd_inst|cnt_20ms[3]  ; key_filter:key_rd_inst|cnt_20ms[1]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.606      ;
+; -8.939 ; key_filter:key_rd_inst|cnt_20ms[3]  ; key_filter:key_rd_inst|cnt_20ms[2]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.606      ;
+; -8.939 ; key_filter:key_rd_inst|cnt_20ms[3]  ; key_filter:key_rd_inst|cnt_20ms[3]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.606      ;
+; -8.939 ; key_filter:key_rd_inst|cnt_20ms[3]  ; key_filter:key_rd_inst|cnt_20ms[4]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.606      ;
+; -8.939 ; key_filter:key_rd_inst|cnt_20ms[3]  ; key_filter:key_rd_inst|cnt_20ms[5]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.606      ;
+; -8.939 ; key_filter:key_rd_inst|cnt_20ms[3]  ; key_filter:key_rd_inst|cnt_20ms[6]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.606      ;
+; -8.939 ; key_filter:key_rd_inst|cnt_20ms[3]  ; key_filter:key_rd_inst|cnt_20ms[7]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.606      ;
+; -8.939 ; key_filter:key_rd_inst|cnt_20ms[3]  ; key_filter:key_rd_inst|cnt_20ms[8]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.606      ;
+; -8.939 ; key_filter:key_rd_inst|cnt_20ms[3]  ; key_filter:key_rd_inst|cnt_20ms[9]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.606      ;
+; -8.927 ; key_filter:key_rd_inst|cnt_20ms[4]  ; key_filter:key_rd_inst|cnt_20ms[0]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.594      ;
+; -8.927 ; key_filter:key_rd_inst|cnt_20ms[4]  ; key_filter:key_rd_inst|cnt_20ms[1]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.594      ;
+; -8.927 ; key_filter:key_rd_inst|cnt_20ms[4]  ; key_filter:key_rd_inst|cnt_20ms[2]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.594      ;
+; -8.927 ; key_filter:key_rd_inst|cnt_20ms[4]  ; key_filter:key_rd_inst|cnt_20ms[3]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.594      ;
+; -8.927 ; key_filter:key_rd_inst|cnt_20ms[4]  ; key_filter:key_rd_inst|cnt_20ms[4]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.594      ;
+; -8.927 ; key_filter:key_rd_inst|cnt_20ms[4]  ; key_filter:key_rd_inst|cnt_20ms[5]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.594      ;
+; -8.927 ; key_filter:key_rd_inst|cnt_20ms[4]  ; key_filter:key_rd_inst|cnt_20ms[6]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.594      ;
+; -8.927 ; key_filter:key_rd_inst|cnt_20ms[4]  ; key_filter:key_rd_inst|cnt_20ms[7]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.594      ;
+; -8.927 ; key_filter:key_rd_inst|cnt_20ms[4]  ; key_filter:key_rd_inst|cnt_20ms[8]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.594      ;
+; -8.927 ; key_filter:key_rd_inst|cnt_20ms[4]  ; key_filter:key_rd_inst|cnt_20ms[9]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.594      ;
+; -8.924 ; key_filter:key_rd_inst|cnt_20ms[1]  ; key_filter:key_rd_inst|cnt_20ms[0]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.591      ;
+; -8.924 ; key_filter:key_rd_inst|cnt_20ms[1]  ; key_filter:key_rd_inst|cnt_20ms[1]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.591      ;
+; -8.924 ; key_filter:key_rd_inst|cnt_20ms[1]  ; key_filter:key_rd_inst|cnt_20ms[2]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.591      ;
+; -8.924 ; key_filter:key_rd_inst|cnt_20ms[1]  ; key_filter:key_rd_inst|cnt_20ms[3]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.591      ;
+; -8.924 ; key_filter:key_rd_inst|cnt_20ms[1]  ; key_filter:key_rd_inst|cnt_20ms[4]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.591      ;
+; -8.924 ; key_filter:key_rd_inst|cnt_20ms[1]  ; key_filter:key_rd_inst|cnt_20ms[5]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.591      ;
+; -8.924 ; key_filter:key_rd_inst|cnt_20ms[1]  ; key_filter:key_rd_inst|cnt_20ms[6]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.591      ;
+; -8.924 ; key_filter:key_rd_inst|cnt_20ms[1]  ; key_filter:key_rd_inst|cnt_20ms[7]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.591      ;
+; -8.924 ; key_filter:key_rd_inst|cnt_20ms[1]  ; key_filter:key_rd_inst|cnt_20ms[8]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.591      ;
+; -8.924 ; key_filter:key_rd_inst|cnt_20ms[1]  ; key_filter:key_rd_inst|cnt_20ms[9]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.591      ;
+; -8.595 ; key_filter:key_rd_inst|cnt_20ms[9]  ; key_filter:key_rd_inst|cnt_20ms[0]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.262      ;
+; -8.595 ; key_filter:key_rd_inst|cnt_20ms[9]  ; key_filter:key_rd_inst|cnt_20ms[1]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.262      ;
+; -8.595 ; key_filter:key_rd_inst|cnt_20ms[9]  ; key_filter:key_rd_inst|cnt_20ms[2]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.262      ;
+; -8.595 ; key_filter:key_rd_inst|cnt_20ms[9]  ; key_filter:key_rd_inst|cnt_20ms[3]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.262      ;
+; -8.595 ; key_filter:key_rd_inst|cnt_20ms[9]  ; key_filter:key_rd_inst|cnt_20ms[4]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.262      ;
+; -8.595 ; key_filter:key_rd_inst|cnt_20ms[9]  ; key_filter:key_rd_inst|cnt_20ms[5]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.262      ;
+; -8.595 ; key_filter:key_rd_inst|cnt_20ms[9]  ; key_filter:key_rd_inst|cnt_20ms[6]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.262      ;
+; -8.595 ; key_filter:key_rd_inst|cnt_20ms[9]  ; key_filter:key_rd_inst|cnt_20ms[7]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.262      ;
+; -8.595 ; key_filter:key_rd_inst|cnt_20ms[9]  ; key_filter:key_rd_inst|cnt_20ms[8]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.262      ;
+; -8.595 ; key_filter:key_rd_inst|cnt_20ms[9]  ; key_filter:key_rd_inst|cnt_20ms[9]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.262      ;
+; -8.591 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[17] ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.258      ;
+; -8.591 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[18] ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.258      ;
+; -8.591 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[19] ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.258      ;
+; -8.591 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[10] ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.258      ;
+; -8.591 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[11] ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.258      ;
+; -8.591 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[12] ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.258      ;
+; -8.591 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[14] ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.258      ;
+; -8.591 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[16] ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.258      ;
+; -8.591 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[13] ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.258      ;
+; -8.591 ; key_filter:key_rd_inst|cnt_20ms[2]  ; key_filter:key_rd_inst|cnt_20ms[15] ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.258      ;
+; -8.571 ; key_filter:key_rd_inst|cnt_20ms[15] ; key_filter:key_rd_inst|cnt_20ms[0]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.238      ;
+; -8.571 ; key_filter:key_rd_inst|cnt_20ms[15] ; key_filter:key_rd_inst|cnt_20ms[1]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.238      ;
+; -8.571 ; key_filter:key_rd_inst|cnt_20ms[15] ; key_filter:key_rd_inst|cnt_20ms[2]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.238      ;
+; -8.571 ; key_filter:key_rd_inst|cnt_20ms[15] ; key_filter:key_rd_inst|cnt_20ms[3]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.238      ;
+; -8.571 ; key_filter:key_rd_inst|cnt_20ms[15] ; key_filter:key_rd_inst|cnt_20ms[4]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.238      ;
+; -8.571 ; key_filter:key_rd_inst|cnt_20ms[15] ; key_filter:key_rd_inst|cnt_20ms[5]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.238      ;
+; -8.571 ; key_filter:key_rd_inst|cnt_20ms[15] ; key_filter:key_rd_inst|cnt_20ms[6]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.238      ;
+; -8.571 ; key_filter:key_rd_inst|cnt_20ms[15] ; key_filter:key_rd_inst|cnt_20ms[7]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.238      ;
+; -8.571 ; key_filter:key_rd_inst|cnt_20ms[15] ; key_filter:key_rd_inst|cnt_20ms[8]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.238      ;
+; -8.571 ; key_filter:key_rd_inst|cnt_20ms[15] ; key_filter:key_rd_inst|cnt_20ms[9]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.238      ;
+; -8.461 ; key_filter:key_rd_inst|cnt_20ms[14] ; key_filter:key_rd_inst|cnt_20ms[0]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.128      ;
+; -8.461 ; key_filter:key_rd_inst|cnt_20ms[14] ; key_filter:key_rd_inst|cnt_20ms[1]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.128      ;
+; -8.461 ; key_filter:key_rd_inst|cnt_20ms[14] ; key_filter:key_rd_inst|cnt_20ms[2]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.128      ;
+; -8.461 ; key_filter:key_rd_inst|cnt_20ms[14] ; key_filter:key_rd_inst|cnt_20ms[3]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.128      ;
+; -8.461 ; key_filter:key_rd_inst|cnt_20ms[14] ; key_filter:key_rd_inst|cnt_20ms[4]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.128      ;
+; -8.461 ; key_filter:key_rd_inst|cnt_20ms[14] ; key_filter:key_rd_inst|cnt_20ms[5]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.128      ;
+; -8.461 ; key_filter:key_rd_inst|cnt_20ms[14] ; key_filter:key_rd_inst|cnt_20ms[6]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.128      ;
+; -8.461 ; key_filter:key_rd_inst|cnt_20ms[14] ; key_filter:key_rd_inst|cnt_20ms[7]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.128      ;
+; -8.461 ; key_filter:key_rd_inst|cnt_20ms[14] ; key_filter:key_rd_inst|cnt_20ms[8]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.128      ;
+; -8.461 ; key_filter:key_rd_inst|cnt_20ms[14] ; key_filter:key_rd_inst|cnt_20ms[9]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.128      ;
+; -8.429 ; key_filter:key_rd_inst|cnt_20ms[13] ; key_filter:key_rd_inst|cnt_20ms[0]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.096      ;
+; -8.429 ; key_filter:key_rd_inst|cnt_20ms[13] ; key_filter:key_rd_inst|cnt_20ms[1]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.096      ;
+; -8.429 ; key_filter:key_rd_inst|cnt_20ms[13] ; key_filter:key_rd_inst|cnt_20ms[2]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.096      ;
+; -8.429 ; key_filter:key_rd_inst|cnt_20ms[13] ; key_filter:key_rd_inst|cnt_20ms[3]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.096      ;
+; -8.429 ; key_filter:key_rd_inst|cnt_20ms[13] ; key_filter:key_rd_inst|cnt_20ms[4]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.096      ;
+; -8.429 ; key_filter:key_rd_inst|cnt_20ms[13] ; key_filter:key_rd_inst|cnt_20ms[5]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.096      ;
+; -8.429 ; key_filter:key_rd_inst|cnt_20ms[13] ; key_filter:key_rd_inst|cnt_20ms[6]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.096      ;
+; -8.429 ; key_filter:key_rd_inst|cnt_20ms[13] ; key_filter:key_rd_inst|cnt_20ms[7]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.096      ;
+; -8.429 ; key_filter:key_rd_inst|cnt_20ms[13] ; key_filter:key_rd_inst|cnt_20ms[8]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.096      ;
+; -8.429 ; key_filter:key_rd_inst|cnt_20ms[13] ; key_filter:key_rd_inst|cnt_20ms[9]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.096      ;
+; -8.387 ; key_filter:key_rd_inst|cnt_20ms[11] ; key_filter:key_rd_inst|cnt_20ms[0]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.054      ;
+; -8.387 ; key_filter:key_rd_inst|cnt_20ms[11] ; key_filter:key_rd_inst|cnt_20ms[1]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.054      ;
+; -8.387 ; key_filter:key_rd_inst|cnt_20ms[11] ; key_filter:key_rd_inst|cnt_20ms[2]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.054      ;
+; -8.387 ; key_filter:key_rd_inst|cnt_20ms[11] ; key_filter:key_rd_inst|cnt_20ms[3]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.054      ;
+; -8.387 ; key_filter:key_rd_inst|cnt_20ms[11] ; key_filter:key_rd_inst|cnt_20ms[4]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.054      ;
+; -8.387 ; key_filter:key_rd_inst|cnt_20ms[11] ; key_filter:key_rd_inst|cnt_20ms[5]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.054      ;
+; -8.387 ; key_filter:key_rd_inst|cnt_20ms[11] ; key_filter:key_rd_inst|cnt_20ms[6]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.054      ;
+; -8.387 ; key_filter:key_rd_inst|cnt_20ms[11] ; key_filter:key_rd_inst|cnt_20ms[7]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.054      ;
+; -8.387 ; key_filter:key_rd_inst|cnt_20ms[11] ; key_filter:key_rd_inst|cnt_20ms[8]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.054      ;
+; -8.387 ; key_filter:key_rd_inst|cnt_20ms[11] ; key_filter:key_rd_inst|cnt_20ms[9]  ; sys_clk      ; sys_clk     ; 1.000        ; 0.000      ; 9.054      ;
++--------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'i2c_ctrl:i2c_ctrl_inst|i2c_clk'                                                                                                                                                                     ;
++--------+--------------------------------------------+--------------------------------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                  ; To Node                                    ; Launch Clock                   ; Latch Clock                    ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------+--------------------------------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+; -7.898 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.565      ;
+; -7.898 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.565      ;
+; -7.898 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.565      ;
+; -7.898 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.565      ;
+; -7.898 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.565      ;
+; -7.898 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.565      ;
+; -7.898 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[9]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.565      ;
+; -7.898 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[8]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.565      ;
+; -7.750 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.417      ;
+; -7.750 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.417      ;
+; -7.750 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.417      ;
+; -7.750 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.417      ;
+; -7.750 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.417      ;
+; -7.750 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.417      ;
+; -7.750 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[9]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.417      ;
+; -7.750 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[8]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.417      ;
+; -7.747 ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[1]          ; i2c_ctrl:i2c_ctrl_inst|state.WR_DATA       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.414      ;
+; -7.631 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.298      ;
+; -7.631 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.298      ;
+; -7.631 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.298      ;
+; -7.631 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.298      ;
+; -7.631 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.298      ;
+; -7.631 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.298      ;
+; -7.631 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[9]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.298      ;
+; -7.631 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[8]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.298      ;
+; -7.573 ; i2c_ctrl:i2c_ctrl_inst|i2c_end             ; i2c_rw_data:i2c_rw_data_inst|byte_addr[12] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_ctrl:i2c_ctrl_inst|i2c_end             ; i2c_rw_data:i2c_rw_data_inst|byte_addr[15] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_ctrl:i2c_ctrl_inst|i2c_end             ; i2c_rw_data:i2c_rw_data_inst|byte_addr[13] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_ctrl:i2c_ctrl_inst|i2c_end             ; i2c_rw_data:i2c_rw_data_inst|byte_addr[14] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_ctrl:i2c_ctrl_inst|i2c_end             ; i2c_rw_data:i2c_rw_data_inst|byte_addr[8]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_ctrl:i2c_ctrl_inst|i2c_end             ; i2c_rw_data:i2c_rw_data_inst|byte_addr[11] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_ctrl:i2c_ctrl_inst|i2c_end             ; i2c_rw_data:i2c_rw_data_inst|byte_addr[10] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_ctrl:i2c_ctrl_inst|i2c_end             ; i2c_rw_data:i2c_rw_data_inst|byte_addr[9]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[9]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.573 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[8]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.240      ;
+; -7.472 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[2]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.139      ;
+; -7.472 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[2]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.139      ;
+; -7.472 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[2]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.139      ;
+; -7.472 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[2]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.139      ;
+; -7.472 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[2]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.139      ;
+; -7.472 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[2]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.139      ;
+; -7.472 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[2]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[9]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.139      ;
+; -7.472 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[2]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[8]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.139      ;
+; -7.467 ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[1]          ; i2c_ctrl:i2c_ctrl_inst|state.N_ACK         ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.134      ;
+; -7.454 ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[0]          ; i2c_ctrl:i2c_ctrl_inst|state.WR_DATA       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.121      ;
+; -7.408 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.075      ;
+; -7.408 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.075      ;
+; -7.408 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.075      ;
+; -7.408 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.075      ;
+; -7.408 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.075      ;
+; -7.408 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.075      ;
+; -7.408 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[9]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.075      ;
+; -7.408 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[8]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.075      ;
+; -7.390 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[7]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.057      ;
+; -7.390 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[4]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.057      ;
+; -7.390 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[6]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.057      ;
+; -7.390 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[5]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.057      ;
+; -7.390 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[3]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.057      ;
+; -7.390 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[2]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.057      ;
+; -7.390 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[1]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.057      ;
+; -7.390 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[0]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 8.057      ;
+; -7.292 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[0]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.959      ;
+; -7.292 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[0]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.959      ;
+; -7.292 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[0]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.959      ;
+; -7.292 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[0]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.959      ;
+; -7.292 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[0]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.959      ;
+; -7.292 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[0]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.959      ;
+; -7.292 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[0]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[9]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.959      ;
+; -7.292 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[0]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[8]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.959      ;
+; -7.269 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.936      ;
+; -7.269 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.936      ;
+; -7.269 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.936      ;
+; -7.269 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.936      ;
+; -7.269 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.936      ;
+; -7.269 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.936      ;
+; -7.269 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[9]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.936      ;
+; -7.269 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[8]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.936      ;
+; -7.242 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[7]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.909      ;
+; -7.242 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[4]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.909      ;
+; -7.242 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[6]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.909      ;
+; -7.242 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[5]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.909      ;
+; -7.242 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[3]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.909      ;
+; -7.242 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[2]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.909      ;
+; -7.242 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[1]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.909      ;
+; -7.242 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_rw_data:i2c_rw_data_inst|cnt_start[0]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.909      ;
+; -7.196 ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[1]          ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.863      ;
+; -7.174 ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[0]          ; i2c_ctrl:i2c_ctrl_inst|state.N_ACK         ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.841      ;
+; -7.141 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[3]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.808      ;
+; -7.141 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[3]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.808      ;
+; -7.141 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[3]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.808      ;
+; -7.141 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[3]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.808      ;
+; -7.141 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[3]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.808      ;
+; -7.141 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[3]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.808      ;
+; -7.141 ; i2c_rw_data:i2c_rw_data_inst|cnt_start[3]  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[9]  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 1.000        ; 0.000      ; 7.808      ;
++--------+--------------------------------------------+--------------------------------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'sys_clk'                                                                                                                                                                   ;
++--------+----------------------------------------+-----------------------------------------+--------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                              ; To Node                                 ; Launch Clock                   ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------+-----------------------------------------+--------------------------------+-------------+--------------+------------+------------+
+; -2.589 ; i2c_ctrl:i2c_ctrl_inst|i2c_clk         ; i2c_ctrl:i2c_ctrl_inst|i2c_clk          ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; sys_clk     ; 0.000        ; 3.852      ; 1.860      ;
+; -2.089 ; i2c_ctrl:i2c_ctrl_inst|i2c_clk         ; i2c_ctrl:i2c_ctrl_inst|i2c_clk          ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; sys_clk     ; -0.500       ; 3.852      ; 1.860      ;
+; 1.659  ; key_filter:key_wr_inst|cnt_20ms[19]    ; key_filter:key_wr_inst|cnt_20ms[19]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 1.880      ;
+; 1.659  ; key_filter:key_rd_inst|cnt_20ms[19]    ; key_filter:key_rd_inst|cnt_20ms[19]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 1.880      ;
+; 1.875  ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[7]      ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[2]       ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.096      ;
+; 2.116  ; key_filter:key_wr_inst|cnt_20ms[0]     ; key_filter:key_wr_inst|cnt_20ms[0]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116  ; key_filter:key_wr_inst|cnt_20ms[10]    ; key_filter:key_wr_inst|cnt_20ms[10]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116  ; key_filter:key_rd_inst|cnt_20ms[0]     ; key_filter:key_rd_inst|cnt_20ms[0]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116  ; key_filter:key_rd_inst|cnt_20ms[10]    ; key_filter:key_rd_inst|cnt_20ms[10]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117  ; key_filter:key_wr_inst|cnt_20ms[17]    ; key_filter:key_wr_inst|cnt_20ms[17]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; key_filter:key_wr_inst|cnt_20ms[7]     ; key_filter:key_wr_inst|cnt_20ms[7]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; key_filter:key_rd_inst|cnt_20ms[17]    ; key_filter:key_rd_inst|cnt_20ms[17]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; key_filter:key_rd_inst|cnt_20ms[7]     ; key_filter:key_rd_inst|cnt_20ms[7]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.338      ;
+; 2.126  ; key_filter:key_wr_inst|cnt_20ms[1]     ; key_filter:key_wr_inst|cnt_20ms[1]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; key_filter:key_wr_inst|cnt_20ms[2]     ; key_filter:key_wr_inst|cnt_20ms[2]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; key_filter:key_wr_inst|cnt_20ms[9]     ; key_filter:key_wr_inst|cnt_20ms[9]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; key_filter:key_wr_inst|cnt_20ms[11]    ; key_filter:key_wr_inst|cnt_20ms[11]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; key_filter:key_wr_inst|cnt_20ms[12]    ; key_filter:key_wr_inst|cnt_20ms[12]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; key_filter:key_rd_inst|cnt_20ms[1]     ; key_filter:key_rd_inst|cnt_20ms[1]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; key_filter:key_rd_inst|cnt_20ms[2]     ; key_filter:key_rd_inst|cnt_20ms[2]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; key_filter:key_rd_inst|cnt_20ms[9]     ; key_filter:key_rd_inst|cnt_20ms[9]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; key_filter:key_rd_inst|cnt_20ms[11]    ; key_filter:key_rd_inst|cnt_20ms[11]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; key_filter:key_rd_inst|cnt_20ms[12]    ; key_filter:key_rd_inst|cnt_20ms[12]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.347      ;
+; 2.142  ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[0] ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[0]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.363      ;
+; 2.142  ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[0] ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[0]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.363      ;
+; 2.144  ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[1] ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[1]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.365      ;
+; 2.144  ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[2] ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[2]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.365      ;
+; 2.144  ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[1] ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[1]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.365      ;
+; 2.144  ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[2] ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[2]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.365      ;
+; 2.145  ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[7] ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[7]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.366      ;
+; 2.145  ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[7] ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[7]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.366      ;
+; 2.221  ; key_filter:key_wr_inst|cnt_20ms[18]    ; key_filter:key_wr_inst|cnt_20ms[18]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; key_filter:key_wr_inst|cnt_20ms[3]     ; key_filter:key_wr_inst|cnt_20ms[3]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; key_filter:key_wr_inst|cnt_20ms[8]     ; key_filter:key_wr_inst|cnt_20ms[8]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; key_filter:key_wr_inst|cnt_20ms[13]    ; key_filter:key_wr_inst|cnt_20ms[13]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; key_filter:key_rd_inst|cnt_20ms[18]    ; key_filter:key_rd_inst|cnt_20ms[18]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; key_filter:key_rd_inst|cnt_20ms[3]     ; key_filter:key_rd_inst|cnt_20ms[3]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; key_filter:key_rd_inst|cnt_20ms[8]     ; key_filter:key_rd_inst|cnt_20ms[8]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; key_filter:key_rd_inst|cnt_20ms[13]    ; key_filter:key_rd_inst|cnt_20ms[13]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.442      ;
+; 2.230  ; key_filter:key_wr_inst|cnt_20ms[5]     ; key_filter:key_wr_inst|cnt_20ms[5]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230  ; key_filter:key_wr_inst|cnt_20ms[15]    ; key_filter:key_wr_inst|cnt_20ms[15]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230  ; key_filter:key_rd_inst|cnt_20ms[5]     ; key_filter:key_rd_inst|cnt_20ms[5]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230  ; key_filter:key_rd_inst|cnt_20ms[15]    ; key_filter:key_rd_inst|cnt_20ms[15]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231  ; key_filter:key_wr_inst|cnt_20ms[4]     ; key_filter:key_wr_inst|cnt_20ms[4]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; key_filter:key_wr_inst|cnt_20ms[6]     ; key_filter:key_wr_inst|cnt_20ms[6]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; key_filter:key_wr_inst|cnt_20ms[14]    ; key_filter:key_wr_inst|cnt_20ms[14]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; key_filter:key_wr_inst|cnt_20ms[16]    ; key_filter:key_wr_inst|cnt_20ms[16]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; key_filter:key_rd_inst|cnt_20ms[4]     ; key_filter:key_rd_inst|cnt_20ms[4]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; key_filter:key_rd_inst|cnt_20ms[6]     ; key_filter:key_rd_inst|cnt_20ms[6]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; key_filter:key_rd_inst|cnt_20ms[14]    ; key_filter:key_rd_inst|cnt_20ms[14]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; key_filter:key_rd_inst|cnt_20ms[16]    ; key_filter:key_rd_inst|cnt_20ms[16]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.452      ;
+; 2.233  ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[3] ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[3]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.454      ;
+; 2.242  ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[3] ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[3]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.463      ;
+; 2.249  ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[5] ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[5]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.470      ;
+; 2.249  ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[6] ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[6]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.470      ;
+; 2.251  ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[4] ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[4]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.472      ;
+; 2.253  ; key_filter:key_rd_inst|key_flag        ; i2c_rw_data:i2c_rw_data_inst|read_valid ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.474      ;
+; 2.261  ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[4] ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[4]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.482      ;
+; 2.261  ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[5] ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[5]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.482      ;
+; 2.342  ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[7]      ; i2c_ctrl:i2c_ctrl_inst|i2c_clk          ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.563      ;
+; 2.344  ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[7]      ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[4]       ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.565      ;
+; 2.533  ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[6] ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[6]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 2.754      ;
+; 2.916  ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[5]      ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[2]       ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.137      ;
+; 2.936  ; key_filter:key_wr_inst|cnt_20ms[0]     ; key_filter:key_wr_inst|key_flag         ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.157      ;
+; 2.948  ; key_filter:key_wr_inst|cnt_20ms[0]     ; key_filter:key_wr_inst|cnt_20ms[1]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.169      ;
+; 2.948  ; key_filter:key_wr_inst|cnt_20ms[10]    ; key_filter:key_wr_inst|cnt_20ms[11]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.169      ;
+; 2.948  ; key_filter:key_rd_inst|cnt_20ms[0]     ; key_filter:key_rd_inst|cnt_20ms[1]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.169      ;
+; 2.948  ; key_filter:key_rd_inst|cnt_20ms[10]    ; key_filter:key_rd_inst|cnt_20ms[11]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.169      ;
+; 2.949  ; key_filter:key_wr_inst|cnt_20ms[17]    ; key_filter:key_wr_inst|cnt_20ms[18]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949  ; key_filter:key_wr_inst|cnt_20ms[7]     ; key_filter:key_wr_inst|cnt_20ms[8]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949  ; key_filter:key_rd_inst|cnt_20ms[17]    ; key_filter:key_rd_inst|cnt_20ms[18]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949  ; key_filter:key_rd_inst|cnt_20ms[7]     ; key_filter:key_rd_inst|cnt_20ms[8]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.170      ;
+; 2.958  ; key_filter:key_wr_inst|cnt_20ms[1]     ; key_filter:key_wr_inst|cnt_20ms[2]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958  ; key_filter:key_wr_inst|cnt_20ms[2]     ; key_filter:key_wr_inst|cnt_20ms[3]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958  ; key_filter:key_wr_inst|cnt_20ms[11]    ; key_filter:key_wr_inst|cnt_20ms[12]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958  ; key_filter:key_wr_inst|cnt_20ms[12]    ; key_filter:key_wr_inst|cnt_20ms[13]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958  ; key_filter:key_rd_inst|cnt_20ms[1]     ; key_filter:key_rd_inst|cnt_20ms[2]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958  ; key_filter:key_rd_inst|cnt_20ms[2]     ; key_filter:key_rd_inst|cnt_20ms[3]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958  ; key_filter:key_rd_inst|cnt_20ms[11]    ; key_filter:key_rd_inst|cnt_20ms[12]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958  ; key_filter:key_rd_inst|cnt_20ms[12]    ; key_filter:key_rd_inst|cnt_20ms[13]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.179      ;
+; 2.974  ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[0] ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[1]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.195      ;
+; 2.974  ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[0] ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[1]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.195      ;
+; 2.976  ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[1] ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[2]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.197      ;
+; 2.976  ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[2] ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[3]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.197      ;
+; 2.976  ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[1] ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[2]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.197      ;
+; 2.976  ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[2] ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[3]  ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.197      ;
+; 2.999  ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[6]      ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[6]       ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.220      ;
+; 3.008  ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[1]      ; i2c_ctrl:i2c_ctrl_inst|i2c_clk          ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.229      ;
+; 3.011  ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[1]      ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[4]       ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.232      ;
+; 3.012  ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[1]      ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[2]       ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.233      ;
+; 3.059  ; key_filter:key_wr_inst|cnt_20ms[0]     ; key_filter:key_wr_inst|cnt_20ms[2]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.280      ;
+; 3.059  ; key_filter:key_wr_inst|cnt_20ms[10]    ; key_filter:key_wr_inst|cnt_20ms[12]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.280      ;
+; 3.059  ; key_filter:key_rd_inst|cnt_20ms[0]     ; key_filter:key_rd_inst|cnt_20ms[2]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.280      ;
+; 3.059  ; key_filter:key_rd_inst|cnt_20ms[10]    ; key_filter:key_rd_inst|cnt_20ms[12]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.280      ;
+; 3.060  ; key_filter:key_wr_inst|cnt_20ms[17]    ; key_filter:key_wr_inst|cnt_20ms[19]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060  ; key_filter:key_wr_inst|cnt_20ms[7]     ; key_filter:key_wr_inst|cnt_20ms[9]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060  ; key_filter:key_rd_inst|cnt_20ms[17]    ; key_filter:key_rd_inst|cnt_20ms[19]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060  ; key_filter:key_rd_inst|cnt_20ms[7]     ; key_filter:key_rd_inst|cnt_20ms[9]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.281      ;
+; 3.069  ; key_filter:key_wr_inst|cnt_20ms[2]     ; key_filter:key_wr_inst|cnt_20ms[4]      ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069  ; key_filter:key_wr_inst|cnt_20ms[12]    ; key_filter:key_wr_inst|cnt_20ms[14]     ; sys_clk                        ; sys_clk     ; 0.000        ; 0.000      ; 3.290      ;
++--------+----------------------------------------+-----------------------------------------+--------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'i2c_ctrl:i2c_ctrl_inst|i2c_clk'                                                                                                                                                                                       ;
++--------+-------------------------------------------------+-------------------------------------------------+---------------------------------------+--------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                       ; To Node                                         ; Launch Clock                          ; Latch Clock                    ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------------+-------------------------------------------------+---------------------------------------+--------------------------------+--------------+------------+------------+
+; -2.379 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 2.164      ;
+; -2.079 ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA            ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA            ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 2.464      ;
+; -1.879 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 2.164      ;
+; -1.579 ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA            ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA            ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 2.464      ;
+; -0.955 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[1]           ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 3.588      ;
+; -0.868 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|i2c_end                  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 3.675      ;
+; -0.868 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.START_1            ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 3.675      ;
+; -0.864 ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA            ; i2c_ctrl:i2c_ctrl_inst|state.N_ACK              ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 3.679      ;
+; -0.786 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.ACK_5              ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 3.757      ;
+; -0.786 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.ACK_1              ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 3.757      ;
+; -0.784 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.ACK_2              ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 3.759      ;
+; -0.559 ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA            ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[0]               ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 3.984      ;
+; -0.551 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.SEND_RD_ADDR       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 3.992      ;
+; -0.550 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.SEND_D_ADDR        ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 3.993      ;
+; -0.524 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.ACK_4              ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 4.019      ;
+; -0.468 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.STOP               ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 4.075      ;
+; -0.455 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[1]           ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 3.588      ;
+; -0.368 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|i2c_end                  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 3.675      ;
+; -0.368 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.START_1            ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 3.675      ;
+; -0.364 ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA            ; i2c_ctrl:i2c_ctrl_inst|state.N_ACK              ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 3.679      ;
+; -0.314 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.SEND_B_ADDR_H      ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 4.229      ;
+; -0.297 ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA            ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[1]               ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 4.246      ;
+; -0.297 ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA            ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[2]               ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 4.246      ;
+; -0.286 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.ACK_5              ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 3.757      ;
+; -0.286 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.ACK_1              ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 3.757      ;
+; -0.284 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.ACK_2              ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 3.759      ;
+; -0.193 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.SEND_B_ADDR_L      ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 4.350      ;
+; -0.059 ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA            ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[0]               ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 3.984      ;
+; -0.051 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.SEND_RD_ADDR       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 3.992      ;
+; -0.050 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.SEND_D_ADDR        ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 3.993      ;
+; -0.024 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.ACK_4              ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 4.019      ;
+; 0.032  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.STOP               ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 4.075      ;
+; 0.078  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.START_2            ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 4.621      ;
+; 0.080  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.WR_DATA            ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 4.623      ;
+; 0.186  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.SEND_B_ADDR_H      ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 4.229      ;
+; 0.203  ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA            ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[1]               ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 4.246      ;
+; 0.203  ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA            ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[2]               ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 4.246      ;
+; 0.272  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA            ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 4.815      ;
+; 0.307  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.SEND_B_ADDR_L      ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 4.350      ;
+; 0.345  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.IDLE               ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 4.888      ;
+; 0.402  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.ACK_3              ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 4.945      ;
+; 0.466  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk_en           ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 5.009      ;
+; 0.543  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.N_ACK              ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 5.086      ;
+; 0.564  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[0]               ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 5.107      ;
+; 0.566  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[2]               ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 5.109      ;
+; 0.567  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[1]               ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 3.946      ; 5.110      ;
+; 0.578  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.START_2            ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 4.621      ;
+; 0.580  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.WR_DATA            ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 4.623      ;
+; 0.772  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA            ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 4.815      ;
+; 0.845  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.IDLE               ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 4.888      ;
+; 0.902  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.ACK_3              ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 4.945      ;
+; 0.966  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk_en           ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 5.009      ;
+; 1.043  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|state.N_ACK              ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 5.086      ;
+; 1.064  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[0]               ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 5.107      ;
+; 1.066  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[2]               ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 5.109      ;
+; 1.067  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]           ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[1]               ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 3.946      ; 5.110      ;
+; 1.660  ; i2c_rw_data:i2c_rw_data_inst|wr_data[0]         ; i2c_rw_data:i2c_rw_data_inst|wr_data[0]         ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 1.881      ;
+; 1.938  ; i2c_ctrl:i2c_ctrl_inst|state.ACK_1              ; i2c_ctrl:i2c_ctrl_inst|state.ACK_1              ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.159      ;
+; 1.941  ; i2c_ctrl:i2c_ctrl_inst|state.ACK_1              ; i2c_ctrl:i2c_ctrl_inst|state.SEND_B_ADDR_H      ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.162      ;
+; 1.956  ; i2c_rw_data:i2c_rw_data_inst|rd_en              ; i2c_rw_data:i2c_rw_data_inst|rd_en              ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.177      ;
+; 2.057  ; i2c_rw_data:i2c_rw_data_inst|read_valid         ; i2c_rw_data:i2c_rw_data_inst|rd_en              ; sys_clk                               ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 0.094      ; 1.872      ;
+; 2.061  ; i2c_rw_data:i2c_rw_data_inst|write_valid        ; i2c_rw_data:i2c_rw_data_inst|wr_en              ; sys_clk                               ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; -0.500       ; 0.094      ; 1.876      ;
+; 2.117  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[10]      ; i2c_rw_data:i2c_rw_data_inst|byte_addr[10]      ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[9]       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[9]       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[7]       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[7]       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[0]       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[0]       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.338      ;
+; 2.118  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[5]       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[5]       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.339      ;
+; 2.125  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[8]       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[8]       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.346      ;
+; 2.125  ; i2c_rw_data:i2c_rw_data_inst|wr_i2c_data_num[0] ; i2c_rw_data:i2c_rw_data_inst|wr_i2c_data_num[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.346      ;
+; 2.126  ; i2c_rw_data:i2c_rw_data_inst|wr_i2c_data_num[1] ; i2c_rw_data:i2c_rw_data_inst|wr_i2c_data_num[1] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.347      ;
+; 2.133  ; i2c_rw_data:i2c_rw_data_inst|rd_i2c_data_num[0] ; i2c_rw_data:i2c_rw_data_inst|rd_i2c_data_num[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.354      ;
+; 2.133  ; i2c_ctrl:i2c_ctrl_inst|state.ACK_5              ; i2c_ctrl:i2c_ctrl_inst|state.ACK_5              ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.354      ;
+; 2.134  ; i2c_rw_data:i2c_rw_data_inst|rd_i2c_data_num[1] ; i2c_rw_data:i2c_rw_data_inst|rd_i2c_data_num[1] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.355      ;
+; 2.134  ; i2c_ctrl:i2c_ctrl_inst|state.START_2            ; i2c_ctrl:i2c_ctrl_inst|state.START_2            ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.355      ;
+; 2.134  ; i2c_rw_data:i2c_rw_data_inst|wr_en              ; i2c_rw_data:i2c_rw_data_inst|wr_en              ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.355      ;
+; 2.135  ; i2c_rw_data:i2c_rw_data_inst|wr_i2c_data_num[2] ; i2c_rw_data:i2c_rw_data_inst|wr_i2c_data_num[2] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.356      ;
+; 2.135  ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[2]               ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[2]               ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.356      ;
+; 2.136  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[15]      ; i2c_rw_data:i2c_rw_data_inst|byte_addr[15]      ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.357      ;
+; 2.136  ; i2c_rw_data:i2c_rw_data_inst|wr_i2c_data_num[7] ; i2c_rw_data:i2c_rw_data_inst|wr_i2c_data_num[7] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.357      ;
+; 2.136  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15]      ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15]      ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.357      ;
+; 2.136  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[5]       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[5]       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.357      ;
+; 2.136  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[0]       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[0]       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.357      ;
+; 2.140  ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[1]               ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[1]               ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.361      ;
+; 2.144  ; i2c_rw_data:i2c_rw_data_inst|rd_i2c_data_num[2] ; i2c_rw_data:i2c_rw_data_inst|rd_i2c_data_num[2] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.365      ;
+; 2.144  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10]      ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10]      ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.365      ;
+; 2.144  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[9]       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[9]       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.365      ;
+; 2.145  ; i2c_rw_data:i2c_rw_data_inst|rd_i2c_data_num[7] ; i2c_rw_data:i2c_rw_data_inst|rd_i2c_data_num[7] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.366      ;
+; 2.171  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[1]           ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[1]           ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.392      ;
+; 2.191  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[1]           ; i2c_ctrl:i2c_ctrl_inst|state.STOP               ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.412      ;
+; 2.212  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[11]      ; i2c_rw_data:i2c_rw_data_inst|byte_addr[11]      ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.433      ;
+; 2.221  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[6]       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[6]       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[3]       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[3]       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[1]       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[1]       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.442      ;
+; 2.222  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[2]       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[2]       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.443      ;
+; 2.232  ; i2c_rw_data:i2c_rw_data_inst|rd_i2c_data_num[3] ; i2c_rw_data:i2c_rw_data_inst|rd_i2c_data_num[3] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.453      ;
+; 2.232  ; i2c_ctrl:i2c_ctrl_inst|state.SEND_RD_ADDR       ; i2c_ctrl:i2c_ctrl_inst|state.SEND_RD_ADDR       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.453      ;
+; 2.233  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11]      ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11]      ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.454      ;
+; 2.240  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13]      ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13]      ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.461      ;
+; 2.241  ; i2c_rw_data:i2c_rw_data_inst|wr_i2c_data_num[3] ; i2c_rw_data:i2c_rw_data_inst|wr_i2c_data_num[3] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.462      ;
+; 2.248  ; i2c_rw_data:i2c_rw_data_inst|cnt_start[6]       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[6]       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; 0.000        ; 0.000      ; 2.469      ;
++--------+-------------------------------------------------+-------------------------------------------------+---------------------------------------+--------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'i2c_ctrl:i2c_ctrl_inst|state.RD_DATA'                                                                                                                                                                     ;
++--------+--------------------------------------------+------------------------------------+---------------------------------------+--------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                  ; To Node                            ; Launch Clock                          ; Latch Clock                          ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------+------------------------------------+---------------------------------------+--------------------------------------+--------------+------------+------------+
+; 4.105  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]      ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0.000        ; 2.050      ; 6.531      ;
+; 4.605  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]      ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; 2.050      ; 6.531      ;
+; 6.076  ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[2]          ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 3.680      ;
+; 7.885  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[12] ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 5.489      ;
+; 7.949  ; i2c_ctrl:i2c_ctrl_inst|state.SEND_B_ADDR_H ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 5.553      ;
+; 8.029  ; i2c_ctrl:i2c_ctrl_inst|state.N_ACK         ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 5.633      ;
+; 8.218  ; i2c_ctrl:i2c_ctrl_inst|state.START_2       ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 5.822      ;
+; 8.229  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[14] ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 5.833      ;
+; 8.369  ; i2c_ctrl:i2c_ctrl_inst|state.WR_DATA       ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 5.973      ;
+; 8.410  ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[1]          ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.014      ;
+; 8.477  ; i2c_rw_data:i2c_rw_data_inst|wr_data[4]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.081      ;
+; 8.540  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[15] ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.144      ;
+; 8.699  ; i2c_rw_data:i2c_rw_data_inst|wr_data[5]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.303      ;
+; 8.734  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[13] ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.338      ;
+; 8.855  ; i2c_ctrl:i2c_ctrl_inst|state.IDLE          ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.459      ;
+; 8.917  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[8]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.521      ;
+; 8.956  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[11] ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.560      ;
+; 8.971  ; i2c_rw_data:i2c_rw_data_inst|wr_data[1]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.575      ;
+; 8.987  ; i2c_rw_data:i2c_rw_data_inst|wr_data[6]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.591      ;
+; 9.127  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[9]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.731      ;
+; 9.148  ; i2c_rw_data:i2c_rw_data_inst|wr_data[7]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.752      ;
+; 9.235  ; i2c_rw_data:i2c_rw_data_inst|wr_data[0]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.839      ;
+; 9.256  ; i2c_ctrl:i2c_ctrl_inst|state.SEND_B_ADDR_L ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.860      ;
+; 9.300  ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[0]          ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.904      ;
+; 9.327  ; i2c_rw_data:i2c_rw_data_inst|wr_data[2]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 6.931      ;
+; 9.419  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[10] ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.023      ;
+; 9.487  ; i2c_rw_data:i2c_rw_data_inst|wr_data[3]    ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.091      ;
+; 9.526  ; i2c_ctrl:i2c_ctrl_inst|state.SEND_D_ADDR   ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.130      ;
+; 9.599  ; i2c_ctrl:i2c_ctrl_inst|state.START_1       ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.203      ;
+; 9.613  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[0]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.217      ;
+; 9.624  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[3]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.228      ;
+; 9.703  ; i2c_ctrl:i2c_ctrl_inst|state.SEND_RD_ADDR  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.307      ;
+; 9.759  ; i2c_ctrl:i2c_ctrl_inst|state.ACK_2         ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.363      ;
+; 9.806  ; i2c_ctrl:i2c_ctrl_inst|state.ACK_5         ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.410      ;
+; 9.816  ; i2c_ctrl:i2c_ctrl_inst|state.STOP          ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.420      ;
+; 9.959  ; i2c_ctrl:i2c_ctrl_inst|state.ACK_4         ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.563      ;
+; 9.972  ; i2c_rw_data:i2c_rw_data_inst|byte_addr[2]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.576      ;
+; 10.001 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[6]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.605      ;
+; 10.041 ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[1]      ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.645      ;
+; 10.051 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[4]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.655      ;
+; 10.061 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[1]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.665      ;
+; 10.085 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_3         ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.689      ;
+; 10.139 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_1         ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 7.743      ;
+; 10.832 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[7]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 8.436      ;
+; 10.885 ; i2c_rw_data:i2c_rw_data_inst|byte_addr[5]  ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; -0.500       ; -1.896     ; 8.489      ;
++--------+--------------------------------------------+------------------------------------+---------------------------------------+--------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]'                                                                                                                                          ;
++--------+------------------------------------+----------------------------+--------------------------------+---------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                    ; Launch Clock                   ; Latch Clock                           ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+----------------------------+--------------------------------+---------------------------------------+--------------+------------+------------+
+; -4.188 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_1 ; i2c_ctrl:i2c_ctrl_inst|ack ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; 0.500        ; 0.200      ; 2.882      ;
+; -4.134 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_3 ; i2c_ctrl:i2c_ctrl_inst|ack ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; 0.500        ; 0.200      ; 2.828      ;
+; -4.008 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_4 ; i2c_ctrl:i2c_ctrl_inst|ack ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; 0.500        ; 0.200      ; 2.702      ;
+; -3.855 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_5 ; i2c_ctrl:i2c_ctrl_inst|ack ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; 0.500        ; 0.200      ; 2.549      ;
+; -3.808 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_2 ; i2c_ctrl:i2c_ctrl_inst|ack ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; 0.500        ; 0.200      ; 2.502      ;
++--------+------------------------------------+----------------------------+--------------------------------+---------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]'                                                                                                                                          ;
++-------+------------------------------------+----------------------------+--------------------------------+---------------------------------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                    ; Launch Clock                   ; Latch Clock                           ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+----------------------------+--------------------------------+---------------------------------------+--------------+------------+------------+
+; 2.802 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_2 ; i2c_ctrl:i2c_ctrl_inst|ack ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; -0.500       ; 0.200      ; 2.502      ;
+; 2.849 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_5 ; i2c_ctrl:i2c_ctrl_inst|ack ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; -0.500       ; 0.200      ; 2.549      ;
+; 3.002 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_4 ; i2c_ctrl:i2c_ctrl_inst|ack ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; -0.500       ; 0.200      ; 2.702      ;
+; 3.128 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_3 ; i2c_ctrl:i2c_ctrl_inst|ack ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; -0.500       ; 0.200      ; 2.828      ;
+; 3.182 ; i2c_ctrl:i2c_ctrl_inst|state.ACK_1 ; i2c_ctrl:i2c_ctrl_inst|ack ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; -0.500       ; 0.200      ; 2.882      ;
++-------+------------------------------------+----------------------------+--------------------------------+---------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'sys_clk'                                                                                              ;
++--------+--------------+----------------+------------------+---------+------------+------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target                                   ;
++--------+--------------+----------------+------------------+---------+------------+------------------------------------------+
+; -3.545 ; 1.000        ; 4.545          ; Port Rate        ; sys_clk ; Rise       ; sys_clk                                  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[0]        ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[0]        ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[1]        ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[1]        ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[2]        ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[2]        ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[3]        ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[3]        ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[4]        ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[4]        ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[5]        ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[5]        ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[6]        ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[6]        ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[7]        ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_clk[7]        ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk           ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk           ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[0]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[0]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[1]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[1]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[2]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[2]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[3]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[3]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[4]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[4]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[5]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[5]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[6]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[6]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[7]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_rd[7]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[0]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[0]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[1]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[1]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[2]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[2]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[3]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[3]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[4]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[4]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[5]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[5]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[6]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[6]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[7]   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|cnt_wr[7]   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|read_valid  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|read_valid  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|write_valid ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; i2c_rw_data:i2c_rw_data_inst|write_valid ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[0]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[0]       ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[10]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[10]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[11]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[11]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[12]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[12]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[13]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[13]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[14]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[14]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[15]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[15]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[16]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[16]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[17]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[17]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[18]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[18]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[19]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[19]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[1]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[1]       ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[2]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[2]       ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[3]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[3]       ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[4]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[4]       ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[5]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[5]       ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[6]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[6]       ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[7]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[7]       ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[8]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[8]       ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[9]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|cnt_20ms[9]       ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_rd_inst|key_flag          ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_rd_inst|key_flag          ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_wr_inst|cnt_20ms[0]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sys_clk ; Rise       ; key_filter:key_wr_inst|cnt_20ms[0]       ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sys_clk ; Rise       ; key_filter:key_wr_inst|cnt_20ms[10]      ;
++--------+--------------+----------------+------------------+---------+------------+------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'i2c_ctrl:i2c_ctrl_inst|i2c_clk'                                                                                               ;
++-------+--------------+----------------+------------------+--------------------------------+------------+--------------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                          ; Clock Edge ; Target                                     ;
++-------+--------------+----------------+------------------+--------------------------------+------------+--------------------------------------------+
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[0]          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[0]          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[1]          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[1]          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[2]          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|cnt_bit[2]          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]      ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]      ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[1]      ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[1]      ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk_en      ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk_en      ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|i2c_end             ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|i2c_end             ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.ACK_1         ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.ACK_1         ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.ACK_2         ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.ACK_2         ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.ACK_3         ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.ACK_3         ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.ACK_4         ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.ACK_4         ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.ACK_5         ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.ACK_5         ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.IDLE          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.IDLE          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.N_ACK         ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.N_ACK         ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.SEND_B_ADDR_H ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.SEND_B_ADDR_H ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.SEND_B_ADDR_L ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.SEND_B_ADDR_L ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.SEND_D_ADDR   ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.SEND_D_ADDR   ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.SEND_RD_ADDR  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.SEND_RD_ADDR  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.START_1       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.START_1       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.START_2       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.START_2       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.STOP          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.STOP          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.WR_DATA       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.WR_DATA       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[0]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[0]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[10] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[10] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[11] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[11] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[12] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[12] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[13] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[13] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[14] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[14] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[15] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[15] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[1]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[1]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[2]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[2]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[3]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[3]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[4]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[4]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[5]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[5]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[6]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[6]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[7]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[7]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[8]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[8]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[9]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|byte_addr[9]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[0]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[0]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[10] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[11] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[12] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[13] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[14] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[15] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[1]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[1]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[2]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[2]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[3]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[3]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[4]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; Fall       ; i2c_rw_data:i2c_rw_data_inst|cnt_start[4]  ;
++-------+--------------+----------------+------------------+--------------------------------+------------+--------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]'                                                                                        ;
++-------+--------------+----------------+------------------+---------------------------------------+------------+-------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                                 ; Clock Edge ; Target                              ;
++-------+--------------+----------------+------------------+---------------------------------------+------------+-------------------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; Rise       ; i2c_ctrl:i2c_ctrl_inst|ack          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; Rise       ; i2c_ctrl:i2c_ctrl_inst|ack          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; Rise       ; i2c_ctrl_inst|Equal4~0|combout      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; Rise       ; i2c_ctrl_inst|Equal4~0|combout      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; Rise       ; i2c_ctrl_inst|Equal4~0|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; Rise       ; i2c_ctrl_inst|Equal4~0|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; Rise       ; i2c_ctrl_inst|ack|datab             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; Rise       ; i2c_ctrl_inst|ack|datab             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; Rise       ; i2c_ctrl_inst|cnt_i2c_clk[0]|regout ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; Rise       ; i2c_ctrl_inst|cnt_i2c_clk[0]|regout ;
++-------+--------------+----------------+------------------+---------------------------------------+------------+-------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'i2c_ctrl:i2c_ctrl_inst|state.RD_DATA'                                                                                       ;
++-------+--------------+----------------+------------------+--------------------------------------+------------+------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                                ; Clock Edge ; Target                             ;
++-------+--------------+----------------+------------------+--------------------------------------+------------+------------------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; Rise       ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; Rise       ; i2c_ctrl:i2c_ctrl_inst|i2c_sda_reg ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; Rise       ; i2c_ctrl_inst|i2c_sda_reg|datab    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; Rise       ; i2c_ctrl_inst|i2c_sda_reg|datab    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; Rise       ; i2c_ctrl_inst|state.RD_DATA|regout ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; Rise       ; i2c_ctrl_inst|state.RD_DATA|regout ;
++-------+--------------+----------------+------------------+--------------------------------------+------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                            ;
++-----------+---------------------------------------+-------+-------+------------+---------------------------------------+
+; Data Port ; Clock Port                            ; Rise  ; Fall  ; Clock Edge ; Clock Reference                       ;
++-----------+---------------------------------------+-------+-------+------------+---------------------------------------+
+; sda       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; 4.290 ; 4.290 ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ;
+; key_rd    ; sys_clk                               ; 7.305 ; 7.305 ; Rise       ; sys_clk                               ;
+; key_wr    ; sys_clk                               ; 5.520 ; 5.520 ; Rise       ; sys_clk                               ;
++-----------+---------------------------------------+-------+-------+------------+---------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                               ;
++-----------+---------------------------------------+--------+--------+------------+---------------------------------------+
+; Data Port ; Clock Port                            ; Rise   ; Fall   ; Clock Edge ; Clock Reference                       ;
++-----------+---------------------------------------+--------+--------+------------+---------------------------------------+
+; sda       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; -2.284 ; -2.284 ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ;
+; key_rd    ; sys_clk                               ; -4.250 ; -4.250 ; Rise       ; sys_clk                               ;
+; key_wr    ; sys_clk                               ; -2.862 ; -2.862 ; Rise       ; sys_clk                               ;
++-----------+---------------------------------------+--------+--------+------------+---------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                    ;
++-----------+---------------------------------------+--------+--------+------------+---------------------------------------+
+; Data Port ; Clock Port                            ; Rise   ; Fall   ; Clock Edge ; Clock Reference                       ;
++-----------+---------------------------------------+--------+--------+------------+---------------------------------------+
+; scl       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; 11.960 ;        ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ;
+; scl       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ;        ; 11.960 ; Fall       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ;
+; scl       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; 18.001 ; 18.001 ; Fall       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ;
+; sda       ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; 8.459  ; 8.459  ; Rise       ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ;
++-----------+---------------------------------------+--------+--------+------------+---------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                            ;
++-----------+---------------------------------------+--------+--------+------------+---------------------------------------+
+; Data Port ; Clock Port                            ; Rise   ; Fall   ; Clock Edge ; Clock Reference                       ;
++-----------+---------------------------------------+--------+--------+------------+---------------------------------------+
+; scl       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; 8.884  ;        ; Rise       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ;
+; scl       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ;        ; 8.884  ; Fall       ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ;
+; scl       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; 11.598 ; 11.598 ; Fall       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ;
+; sda       ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; 8.459  ; 8.459  ; Rise       ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ;
++-----------+---------------------------------------+--------+--------+------------+---------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Output Enable Times                                                                                                  ;
++-----------+--------------------------------------+--------+------+------------+--------------------------------------+
+; Data Port ; Clock Port                           ; Rise   ; Fall ; Clock Edge ; Clock Reference                      ;
++-----------+--------------------------------------+--------+------+------------+--------------------------------------+
+; sda       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ; 12.478 ;      ; Fall       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ;
+; sda       ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 6.702  ;      ; Rise       ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ;
++-----------+--------------------------------------+--------+------+------------+--------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Minimum Output Enable Times                                                                                          ;
++-----------+--------------------------------------+--------+------+------------+--------------------------------------+
+; Data Port ; Clock Port                           ; Rise   ; Fall ; Clock Edge ; Clock Reference                      ;
++-----------+--------------------------------------+--------+------+------------+--------------------------------------+
+; sda       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ; 12.098 ;      ; Fall       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ;
+; sda       ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 6.702  ;      ; Rise       ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ;
++-----------+--------------------------------------+--------+------+------------+--------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Output Disable Times                                                                                                         ;
++-----------+--------------------------------------+-----------+-----------+------------+--------------------------------------+
+; Data Port ; Clock Port                           ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference                      ;
++-----------+--------------------------------------+-----------+-----------+------------+--------------------------------------+
+; sda       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ; 12.478    ;           ; Fall       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ;
+; sda       ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 6.702     ;           ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ;
++-----------+--------------------------------------+-----------+-----------+------------+--------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                                                                 ;
++-----------+--------------------------------------+-----------+-----------+------------+--------------------------------------+
+; Data Port ; Clock Port                           ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference                      ;
++-----------+--------------------------------------+-----------+-----------+------------+--------------------------------------+
+; sda       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ; 12.098    ;           ; Fall       ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ;
+; sda       ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 6.702     ;           ; Fall       ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ;
++-----------+--------------------------------------+-----------+-----------+------------+--------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                          ;
++---------------------------------------+--------------------------------------+----------+----------+----------+----------+
+; From Clock                            ; To Clock                             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------------+--------------------------------------+----------+----------+----------+----------+
+; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ; 0        ; 0        ; 49       ; 38       ;
+; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ; 0        ; 0        ; 0        ; 1290     ;
+; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ; 0        ; 0        ; 5        ; 5        ;
+; sys_clk                               ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ; 0        ; 0        ; 2        ; 0        ;
+; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 2        ; 2        ; 0        ; 0        ;
+; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0        ; 70       ; 0        ; 0        ;
+; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; sys_clk                              ; 1        ; 1        ; 0        ; 0        ;
+; sys_clk                               ; sys_clk                              ; 1823     ; 0        ; 0        ; 0        ;
++---------------------------------------+--------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                           ;
++---------------------------------------+--------------------------------------+----------+----------+----------+----------+
+; From Clock                            ; To Clock                             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------------+--------------------------------------+----------+----------+----------+----------+
+; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ; 0        ; 0        ; 49       ; 38       ;
+; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ; 0        ; 0        ; 0        ; 1290     ;
+; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA  ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ; 0        ; 0        ; 5        ; 5        ;
+; sys_clk                               ; i2c_ctrl:i2c_ctrl_inst|i2c_clk       ; 0        ; 0        ; 2        ; 0        ;
+; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 2        ; 2        ; 0        ; 0        ;
+; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; i2c_ctrl:i2c_ctrl_inst|state.RD_DATA ; 0        ; 70       ; 0        ; 0        ;
+; i2c_ctrl:i2c_ctrl_inst|i2c_clk        ; sys_clk                              ; 1        ; 1        ; 0        ; 0        ;
+; sys_clk                               ; sys_clk                              ; 1823     ; 0        ; 0        ; 0        ;
++---------------------------------------+--------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                                                 ;
++--------------------------------+---------------------------------------+----------+----------+----------+----------+
+; From Clock                     ; To Clock                              ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------------------+---------------------------------------+----------+----------+----------+----------+
+; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; 0        ; 5        ; 0        ; 0        ;
++--------------------------------+---------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Removal Transfers                                                                                                  ;
++--------------------------------+---------------------------------------+----------+----------+----------+----------+
+; From Clock                     ; To Clock                              ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------------------+---------------------------------------+----------+----------+----------+----------+
+; i2c_ctrl:i2c_ctrl_inst|i2c_clk ; i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] ; 0        ; 5        ; 0        ; 0        ;
++--------------------------------+---------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 192   ; 192  ;
+; Unconstrained Output Ports      ; 2     ; 2    ;
+; Unconstrained Output Port Paths ; 15    ; 15   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Tue Dec 12 10:18:41 2023
+Info: Command: quartus_sta eeprom_byte_rd_wr -c eeprom_byte_rd_wr
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 20 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 14 of the 14 physical processors detected instead.
+Info (21077): Low junction temperature is -40 degrees C
+Info (21077): High junction temperature is 100 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335093): TimeQuest Timing Analyzer is analyzing 2 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'eeprom_byte_rd_wr.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name i2c_ctrl:i2c_ctrl_inst|i2c_clk i2c_ctrl:i2c_ctrl_inst|i2c_clk
+    Info (332105): create_clock -period 1.000 -name sys_clk sys_clk
+    Info (332105): create_clock -period 1.000 -name i2c_ctrl:i2c_ctrl_inst|state.RD_DATA i2c_ctrl:i2c_ctrl_inst|state.RD_DATA
+    Info (332105): create_clock -period 1.000 -name i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -11.901
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -11.901       -11.901 i2c_ctrl:i2c_ctrl_inst|state.RD_DATA 
+    Info (332119):    -9.203      -445.511 sys_clk 
+    Info (332119):    -7.898      -531.777 i2c_ctrl:i2c_ctrl_inst|i2c_clk 
+Info (332146): Worst-case hold slack is -2.589
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.589        -2.589 sys_clk 
+    Info (332119):    -2.379       -14.122 i2c_ctrl:i2c_ctrl_inst|i2c_clk 
+    Info (332119):     4.105         0.000 i2c_ctrl:i2c_ctrl_inst|state.RD_DATA 
+Info (332146): Worst-case recovery slack is -4.188
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.188        -4.188 i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] 
+Info (332146): Worst-case removal slack is 2.802
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     2.802         0.000 i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] 
+Info (332146): Worst-case minimum pulse width slack is -3.545
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.545        -3.545 sys_clk 
+    Info (332119):     0.234         0.000 i2c_ctrl:i2c_ctrl_inst|i2c_clk 
+    Info (332119):     0.500         0.000 i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0] 
+    Info (332119):     0.500         0.000 i2c_ctrl:i2c_ctrl_inst|state.RD_DATA 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4578 megabytes
+    Info: Processing ended: Tue Dec 12 10:18:41 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

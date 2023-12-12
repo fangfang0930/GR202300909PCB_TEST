@@ -1,0 +1,53 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'i2c_ctrl:i2c_ctrl_inst|state.RD_DATA'
+Slack : -11.901
+TNS   : -11.901
+
+Type  : Setup 'sys_clk'
+Slack : -9.203
+TNS   : -445.511
+
+Type  : Setup 'i2c_ctrl:i2c_ctrl_inst|i2c_clk'
+Slack : -7.898
+TNS   : -531.777
+
+Type  : Hold 'sys_clk'
+Slack : -2.589
+TNS   : -2.589
+
+Type  : Hold 'i2c_ctrl:i2c_ctrl_inst|i2c_clk'
+Slack : -2.379
+TNS   : -14.122
+
+Type  : Hold 'i2c_ctrl:i2c_ctrl_inst|state.RD_DATA'
+Slack : 4.105
+TNS   : 0.000
+
+Type  : Recovery 'i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]'
+Slack : -4.188
+TNS   : -4.188
+
+Type  : Removal 'i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]'
+Slack : 2.802
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'sys_clk'
+Slack : -3.545
+TNS   : -3.545
+
+Type  : Minimum Pulse Width 'i2c_ctrl:i2c_ctrl_inst|i2c_clk'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'i2c_ctrl:i2c_ctrl_inst|cnt_i2c_clk[0]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'i2c_ctrl:i2c_ctrl_inst|state.RD_DATA'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

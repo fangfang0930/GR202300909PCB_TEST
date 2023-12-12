@@ -1,0 +1,158 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
+
+// DATE "12/07/2023 08:55:17"
+
+// 
+// Device: Altera EP4CE10F17C8 Package FBGA256
+// 
+
+// 
+// This Verilog file should be used for ModelSim (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module eeprom_byte_rd_wr (
+	sys_clk,
+	sys_rst_n,
+	key_wr,
+	key_rd,
+	sda,
+	scl);
+input 	sys_clk;
+input 	sys_rst_n;
+input 	key_wr;
+input 	key_rd;
+inout 	sda;
+output 	scl;
+
+// Design Ports Information
+// sys_clk	=>  Location: PIN_E1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sys_rst_n	=>  Location: PIN_M15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// key_wr	=>  Location: PIN_M2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// key_rd	=>  Location: PIN_M1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// scl	=>  Location: PIN_P15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sda	=>  Location: PIN_N14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("eeprom_byte_rd_wr_8_1200mv_0c_v_slow.sdo");
+// synopsys translate_on
+
+wire \sys_clk~input_o ;
+wire \sys_rst_n~input_o ;
+wire \key_wr~input_o ;
+wire \key_rd~input_o ;
+wire \sda~input_o ;
+wire \sda~output_o ;
+wire \scl~output_o ;
+
+
+// Location: IOOBUF_X34_Y4_N23
+cycloneive_io_obuf \sda~output (
+	.i(vcc),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\sda~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \sda~output .bus_hold = "false";
+defparam \sda~output .open_drain_output = "true";
+// synopsys translate_on
+
+// Location: IOOBUF_X34_Y4_N16
+cycloneive_io_obuf \scl~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\scl~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \scl~output .bus_hold = "false";
+defparam \scl~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y11_N8
+cycloneive_io_ibuf \sys_clk~input (
+	.i(sys_clk),
+	.ibar(gnd),
+	.o(\sys_clk~input_o ));
+// synopsys translate_off
+defparam \sys_clk~input .bus_hold = "false";
+defparam \sys_clk~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X34_Y12_N15
+cycloneive_io_ibuf \sys_rst_n~input (
+	.i(sys_rst_n),
+	.ibar(gnd),
+	.o(\sys_rst_n~input_o ));
+// synopsys translate_off
+defparam \sys_rst_n~input .bus_hold = "false";
+defparam \sys_rst_n~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y11_N15
+cycloneive_io_ibuf \key_wr~input (
+	.i(key_wr),
+	.ibar(gnd),
+	.o(\key_wr~input_o ));
+// synopsys translate_off
+defparam \key_wr~input .bus_hold = "false";
+defparam \key_wr~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y11_N22
+cycloneive_io_ibuf \key_rd~input (
+	.i(key_rd),
+	.ibar(gnd),
+	.o(\key_rd~input_o ));
+// synopsys translate_off
+defparam \key_rd~input .bus_hold = "false";
+defparam \key_rd~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X34_Y4_N22
+cycloneive_io_ibuf \sda~input (
+	.i(sda),
+	.ibar(gnd),
+	.o(\sda~input_o ));
+// synopsys translate_off
+defparam \sda~input .bus_hold = "false";
+defparam \sda~input .simulate_z_as = "z";
+// synopsys translate_on
+
+assign scl = \scl~output_o ;
+
+assign sda = \sda~output_o ;
+
+endmodule
