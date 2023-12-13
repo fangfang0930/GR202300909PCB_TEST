@@ -1,13 +1,10 @@
 module UNIT_FINAL(
                 
-               input	clk,
-					input sys_rst_n,
+                	input	clk,
 					input	ad_in,
 					output	adclk,
 					input   TEM,
-					input    rx,
-					output   tx,
-					output   cs_n,
+					output  cs_n,
 					output	K_1 ,
 					output	K_2 ,
 					output	K_3 ,
@@ -20,8 +17,8 @@ module UNIT_FINAL(
 					//output	LED6
 
 				);
-
-
+	   
+   
 	reg		LED1_reg,LED2_reg,LED3_reg,LED4_reg,LED5_reg;
 	
 	reg		[19:0]t;
@@ -145,8 +142,8 @@ always@(posedge clk)
 			  EnableOut<=0;
 		  end
 	end
-DoublePulse DoublePulse1(
-	    .enable ( 1   ),
+	K1Module K1Module(
+	    .enable ( EnableOut   ),
 		.clk ( clk   ),
 		.TEM ( TEM   ),
 		.K1 ( K_1   ),
@@ -155,21 +152,14 @@ DoublePulse DoublePulse1(
 	
 	 
 	DoublePulse DoublePulse4(
-		.enable ( 1   ),
+		.enable ( EnableOut   ),
 		.clk ( clk   ),
 		.TEM ( TEM   ),
 		.K1 ( K_3   ),
 		.K2 ( K_4   )
 		);
 
-   	   
-   rs232  rs232
-(
-   . sys_clk   (clk  ) ,   //系统时钟50MHz
-   . sys_rst_n (sys_rst_n) ,   //全局复位
-   . rx        (rx       ) ,   //串口接收数据
-   . tx        (tx       )     //串口发送数据
-);
+   
   
 	
 endmodule	

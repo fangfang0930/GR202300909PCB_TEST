@@ -100,8 +100,8 @@ TMS                          : 33        : input  :                   :         
 TDI                          : 34        : input  :                   :         : 1         :                
 TCK                          : 35        : input  :                   :         : 1         :                
 TDO                          : 36        : output :                   :         : 1         :                
-RESERVED_INPUT               : 37        :        :                   :         : 4         :                
-RESERVED_INPUT               : 38        :        :                   :         : 4         :                
+rx                           : 37        : input  : 3.3-V LVTTL       :         : 4         : Y              
+tx                           : 38        : output : 3.3-V LVTTL       :         : 4         : Y              
 RESERVED_INPUT               : 39        :        :                   :         : 4         :                
 LED1                         : 40        : output : 3.3-V LVTTL       :         : 4         : Y              
 LED2                         : 41        : output : 3.3-V LVTTL       :         : 4         : Y              
@@ -123,7 +123,7 @@ VCCINT                       : 56        : power  :                   : 2.5V/3.3
 RESERVED_INPUT               : 57        :        :                   :         : 4         :                
 RESERVED_INPUT               : 58        :        :                   :         : 4         :                
 RESERVED_INPUT               : 59        :        :                   :         : 4         :                
-RESERVED_INPUT               : 60        :        :                   :         : 4         :                
+sys_rst_n                    : 60        : input  : 3.3-V LVTTL       :         : 4         : Y              
 RESERVED_INPUT               : 61        :        :                   :         : 4         :                
 RESERVED_INPUT               : 62        :        :                   :         : 4         :                
 RESERVED_INPUT               : 63        :        :                   :         : 4         :                

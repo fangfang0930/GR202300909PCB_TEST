@@ -60,7 +60,7 @@ reg TEM_prev1;
 		  end
 
 		  HIGH_STATE: begin
-			if (dblcount < 31'd1200) begin // 30us high	
+			if (dblcount < 31'd800) begin // 20us high	
 			   K1 <= 1;	      
 			  dblcount <= dblcount + 1;
 			end
@@ -72,7 +72,7 @@ reg TEM_prev1;
 		  end
 
 		  LOW_STATE: begin
-			if (dblcount < 31'd800) begin // 20us low
+			if (dblcount < 31'd520) begin // 13us low
 			  dblcount <= dblcount + 1;
 			end 
 			else begin
@@ -81,7 +81,7 @@ reg TEM_prev1;
 			end
 		  end
 		  HIGH2_STATE: begin
-			if (dblcount < 31'd1200) begin // 30us high	
+			if (dblcount < 31'd800) begin // 20us high	
 			   K1 <= 1;		 
 			  dblcount <= dblcount + 1;
 			end

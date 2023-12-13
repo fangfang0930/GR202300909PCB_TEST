@@ -78,11 +78,17 @@ set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_UNIT_FINA
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "1 us" -section_id tb_UNIT_FINAL.V
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_UNIT_FINAL.V -section_id tb_UNIT_FINAL.V
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_UNIT_FINAL.v -section_id tb_UNIT_FINAL.V
+set_location_assignment PIN_109 -to K_2
+set_location_assignment PIN_122 -to K_3
+set_location_assignment PIN_118 -to K_4
+set_global_assignment -name VERILOG_FILE rs232.v
+set_global_assignment -name VERILOG_FILE uart_tx.v
+set_global_assignment -name VERILOG_FILE uart_rx.v
 set_global_assignment -name VERILOG_FILE DoublePulse.v
 set_global_assignment -name VERILOG_FILE K1Module.v
 set_global_assignment -name VERILOG_FILE tb_UNIT_FINAL.v
 set_global_assignment -name VERILOG_FILE ad.v
 set_global_assignment -name VERILOG_FILE UNIT_FINAL.v
-set_location_assignment PIN_109 -to K_2
-set_location_assignment PIN_122 -to K_3
-set_location_assignment PIN_118 -to K_4
+set_location_assignment PIN_60 -to sys_rst_n
+set_location_assignment PIN_37 -to rx
+set_location_assignment PIN_38 -to tx
