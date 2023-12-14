@@ -1,0 +1,11 @@
+Fitter Status : Successful - Wed Dec 13 16:24:03 2023
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : rs232
+Top-level Entity Name : rs232
+Family : MAX II
+Device : EPM1270T144I5
+Timing Models : Final
+Total logic elements : 85 / 1,270 ( 7 % )
+Total pins : 5 / 116 ( 4 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )
