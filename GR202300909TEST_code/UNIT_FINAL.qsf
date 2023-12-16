@@ -92,3 +92,8 @@ set_global_assignment -name VERILOG_FILE UNIT_FINAL.v
 set_location_assignment PIN_60 -to sys_rst_n
 set_location_assignment PIN_37 -to rx
 set_location_assignment PIN_38 -to tx
+set_global_assignment -name VERILOG_FILE key_filter.v
+set_location_assignment PIN_137 -to fault1
+set_location_assignment PIN_138 -to fault2
+set_location_assignment PIN_139 -to fault3
+set_location_assignment PIN_140 -to fault4

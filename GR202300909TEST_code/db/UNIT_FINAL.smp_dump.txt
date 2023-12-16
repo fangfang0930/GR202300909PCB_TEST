@@ -1,14 +1,16 @@
 
 State Machine - |UNIT_FINAL|DoublePulse:DoublePulse4|state
-Name state.HIGH2_STATE state.LOW_STATE state.HIGH_STATE state.IDLE_STATE 
-state.IDLE_STATE 0 0 0 0 
-state.HIGH_STATE 0 0 1 1 
-state.LOW_STATE 0 1 0 1 
-state.HIGH2_STATE 1 0 0 1 
+Name state.HIGH2_STATE state.LOW1_STATE state.HIGH1_STATE state.IDLE_STATE state.LOW2_STATE 
+state.IDLE_STATE 0 0 0 0 0 
+state.HIGH1_STATE 0 0 1 1 0 
+state.LOW1_STATE 0 1 0 1 0 
+state.HIGH2_STATE 1 0 0 1 0 
+state.LOW2_STATE 0 0 0 1 1 
 
 State Machine - |UNIT_FINAL|DoublePulse:DoublePulse1|state
-Name state.HIGH2_STATE state.LOW_STATE state.HIGH_STATE state.IDLE_STATE 
-state.IDLE_STATE 0 0 0 0 
-state.HIGH_STATE 0 0 1 1 
-state.LOW_STATE 0 1 0 1 
-state.HIGH2_STATE 1 0 0 1 
+Name state.HIGH2_STATE state.LOW1_STATE state.HIGH1_STATE state.IDLE_STATE state.LOW2_STATE 
+state.IDLE_STATE 0 0 0 0 0 
+state.HIGH1_STATE 0 0 1 1 0 
+state.LOW1_STATE 0 1 0 1 0 
+state.HIGH2_STATE 1 0 0 1 0 
+state.LOW2_STATE 0 0 0 1 1 

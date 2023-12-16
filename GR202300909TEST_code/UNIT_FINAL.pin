@@ -200,10 +200,10 @@ RESERVED_INPUT               : 133       :        :                   :         
 RESERVED_INPUT               : 134       :        :                   :         : 2         :                
 GNDIO                        : 135       : gnd    :                   :         :           :                
 VCCIO2                       : 136       : power  :                   : 3.3V    : 2         :                
-RESERVED_INPUT               : 137       :        :                   :         : 2         :                
-RESERVED_INPUT               : 138       :        :                   :         : 2         :                
-RESERVED_INPUT               : 139       :        :                   :         : 2         :                
-RESERVED_INPUT               : 140       :        :                   :         : 2         :                
+fault1                       : 137       : input  : 3.3-V LVTTL       :         : 2         : Y              
+fault2                       : 138       : input  : 3.3-V LVTTL       :         : 2         : Y              
+fault3                       : 139       : input  : 3.3-V LVTTL       :         : 2         : Y              
+fault4                       : 140       : input  : 3.3-V LVTTL       :         : 2         : Y              
 RESERVED_INPUT               : 141       :        :                   :         : 2         :                
 RESERVED_INPUT               : 142       :        :                   :         : 2         :                
 RESERVED_INPUT               : 143       :        :                   :         : 2         :                

@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Ign)
-		Device PartName(EPM1270T144) MfrSpec(OpMask(0) SEC_Device(EPM1270T144) Child_OpMask(2 7 7) FullPath("D:/temp/hff/git_test/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.pof"));
+		Device PartName(EPM1270T144) MfrSpec(OpMask(0) SEC_Device(EPM1270T144) Child_OpMask(2 7 7) FullPath("D:/temp/hff/gitsinglepulse/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.pof"));
 
 ChainEnd;
 
