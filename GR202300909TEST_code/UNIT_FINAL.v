@@ -12,7 +12,7 @@ module UNIT_FINAL(
 					output	K_2 ,
 					output	K_3 ,
 					output	K_4 ,
-					 input  fault1,
+					input  fault1,
 					input  fault2,
 					input  fault3,
 					input  fault4,
@@ -48,7 +48,7 @@ reg  no_fault;
 	begin
 	tri_200us <= 16'b0;
 	LED1_reg <=1; 
-    LED2_reg <=1; 
+   LED2_reg <=1; 
 	LED3_reg <=1;  
 	LED4_reg <=1; 
 	LED5_reg <=1;
@@ -156,18 +156,18 @@ always@(posedge clk)
 		  end
 	end
 	
-reg [39:0]	tri_10s;
+reg [63:0]	tri_10s;
 always @(posedge clk) begin
 // Detect rising edge of TEM
 	if (risingflg && !TEM_prev1) begin
 	 tri_10s<=1;
 	 end 
 	else begin 
-	 if((tri_10s < 40'd4000)&&(tri_10s > 0))//40'd400_000)
+	 if((tri_10s < 64'd200_000_000)&&(tri_10s > 0))//40'd400_000)
 	   begin	    
 		  tri_10s <= tri_10s + 1;
 	   end
-	  else if (tri_10s == 40'd4000) begin
+	  else if (tri_10s == 64'd200_000_000) begin
 	    pulse_out_flag<=1;
 		 tri_10s <= 0;
 	   end
@@ -176,38 +176,22 @@ always @(posedge clk) begin
 	 // Store the previous value of TEM
 	 TEM_prev1 <= risingflg;
   end
-	//risingflg后10s给脉冲  
-always@(posedge clk)
-	begin
-	if(risingflg==1)begin
-	  tri_10s <=1;		
-	 end
-	else begin 
-	 if((tri_10s < 40'd4000)&&(tri_10s > 0))//40'd400_000)
-	   begin	    
-		  tri_10s <= tri_10s + 1;
-	   end
-	  else if (tri_10s == 40'd4000) begin
-	    pulse_out_flag<=1;
-		 tri_10s <= 0;
-	   end
-	 else  pulse_out_flag<=0;
-	end
- end
+  
+
 	
 DoublePulse DoublePulse1(
 	   .enable ( no_fault ),
 		.clk ( clk   ),
-		.TEM ( risingflg ),
+		.TEM ( pulse_out_flag ),
 		.K1 ( K_1   ),
 		.K2 ( K_2    )
 	);
 	
 	 
-	DoublePulse DoublePulse4(
+DoublePulse DoublePulse4(
 	   .enable ( no_fault ),
 		.clk ( clk   ),
-		.TEM ( risingflg ),
+		.TEM ( pulse_out_flag ),
 		.K1 ( K_3   ),
 		.K2 ( K_4   )
 		);

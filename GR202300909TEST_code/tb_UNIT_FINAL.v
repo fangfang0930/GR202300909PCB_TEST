@@ -13,7 +13,7 @@ module tb_UNIT_FINAL();
       forever #2 clk = ~clk;
 	 
    end
-   always #5000 TEM <= {$random} % 2; /*取模求余数，产生非负随机数0、1
+   always #50000 TEM <= {$random} % 2; /*取模求余数，产生非负随机数0、1
                                       每隔10ns产生一次随机数*/
    // Instantiate UNIT_FINAL module
    UNIT_FINAL uut (

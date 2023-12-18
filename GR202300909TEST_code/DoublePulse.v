@@ -51,7 +51,7 @@ module DoublePulse (
 		  end
 
 		  HIGH1_STATE: begin
-			if (dblcount < 63'd1200) begin // 30us high
+			if (dblcount < 63'd4000) begin // 100us high
 			//   if(enable)	
 			   K1 <= 1;	
            // else K1 <= 0;		
