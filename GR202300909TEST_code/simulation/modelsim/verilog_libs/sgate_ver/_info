@@ -9,7 +9,7 @@ z2
 cModel Technology
 dD:/STUDY/chenhui_tanliang/7820H182_111020_1/simulation/modelsim
 vio_buf_opdrn
-Z0 !s110 1702721793
+Z0 !s110 1702879160
 !i10b 1
 !s100 =^<AH`I:TA`[9YUe=h1;_1
 IOf]32XaNKLB2:XCC40nG[2
@@ -23,7 +23,7 @@ Z6 OL;L;10.5;63
 r1
 !s85 0
 31
-Z7 !s108 1702721793.000000
+Z7 !s108 1702879160.000000
 Z8 !s107 d:/program files/altera/quartus/eda/sim_lib/sgate.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|sgate_ver|d:/program files/altera/quartus/eda/sim_lib/sgate.v|
 !i113 0

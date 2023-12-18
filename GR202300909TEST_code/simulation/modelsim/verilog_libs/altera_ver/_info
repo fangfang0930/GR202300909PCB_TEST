@@ -9,7 +9,7 @@ z2
 cModel Technology
 dD:/STUDY/chenhui_tanliang/7820H182_111020_1/simulation/modelsim
 valt_bidir_buf
-Z0 !s110 1702721792
+Z0 !s110 1702879159
 !i10b 1
 !s100 a6?6cHeC]_[b_;=i8O1hN3
 I1BI1QI43OZIjJgibI>2YW3
@@ -23,7 +23,7 @@ Z6 OL;L;10.5;63
 r1
 !s85 0
 31
-Z7 !s108 1702721792.000000
+Z7 !s108 1702879159.000000
 Z8 !s107 d:/program files/altera/quartus/eda/sim_lib/altera_primitives.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|altera_ver|d:/program files/altera/quartus/eda/sim_lib/altera_primitives.v|
 !i113 0

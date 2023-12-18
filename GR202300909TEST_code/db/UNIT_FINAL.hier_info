@@ -122,9 +122,21 @@ volt[15] <= volt[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |UNIT_FINAL|DoublePulse:DoublePulse1
-enable => K1.DATAB
+enable => PA1.DATAB
+enable => K2.DATAB
 clk => K2~reg0.CLK
 clk => K1~reg0.CLK
+clk => d_data1[0].CLK
+clk => d_data1[1].CLK
+clk => d_data1[2].CLK
+clk => d_data1[3].CLK
+clk => d_data1[4].CLK
+clk => d_data1[5].CLK
+clk => d_data1[6].CLK
+clk => d_data1[7].CLK
+clk => d_data1[8].CLK
+clk => d_data1[9].CLK
+clk => PA1.CLK
 clk => dblcount[0].CLK
 clk => dblcount[1].CLK
 clk => dblcount[2].CLK
@@ -262,9 +274,21 @@ K2 <= K2~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |UNIT_FINAL|DoublePulse:DoublePulse4
-enable => K1.DATAB
+enable => PA1.DATAB
+enable => K2.DATAB
 clk => K2~reg0.CLK
 clk => K1~reg0.CLK
+clk => d_data1[0].CLK
+clk => d_data1[1].CLK
+clk => d_data1[2].CLK
+clk => d_data1[3].CLK
+clk => d_data1[4].CLK
+clk => d_data1[5].CLK
+clk => d_data1[6].CLK
+clk => d_data1[7].CLK
+clk => d_data1[8].CLK
+clk => d_data1[9].CLK
+clk => PA1.CLK
 clk => dblcount[0].CLK
 clk => dblcount[1].CLK
 clk => dblcount[2].CLK

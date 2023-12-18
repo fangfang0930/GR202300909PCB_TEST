@@ -157,6 +157,7 @@ always@(posedge clk)
 	end
 	
 reg [63:0]	tri_10s;
+
 always @(posedge clk) begin
 // Detect rising edge of TEM
 	if (risingflg && !TEM_prev1) begin
@@ -179,6 +180,18 @@ always @(posedge clk) begin
   
 
 	
+/*
+always @(posedge clk) begin
+// Detect rising edge of TEM
+	if (TEM && !TEM_prev1) begin
+	 tri_10s<=1;
+    pulse_out_flag<=1;
+	end
+	else pulse_out_flag<=0;
+	 // Store the previous value of TEM
+	 TEM_prev1 <= TEM;
+  end
+  */
 DoublePulse DoublePulse1(
 	   .enable ( no_fault ),
 		.clk ( clk   ),
