@@ -55,15 +55,15 @@ set_global_assignment -name FMAX_REQUIREMENT "40 MHz" -section_id clk
 set_instance_assignment -name CLOCK_SETTINGS clk -to clk
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
-set_location_assignment PIN_40 -to LED1
-set_location_assignment PIN_41 -to LED2
-set_location_assignment PIN_42 -to LED3
+set_location_assignment PIN_37 -to LED1
+set_location_assignment PIN_39 -to LED2
+set_location_assignment PIN_41 -to LED3
 set_location_assignment PIN_43 -to LED4
-set_location_assignment PIN_44 -to LED5
-set_location_assignment PIN_113 -to K_1
-set_location_assignment PIN_18 -to clk
+set_location_assignment PIN_45 -to LED5
+set_location_assignment PIN_109 -to K_1
+set_location_assignment PIN_20 -to clk
 set_location_assignment PIN_88 -to cs_n
-set_location_assignment PIN_72 -to TEM
+set_location_assignment PIN_97 -to TEM
 set_location_assignment PIN_91 -to ad_in
 set_location_assignment PIN_94 -to adclk
 set_global_assignment -name DA_CUSTOM_RULE_FILE "D:/STUDY/chenhui_tanliang/7820H182_111020_1/db/UNIT_FINAL.cbx.xml"
@@ -77,12 +77,11 @@ set_global_assignment -name EDA_TEST_BENCH_NAME tb_UNIT_FINAL.V -section_id eda_
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_UNIT_FINAL.V
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "1 us" -section_id tb_UNIT_FINAL.V
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_UNIT_FINAL.V -section_id tb_UNIT_FINAL.V
-set_location_assignment PIN_109 -to K_2
-set_location_assignment PIN_122 -to K_3
-set_location_assignment PIN_118 -to K_4
+set_location_assignment PIN_113 -to K_2
+set_location_assignment PIN_118 -to K_3
+set_location_assignment PIN_122 -to K_4
 set_location_assignment PIN_60 -to sys_rst_n
-set_location_assignment PIN_37 -to rx
-set_location_assignment PIN_38 -to tx
+set_location_assignment PIN_1 -to tx
 set_location_assignment PIN_137 -to fault1
 set_location_assignment PIN_138 -to fault2
 set_location_assignment PIN_139 -to fault3
@@ -102,3 +101,4 @@ set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_DoublePul
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_DoublePulse -section_id tb_DoublePulse
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_UNIT_FINAL.v -section_id tb_UNIT_FINAL.V
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_DoublePulse.v -section_id tb_DoublePulse
+set_instance_assignment -name RESERVE_PIN AS_INPUT_TRI_STATED -to TEM

@@ -10,14 +10,14 @@ cModel Technology
 dD:/STUDY/chenhui_tanliang/7820H182_111020_1/simulation/modelsim
 valtera_arriav_pll
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1702879161
+Z1 !s110 1707121115
 !i10b 1
 !s100 [Yk[z106dfBRQO<E@BWIe0
 IaEV9M5f<R7PiUM68X7nNG3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 !s105 altera_lnsim_sv_unit
 S1
-Z4 dD:/temp/hff/gitsinglepulse/GR202300909PCB_TEST/GR202300909TEST_code/simulation/modelsim
+Z4 dD:/temp/hff/GIT_GB2024/GR202300909PCB_TEST/GR202300909TEST_code/simulation/modelsim
 Z5 w1371091750
 Z6 8d:/program files/altera/quartus/eda/sim_lib/altera_lnsim.sv
 Z7 Fd:/program files/altera/quartus/eda/sim_lib/altera_lnsim.sv
@@ -26,7 +26,7 @@ Z8 OL;L;10.5;63
 r1
 !s85 0
 31
-Z9 !s108 1702879161.000000
+Z9 !s108 1707121115.000000
 Z10 !s107 d:/program files/altera/quartus/eda/sim_lib/altera_lnsim.sv|
 Z11 !s90 -reportprogress|300|-sv|-work|altera_lnsim_ver|d:/program files/altera/quartus/eda/sim_lib/altera_lnsim.sv|
 !i113 0
