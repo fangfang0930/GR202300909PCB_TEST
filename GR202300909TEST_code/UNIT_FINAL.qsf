@@ -81,11 +81,11 @@ set_location_assignment PIN_113 -to K_2
 set_location_assignment PIN_118 -to K_3
 set_location_assignment PIN_122 -to K_4
 set_location_assignment PIN_60 -to sys_rst_n
-set_location_assignment PIN_1 -to tx
-set_location_assignment PIN_137 -to fault1
-set_location_assignment PIN_138 -to fault2
-set_location_assignment PIN_139 -to fault3
-set_location_assignment PIN_140 -to fault4
+set_location_assignment PIN_4 -to tx
+set_location_assignment PIN_133 -to fault1
+set_location_assignment PIN_134 -to fault2
+set_location_assignment PIN_137 -to fault3
+set_location_assignment PIN_138 -to fault4
 set_global_assignment -name VERILOG_FILE rs232.v
 set_global_assignment -name VERILOG_FILE uart_tx.v
 set_global_assignment -name VERILOG_FILE uart_rx.v
@@ -102,3 +102,8 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_DoublePulse -section_i
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_UNIT_FINAL.v -section_id tb_UNIT_FINAL.V
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_DoublePulse.v -section_id tb_DoublePulse
 set_instance_assignment -name RESERVE_PIN AS_INPUT_TRI_STATED -to TEM
+set_location_assignment PIN_1 -to rx
+set_location_assignment PIN_49 -to LED6
+set_location_assignment PIN_51 -to LED7
+set_location_assignment PIN_53 -to LED8
+set_location_assignment PIN_57 -to LED9

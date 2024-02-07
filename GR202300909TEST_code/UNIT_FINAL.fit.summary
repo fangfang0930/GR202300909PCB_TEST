@@ -1,11 +1,11 @@
-Fitter Status : Successful - Mon Feb 05 16:35:30 2024
+Fitter Status : Successful - Wed Feb 07 15:18:39 2024
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : UNIT_FINAL
 Top-level Entity Name : UNIT_FINAL
 Family : MAX II
 Device : EPM1270T144I5
 Timing Models : Final
-Total logic elements : 634 / 1,270 ( 50 % )
-Total pins : 21 / 116 ( 18 % )
+Total logic elements : 635 / 1,270 ( 50 % )
+Total pins : 25 / 116 ( 22 % )
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

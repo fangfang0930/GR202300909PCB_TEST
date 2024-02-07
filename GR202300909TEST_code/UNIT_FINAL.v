@@ -20,8 +20,12 @@ module UNIT_FINAL(
 					output	LED2,
 					output	LED3,
 					output	LED4,
-					output	LED5//,
-					//output	LED6
+					output	LED5,//,
+					output	reg LED6, // 显示故障1
+					output	reg LED7,
+					output	reg LED8,
+					output	reg LED9
+					//output	reg LED10
 
 				);
 
@@ -41,6 +45,8 @@ module UNIT_FINAL(
 	assign LED3 = LED3_reg;
 	assign LED4 = LED4_reg;
 	assign LED5 = LED5_reg;
+	
+
 reg	pulse_out_flag;
 reg  no_fault;
 
@@ -48,18 +54,31 @@ reg  no_fault;
 	begin
 	tri_200us <= 16'b0;
 	LED1_reg <=1; 
-   LED2_reg <=1; 
+    LED2_reg <=1; 
 	LED3_reg <=1;  
 	LED4_reg <=1; 
 	LED5_reg <=1;
 	EnableOut<=0;
-	//K_1<=0;
+	
+	LED6 <=1;
+	LED7<=1;
+	LED8<=1;
+    LED9<=1;
 	end
+	
+	
 always@(posedge clk) //fault1 0-故障
 	begin	
 	if((fault1)&(fault2)&(fault3)&(fault4))
 	no_fault<=1;
-	else no_fault<=0;
+	else   
+	begin
+	  no_fault<=0;
+	  if (~fault1) LED6<=0;
+	  if (~fault2) LED7<=0;
+	  if (~fault3) LED8<=0;
+	  if (~fault4) LED9<=0;
+	end
 	end 
 	
 	///

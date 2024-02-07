@@ -49,7 +49,7 @@ module DoublePulse (
 		  end
 
 		  HIGH1_STATE: begin
-			if (dblcount < 63'd4000) begin // 100us high
+			if (dblcount < 63'd1200) begin // 1200-30us 4000-100us high
 			//   if(enable)	
 			  PA1<=1;	
            // else K1 <= 0;		
@@ -63,7 +63,7 @@ module DoublePulse (
 		  end
 
 		  LOW1_STATE: begin
-			if (dblcount < 63'd800)begin //5US//d800) begin // 20us low
+			if (dblcount < 63'd800)begin //800-20us low
 			  dblcount <= dblcount + 1;
 			  PA1<= 0;
 			end 
@@ -73,7 +73,7 @@ module DoublePulse (
 			end
 		  end
 		  HIGH2_STATE: begin
-			if (dblcount < 63'd1200) begin // 30us high	
+			if (dblcount < 63'd4000) begin // 30us high	 4000-100us
 				if(enable)	
 			    PA1<= 1;
 		      else PA1<= 0;	 
