@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UNIT_FINAL
-Wed Feb 07 15:18:49 2024
+Wed Feb 21 10:45:55 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -49,13 +49,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +-----------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Wed Feb 07 15:18:49 2024            ;
+; Analysis & Synthesis Status ; Successful - Wed Feb 21 10:45:55 2024            ;
 ; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name               ; UNIT_FINAL                                       ;
 ; Top-level Entity Name       ; UNIT_FINAL                                       ;
 ; Family                      ; MAX II                                           ;
-; Total logic elements        ; 645                                              ;
-; Total pins                  ; 25                                               ;
+; Total logic elements        ; 654                                              ;
+; Total pins                  ; 28                                               ;
 ; Total virtual pins          ; 0                                                ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                                    ;
 +-----------------------------+--------------------------------------------------+
@@ -151,16 +151,16 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                  ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
-; DoublePulse.v                    ; yes             ; User Verilog HDL File  ; D:/temp/hff/GIT_GB2024/GR202300909PCB_TEST/GR202300909TEST_code/DoublePulse.v ;         ;
-; ad.v                             ; yes             ; User Verilog HDL File  ; D:/temp/hff/GIT_GB2024/GR202300909PCB_TEST/GR202300909TEST_code/ad.v          ;         ;
-; UNIT_FINAL.v                     ; yes             ; User Verilog HDL File  ; D:/temp/hff/GIT_GB2024/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.v  ;         ;
-; key_filter.v                     ; yes             ; User Verilog HDL File  ; D:/temp/hff/GIT_GB2024/GR202300909PCB_TEST/GR202300909TEST_code/key_filter.v  ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+; DoublePulse.v                    ; yes             ; User Verilog HDL File  ; D:/temp/ZhiYuan_ING/testcode/GR202300909PCB_TEST/GR202300909TEST_code/DoublePulse.v ;         ;
+; ad.v                             ; yes             ; User Verilog HDL File  ; D:/temp/ZhiYuan_ING/testcode/GR202300909PCB_TEST/GR202300909TEST_code/ad.v          ;         ;
+; UNIT_FINAL.v                     ; yes             ; User Verilog HDL File  ; D:/temp/ZhiYuan_ING/testcode/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.v  ;         ;
+; key_filter.v                     ; yes             ; User Verilog HDL File  ; D:/temp/ZhiYuan_ING/testcode/GR202300909PCB_TEST/GR202300909TEST_code/key_filter.v  ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -168,33 +168,33 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 645   ;
-;     -- Combinational with no register       ; 304   ;
+; Total logic elements                        ; 654   ;
+;     -- Combinational with no register       ; 311   ;
 ;     -- Register only                        ; 33    ;
-;     -- Combinational with a register        ; 308   ;
+;     -- Combinational with a register        ; 310   ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 227   ;
-;     -- 3 input functions                    ; 55    ;
-;     -- 2 input functions                    ; 316   ;
-;     -- 1 input functions                    ; 13    ;
+;     -- 4 input functions                    ; 232   ;
+;     -- 3 input functions                    ; 59    ;
+;     -- 2 input functions                    ; 315   ;
+;     -- 1 input functions                    ; 14    ;
 ;     -- 0 input functions                    ; 1     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 358   ;
+;     -- normal mode                          ; 367   ;
 ;     -- arithmetic mode                      ; 287   ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
 ;     -- synchronous clear/load mode          ; 215   ;
 ;     -- asynchronous clear/load mode         ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 341   ;
+; Total registers                             ; 343   ;
 ; Total logic cells in carry chains           ; 299   ;
-; I/O pins                                    ; 25    ;
+; I/O pins                                    ; 28    ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 341   ;
-; Total fan-out                               ; 2553  ;
-; Average fan-out                             ; 3.81  ;
+; Maximum fan-out                             ; 343   ;
+; Total fan-out                               ; 2588  ;
+; Average fan-out                             ; 3.79  ;
 +---------------------------------------------+-------+
 
 
@@ -203,8 +203,8 @@ applicable agreement for further details.
 +-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------+--------------+
 ; Compilation Hierarchy Node    ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                  ; Library Name ;
 +-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------+--------------+
-; |UNIT_FINAL                   ; 645 (245)   ; 341          ; 0          ; 25   ; 0            ; 304 (134)    ; 33 (1)            ; 308 (110)        ; 299 (100)       ; 0 (0)      ; |UNIT_FINAL                          ; work         ;
-;    |DoublePulse:DoublePulse1| ; 156 (156)   ; 82           ; 0          ; 0    ; 0            ; 74 (74)      ; 0 (0)             ; 82 (82)          ; 84 (84)         ; 0 (0)      ; |UNIT_FINAL|DoublePulse:DoublePulse1 ; work         ;
+; |UNIT_FINAL                   ; 654 (255)   ; 343          ; 0          ; 28   ; 0            ; 311 (142)    ; 33 (1)            ; 310 (112)        ; 299 (100)       ; 0 (0)      ; |UNIT_FINAL                          ; work         ;
+;    |DoublePulse:DoublePulse1| ; 155 (155)   ; 82           ; 0          ; 0    ; 0            ; 73 (73)      ; 0 (0)             ; 82 (82)          ; 84 (84)         ; 0 (0)      ; |UNIT_FINAL|DoublePulse:DoublePulse1 ; work         ;
 ;    |DoublePulse:DoublePulse4| ; 155 (155)   ; 82           ; 0          ; 0    ; 0            ; 73 (73)      ; 0 (0)             ; 82 (82)          ; 84 (84)         ; 0 (0)      ; |UNIT_FINAL|DoublePulse:DoublePulse4 ; work         ;
 ;    |ad:ad|                    ; 61 (61)     ; 45           ; 0          ; 0    ; 0            ; 16 (16)      ; 32 (32)           ; 13 (13)          ; 11 (11)         ; 0 (0)      ; |UNIT_FINAL|ad:ad                    ; work         ;
 ;    |key_filter:key_rd_inst|   ; 28 (28)     ; 21           ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 21 (21)          ; 20 (20)         ; 0 (0)      ; |UNIT_FINAL|key_filter:key_rd_inst   ; work         ;
@@ -259,7 +259,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 341   ;
+; Total registers                              ; 343   ;
 ; Number of registers using Synchronous Clear  ; 190   ;
 ; Number of registers using Synchronous Load   ; 45    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -284,7 +284,8 @@ Encoding Type:  One-Hot
 ; LED7~reg0                               ; 2       ;
 ; LED8~reg0                               ; 2       ;
 ; LED9~reg0                               ; 2       ;
-; Total number of inverted registers = 10 ;         ;
+; LED10~reg0                              ; 1       ;
+; Total number of inverted registers = 11 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -293,14 +294,14 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |UNIT_FINAL|ad:ad|clk_div[1]                      ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |UNIT_FINAL|tri_200us[1]                          ;
-; 4:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; Yes        ; |UNIT_FINAL|tri_10s[47]                           ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |UNIT_FINAL|key_filter:key_rd_inst|cnt_20ms[3]    ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |UNIT_FINAL|ad:ad|clk_div[0]                      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |UNIT_FINAL|tri_200us[9]                          ;
+; 4:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; Yes        ; |UNIT_FINAL|tri_10s[59]                           ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |UNIT_FINAL|key_filter:key_rd_inst|cnt_20ms[18]   ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|ad:ad|ad_count[1]                     ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|DoublePulse:DoublePulse1|d_data1[9]   ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|DoublePulse:DoublePulse1|d_data1[1]   ;
 ; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|DoublePulse:DoublePulse4|d_data1[4]   ;
-; 10:1               ; 64 bits   ; 384 LEs       ; 64 LEs               ; 320 LEs                ; Yes        ; |UNIT_FINAL|DoublePulse:DoublePulse4|dblcount[44] ;
+; 10:1               ; 64 bits   ; 384 LEs       ; 64 LEs               ; 320 LEs                ; Yes        ; |UNIT_FINAL|DoublePulse:DoublePulse4|dblcount[45] ;
 ; 10:1               ; 64 bits   ; 384 LEs       ; 64 LEs               ; 320 LEs                ; Yes        ; |UNIT_FINAL|DoublePulse:DoublePulse1|dblcount[14] ;
 ; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |UNIT_FINAL|DoublePulse:DoublePulse4|Selector2    ;
 ; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |UNIT_FINAL|DoublePulse:DoublePulse4|Selector1    ;
@@ -365,7 +366,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed Feb 07 15:18:48 2024
+    Info: Processing started: Wed Feb 21 10:45:53 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UNIT_FINAL -c UNIT_FINAL
 Info (11104): Parallel Compilation has detected 20 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 14 of the 14 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file rs232.v
@@ -389,7 +390,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file key_fil
 Info (12021): Found 1 design units, including 1 entities, in source file tb_doublepulse.v
     Info (12023): Found entity 1: testbench
 Info (12127): Elaborating entity "UNIT_FINAL" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at UNIT_FINAL.v(38): object "EnableOut" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at UNIT_FINAL.v(41): object "EnableOut" assigned a value but never read
 Warning (10034): Output port "tx" at UNIT_FINAL.v(9) has no driver
 Info (12128): Elaborating entity "ad" for hierarchy "ad:ad"
 Info (12128): Elaborating entity "DoublePulse" for hierarchy "DoublePulse:DoublePulse1"
@@ -402,14 +403,14 @@ Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sys_rst_n"
     Warning (15610): No output dependent on input pin "rx"
-Info (21057): Implemented 670 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 645 logic cells
+Info (21057): Implemented 682 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 18 output pins
+    Info (21061): Implemented 654 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 9 warnings
     Info: Peak virtual memory: 4581 megabytes
-    Info: Processing ended: Wed Feb 07 15:18:49 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Processing ended: Wed Feb 21 10:45:55 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 

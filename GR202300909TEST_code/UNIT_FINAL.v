@@ -24,7 +24,10 @@ module UNIT_FINAL(
 					output	reg LED6, // 显示故障1
 					output	reg LED7,
 					output	reg LED8,
-					output	reg LED9
+					output	reg LED9,
+					output	reg LED10,//显示旁路开关的开关情况
+					input  CPU_DI, //旁路开关控制输出后，反馈
+	                output reg CPU_DO //旁路开关输出
 					//output	reg LED10
 
 				);
@@ -64,6 +67,8 @@ reg  no_fault;
 	LED7<=1;
 	LED8<=1;
     LED9<=1;
+	LED10<=1;
+	CPU_DO<=0;
 	end
 	
 	
@@ -183,11 +188,11 @@ always @(posedge clk) begin
 	 tri_10s<=1;
 	 end 
 	else begin 
-	 if((tri_10s < 64'd200_000_000)&&(tri_10s > 0))//40'd400_000)
+	 if((tri_10s < 64'd100_000_000)&&(tri_10s > 0))//40'd400_000)
 	   begin	    
 		  tri_10s <= tri_10s + 1;
 	   end
-	  else if (tri_10s == 64'd200_000_000) begin
+	  else if (tri_10s == 64'd100_000_000) begin
 	    pulse_out_flag<=1;
 		 tri_10s <= 0;
 	   end
@@ -197,20 +202,18 @@ always @(posedge clk) begin
 	 TEM_prev1 <= risingflg;
   end
   
-
-	
-/*
 always @(posedge clk) begin
-// Detect rising edge of TEM
-	if (TEM && !TEM_prev1) begin
-	 tri_10s<=1;
-    pulse_out_flag<=1;
-	end
-	else pulse_out_flag<=0;
-	 // Store the previous value of TEM
-	 TEM_prev1 <= TEM;
+	if(tri_10s==1)begin
+	 CPU_DO <=1;//按钮按下继电器输出
+	 LED10 <=1;
+	 end
+	else  if (tri_10s==64'd10_000_000)  
+	 CPU_DO <=0; 
+	if (CPU_DI==0) //继电器输出时反馈信号为低电平
+	  LED10 <=0;
+	else LED10 <=1;
   end
-  */
+  
 DoublePulse DoublePulse1(
 	   .enable ( no_fault ),
 		.clk ( clk   ),
@@ -232,7 +235,7 @@ DoublePulse DoublePulse4(
 		
 	key_filter  key_rd_inst
 (
-    .sys_clk    (clk    ),  //系统时钟50Mhz
+    .sys_clk    (clk    ),  //系统时钟40Mhz
     .sys_rst_n  (1  ),  //全局复位
     .key_in     (TEM     ),  //按键输入信号
 

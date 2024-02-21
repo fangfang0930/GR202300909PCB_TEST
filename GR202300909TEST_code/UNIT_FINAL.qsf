@@ -107,3 +107,6 @@ set_location_assignment PIN_49 -to LED6
 set_location_assignment PIN_51 -to LED7
 set_location_assignment PIN_53 -to LED8
 set_location_assignment PIN_57 -to LED9
+set_location_assignment PIN_59 -to LED10
+set_location_assignment PIN_31 -to CPU_DI
+set_location_assignment PIN_32 -to CPU_DO

@@ -1,5 +1,5 @@
 Assembler report for UNIT_FINAL
-Wed Feb 07 15:18:40 2024
+Wed Feb 21 10:45:46 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: D:/temp/hff/GIT_GB2024/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.pof
+  5. Assembler Device Options: D:/temp/ZhiYuan_ING/testcode/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.pof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Feb 07 15:18:40 2024 ;
+; Assembler Status      ; Successful - Wed Feb 21 10:45:46 2024 ;
 ; Revision Name         ; UNIT_FINAL                            ;
 ; Top-level Entity Name ; UNIT_FINAL                            ;
 ; Family                ; MAX II                                ;
@@ -75,24 +75,24 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+-----------+---------------+
 
 
-+--------------------------------------------------------------------------------+
-; Assembler Generated Files                                                      ;
-+--------------------------------------------------------------------------------+
-; File Name                                                                      ;
-+--------------------------------------------------------------------------------+
-; D:/temp/hff/GIT_GB2024/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.pof ;
-+--------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                            ;
++--------------------------------------------------------------------------------------+
+; File Name                                                                            ;
++--------------------------------------------------------------------------------------+
+; D:/temp/ZhiYuan_ING/testcode/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.pof ;
++--------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: D:/temp/hff/GIT_GB2024/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.pof ;
-+----------------+-----------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                 ;
-+----------------+-----------------------------------------------------------------------------------------+
-; Device         ; EPM1270T144I5                                                                           ;
-; JTAG usercode  ; 0x005CD2A2                                                                              ;
-; Checksum       ; 0x005CD2BF                                                                              ;
-+----------------+-----------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: D:/temp/ZhiYuan_ING/testcode/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.pof ;
++----------------+-----------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                       ;
++----------------+-----------------------------------------------------------------------------------------------+
+; Device         ; EPM1270T144I5                                                                                 ;
+; JTAG usercode  ; 0x005C7942                                                                                    ;
+; Checksum       ; 0x005C7960                                                                                    ;
++----------------+-----------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -101,14 +101,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed Feb 07 15:18:40 2024
+    Info: Processing started: Wed Feb 21 10:45:45 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off UNIT_FINAL -c UNIT_FINAL
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4541 megabytes
-    Info: Processing ended: Wed Feb 07 15:18:40 2024
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Wed Feb 21 10:45:46 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 
