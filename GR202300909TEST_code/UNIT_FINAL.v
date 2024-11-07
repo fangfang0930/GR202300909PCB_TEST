@@ -12,23 +12,12 @@ module UNIT_FINAL(
 					output	K_2 ,
 					output	K_3 ,
 					output	K_4 ,
-					input  fault1,
-					input  fault2,
-					input  fault3,
-					input  fault4,
 					output	LED1,
 					output	LED2,
 					output	LED3,
 					output	LED4,
-					output	LED5,//,
-					output	reg LED6, // 显示故障1
-					output	reg LED7,
-					output	reg LED8,
-					output	reg LED9,
-					output	reg LED10,//显示旁路开关的开关情况
-					input  CPU_DI, //旁路开关控制输出后，反馈
-	                output reg CPU_DO //旁路开关输出
-					//output	reg LED10
+					output	LED5//,
+					//output	LED6
 
 				);
 
@@ -39,20 +28,18 @@ module UNIT_FINAL(
 	reg		[15:0]tri_200us;
     reg		[15:0]tri_20us;
 	reg	 EnableOut;
-	reg TEM_prev1;
 	//reg      k1_start;
 	wire	[15:0]volt;
-	wire risingflg;
+	
     assign LED1 = LED1_reg;
 	assign LED2 = LED2_reg;
 	assign LED3 = LED3_reg;
 	assign LED4 = LED4_reg;
 	assign LED5 = LED5_reg;
 	
-
-reg	pulse_out_flag;
-reg  no_fault;
-
+	
+	
+	
 	initial
 	begin
 	tri_200us <= 16'b0;
@@ -62,30 +49,9 @@ reg  no_fault;
 	LED4_reg <=1; 
 	LED5_reg <=1;
 	EnableOut<=0;
-	
-	LED6 <=1;
-	LED7<=1;
-	LED8<=1;
-    LED9<=1;
-	LED10<=1;
-	CPU_DO<=0;
+	//K_1<=0;
 	end
-	
-	
-always@(posedge clk) //fault1 0-故障
-	begin	
-	if((fault1)&(fault2)&(fault3)&(fault4))
-	no_fault<=1;
-	else   
-	begin
-	  no_fault<=0;
-	  if (~fault1) LED6<=0;
-	  if (~fault2) LED7<=0;
-	  if (~fault3) LED8<=0;
-	  if (~fault4) LED9<=0;
-	end
-	end 
-	
+
 	///
 always@(posedge clk)
 	begin
@@ -179,71 +145,32 @@ always@(posedge clk)
 			  EnableOut<=0;
 		  end
 	end
-	
-reg [63:0]	tri_10s;
-
-always @(posedge clk) begin
-// Detect rising edge of TEM
-	if (risingflg && !TEM_prev1) begin
-	 tri_10s<=1;
-	 end 
-	else begin 
-	 if((tri_10s < 64'd100_000_000)&&(tri_10s > 0))//40'd400_000)
-	   begin	    
-		  tri_10s <= tri_10s + 1;
-	   end
-	  else if (tri_10s == 64'd100_000_000) begin
-	    pulse_out_flag<=1;
-		 tri_10s <= 0;
-	   end
-	  else  pulse_out_flag<=0;
-	end
-	 // Store the previous value of TEM
-	 TEM_prev1 <= risingflg;
-  end
-  
-always @(posedge clk) begin
-	if(tri_10s==1)begin
-	 CPU_DO <=1;//按钮按下继电器输出
-	 LED10 <=1;
-	 end
-	else  if (tri_10s==64'd10_000_000)  
-	 CPU_DO <=0; 
-	if (CPU_DI==0) //继电器输出时反馈信号为低电平
-	  LED10 <=0;
-	else LED10 <=1;
-  end
-  
 DoublePulse DoublePulse1(
-	   .enable ( no_fault ),
+	    .enable ( 1   ),
 		.clk ( clk   ),
-		.TEM ( pulse_out_flag ),
+		.TEM ( TEM   ),
 		.K1 ( K_1   ),
 		.K2 ( K_2    )
 	);
 	
 	 
-DoublePulse DoublePulse4(
-	   .enable ( no_fault ),
+	DoublePulse DoublePulse4(
+		.enable ( 1   ),
 		.clk ( clk   ),
-		.TEM ( pulse_out_flag ),
+		.TEM ( TEM   ),
 		.K1 ( K_3   ),
 		.K2 ( K_4   )
 		);
-		
-		
-		
-	key_filter  key_rd_inst
-(
-    .sys_clk    (clk    ),  //系统时钟40Mhz
-    .sys_rst_n  (1  ),  //全局复位
-    .key_in     (TEM     ),  //按键输入信号
-
-    .key_flag   (risingflg  )   //key_flag为1时表示按键有效，0表示按键无效
-);
 
    	   
-
+   rs232  rs232
+(
+   . sys_clk   (clk  ) ,   //系统时钟50MHz
+   . sys_rst_n (sys_rst_n) ,   //全局复位
+   . rx        (rx       ) ,   //串口接收数据
+   . tx        (tx       )     //串口发送数据
+);
+  
 	
 endmodule	
 	

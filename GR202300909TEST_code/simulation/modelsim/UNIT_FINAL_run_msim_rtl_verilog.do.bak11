@@ -33,12 +33,12 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+D:/temp/hff/gitsinglepulse/GR202300909PCB_TEST/GR202300909TEST_code {D:/temp/hff/gitsinglepulse/GR202300909PCB_TEST/GR202300909TEST_code/DoublePulse.v}
-vlog -vlog01compat -work work +incdir+D:/temp/hff/gitsinglepulse/GR202300909PCB_TEST/GR202300909TEST_code {D:/temp/hff/gitsinglepulse/GR202300909PCB_TEST/GR202300909TEST_code/ad.v}
-vlog -vlog01compat -work work +incdir+D:/temp/hff/gitsinglepulse/GR202300909PCB_TEST/GR202300909TEST_code {D:/temp/hff/gitsinglepulse/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.v}
-vlog -vlog01compat -work work +incdir+D:/temp/hff/gitsinglepulse/GR202300909PCB_TEST/GR202300909TEST_code {D:/temp/hff/gitsinglepulse/GR202300909PCB_TEST/GR202300909TEST_code/key_filter.v}
+vlog -vlog01compat -work work +incdir+D:/temp/hff/GR202300909PCB_TEST/GR202300909PCB_TEST/GR202300909TEST_code {D:/temp/hff/GR202300909PCB_TEST/GR202300909PCB_TEST/GR202300909TEST_code/DoublePulse.v}
+vlog -vlog01compat -work work +incdir+D:/temp/hff/GR202300909PCB_TEST/GR202300909PCB_TEST/GR202300909TEST_code {D:/temp/hff/GR202300909PCB_TEST/GR202300909PCB_TEST/GR202300909TEST_code/K1Module.v}
+vlog -vlog01compat -work work +incdir+D:/temp/hff/GR202300909PCB_TEST/GR202300909PCB_TEST/GR202300909TEST_code {D:/temp/hff/GR202300909PCB_TEST/GR202300909PCB_TEST/GR202300909TEST_code/ad.v}
+vlog -vlog01compat -work work +incdir+D:/temp/hff/GR202300909PCB_TEST/GR202300909PCB_TEST/GR202300909TEST_code {D:/temp/hff/GR202300909PCB_TEST/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.v}
 
-vlog -vlog01compat -work work +incdir+D:/temp/hff/gitsinglepulse/GR202300909PCB_TEST/GR202300909TEST_code {D:/temp/hff/gitsinglepulse/GR202300909PCB_TEST/GR202300909TEST_code/tb_UNIT_FINAL.v}
+vlog -vlog01compat -work work +incdir+D:/temp/hff/GR202300909PCB_TEST/GR202300909PCB_TEST/GR202300909TEST_code {D:/temp/hff/GR202300909PCB_TEST/GR202300909PCB_TEST/GR202300909TEST_code/tb_UNIT_FINAL.v}
 
 vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L maxii_ver -L rtl_work -L work -voptargs="+acc"  tb_UNIT_FINAL.V
 
