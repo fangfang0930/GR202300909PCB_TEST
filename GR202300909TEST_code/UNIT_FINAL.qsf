@@ -61,9 +61,9 @@ set_location_assignment PIN_42 -to LED3
 set_location_assignment PIN_43 -to LED4
 set_location_assignment PIN_44 -to LED5
 set_location_assignment PIN_113 -to K_1
-set_location_assignment PIN_18 -to clk
+set_location_assignment PIN_20 -to clk
 set_location_assignment PIN_88 -to cs_n
-set_location_assignment PIN_97 -to TEM
+set_location_assignment PIN_1 -to TEM
 set_location_assignment PIN_91 -to ad_in
 set_location_assignment PIN_94 -to adclk
 set_global_assignment -name DA_CUSTOM_RULE_FILE "D:/STUDY/chenhui_tanliang/7820H182_111020_1/db/UNIT_FINAL.cbx.xml"
@@ -81,6 +81,10 @@ set_global_assignment -name EDA_TEST_BENCH_FILE tb_UNIT_FINAL.v -section_id tb_U
 set_location_assignment PIN_109 -to K_2
 set_location_assignment PIN_122 -to K_3
 set_location_assignment PIN_118 -to K_4
+set_location_assignment PIN_60 -to sys_rst_n
+set_location_assignment PIN_37 -to rx
+set_location_assignment PIN_38 -to tx
+set_global_assignment -name VERILOG_FILE err_high_detect.v
 set_global_assignment -name VERILOG_FILE rs232.v
 set_global_assignment -name VERILOG_FILE uart_tx.v
 set_global_assignment -name VERILOG_FILE uart_rx.v
@@ -89,6 +93,11 @@ set_global_assignment -name VERILOG_FILE K1Module.v
 set_global_assignment -name VERILOG_FILE tb_UNIT_FINAL.v
 set_global_assignment -name VERILOG_FILE ad.v
 set_global_assignment -name VERILOG_FILE UNIT_FINAL.v
-set_location_assignment PIN_60 -to sys_rst_n
-set_location_assignment PIN_37 -to rx
-set_location_assignment PIN_38 -to tx
+set_location_assignment PIN_51 -to LED7
+set_location_assignment PIN_53 -to LED8
+set_location_assignment PIN_57 -to LED9
+set_location_assignment PIN_59 -to LED10
+set_location_assignment PIN_134 -to ERR[0]
+set_location_assignment PIN_133 -to ERR[1]
+set_location_assignment PIN_138 -to ERR[2]
+set_location_assignment PIN_137 -to ERR[3]

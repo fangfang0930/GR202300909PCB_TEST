@@ -6,6 +6,9 @@ module UNIT_FINAL(
 					output	adclk,
 					input   TEM,
 					input    rx,
+
+					input [3:0]ERR,//left igbt err   1 active 
+
 					output   tx,
 					output   cs_n,
 					output	K_1 ,
@@ -16,7 +19,11 @@ module UNIT_FINAL(
 					output	LED2,
 					output	LED3,
 					output	LED4,
-					output	LED5//,
+					output	LED5,//,
+					output	LED7,//,
+					output	LED8,//,
+					output	LED9,//,
+					output	LED10//,
 					//output	LED6
 
 				);
@@ -36,7 +43,11 @@ module UNIT_FINAL(
 	assign LED3 = LED3_reg;
 	assign LED4 = LED4_reg;
 	assign LED5 = LED5_reg;
-	
+wire [3:0] igbt_err;
+assign LED7=~igbt_err[3];//ERR[0];	
+assign LED8=~igbt_err[2];
+assign LED9=~igbt_err[1];	
+assign LED10=~igbt_err[0];//
 	
 	
 	
@@ -50,6 +61,10 @@ module UNIT_FINAL(
 	LED5_reg <=1;
 	EnableOut<=0;
 	//K_1<=0;
+	cnt_time<=0;
+	cnt_time1ms<=0;
+    cnt_time100ns <= 0;
+
 	end
 
 	///
@@ -171,7 +186,83 @@ DoublePulse DoublePulse1(
    . tx        (tx       )     //串口发送数据
 );
   
-	
+wire time_1us;
+wire time_1ms;	
+wire time_100ns;
+
+parameter COUNT_1US=39;
+parameter COUNT_1MS=999;
+parameter COUNT_100NS = 3;
+
+reg [5:0]cnt_time;
+reg	[10:0]cnt_time1ms;
+reg [3:0] cnt_time100ns;
+
+always@(posedge clk)
+begin 
+	if(cnt_time==COUNT_1US)
+	cnt_time<=0;
+	else 
+	cnt_time<=cnt_time+1'b1;
+end 
+
+always@(posedge clk)
+begin 
+	if(cnt_time1ms==COUNT_1MS)
+	cnt_time1ms<=0;
+	else if(cnt_time==COUNT_1US) 
+	cnt_time1ms<=cnt_time1ms+1'b1;
+end 
+
+always @(posedge clk)
+begin
+    if (cnt_time100ns == COUNT_100NS)
+        cnt_time100ns <= 0;
+    else
+        cnt_time100ns <= cnt_time100ns + 1'b1;
+end
+
+assign time_1us = (cnt_time>6'd19)?1'b1:1'b0;
+assign time_1ms = (cnt_time1ms>11'd499)?1'b1:1'b0; 
+//assign time_100ns = (cnt_time100ns == 4'd3) ? 1'b1 : 1'b0;
+assign time_100ns = (cnt_time100ns > 4'd3) ? 1'b1 : 1'b0;
+
+err_high_detect err1(
+						.clk(clk),
+						.rst_n(rst_n),
+						.time_1us(time_100ns),//time_1us),
+						.reset_unit(reset_unit),
+						.signal_in(~ERR[0]),
+						.signal_out(igbt_err[0]),
+						.delay_tims(1)//输入范围为1~16383 
+						);
+err_high_detect err2(
+						.clk(clk),
+						.rst_n(rst_n),
+						.time_1us(time_100ns),//time_1us),
+						.reset_unit(reset_unit),
+						.signal_in(~ERR[1]),
+						.signal_out(igbt_err[1]),
+						.delay_tims(1)//输入范围为1~16383 
+						);
+err_high_detect err3(
+						.clk(clk),
+						.rst_n(rst_n),
+						.time_1us(time_100ns),//time_1us),
+						.reset_unit(reset_unit),
+						.signal_in(~ERR[2]),
+						.signal_out(igbt_err[2]),
+						.delay_tims(1)//输入范围为1~16383 
+						);
+err_high_detect err4(
+						.clk(clk),
+						.rst_n(rst_n),
+						.time_1us(time_100ns),//time_1us),
+						.reset_unit(reset_unit),
+						.signal_in(~ERR[3]),
+						.signal_out(igbt_err[3]),
+						.delay_tims(1)//输入范围为1~16383 
+						);	
 endmodule	
 	
 

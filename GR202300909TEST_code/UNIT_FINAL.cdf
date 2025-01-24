@@ -1,10 +1,10 @@
-/* Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version */
+/* Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
 
-	P ActionCode(Ign)
-		Device PartName(EPM1270T144) MfrSpec(OpMask(0) SEC_Device(EPM1270T144) Child_OpMask(2 7 7) FullPath("D:/temp/hff/git_test/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.pof"));
+	P ActionCode(Cfg)
+		Device PartName(EPM1270T144) Path("D:/GRWorkshop/.Item/GR202300909TEST_code/") File("UNIT_FINAL.pof") MfrSpec(OpMask(7) SEC_Device(EPM1270T144) Child_OpMask(2 7 7));
 
 ChainEnd;
 

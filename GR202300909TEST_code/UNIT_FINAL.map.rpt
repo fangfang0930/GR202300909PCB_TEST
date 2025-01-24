@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UNIT_FINAL
-Wed Nov 06 11:29:41 2024
+Mon Dec 23 10:28:07 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,20 +13,27 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |UNIT_FINAL|DoublePulse:DoublePulse4|state
-  9. State Machine - |UNIT_FINAL|DoublePulse:DoublePulse1|state
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: DoublePulse:DoublePulse1
- 15. Parameter Settings for User Entity Instance: DoublePulse:DoublePulse4
- 16. Parameter Settings for User Entity Instance: rs232:rs232
- 17. Parameter Settings for User Entity Instance: rs232:rs232|uart_rx:uart_rx_inst
- 18. Parameter Settings for User Entity Instance: rs232:rs232|uart_tx:uart_tx_inst
- 19. Port Connectivity Checks: "DoublePulse:DoublePulse4"
- 20. Port Connectivity Checks: "DoublePulse:DoublePulse1"
- 21. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |UNIT_FINAL
+ 13. Parameter Settings for User Entity Instance: DoublePulse:DoublePulse1
+ 14. Parameter Settings for User Entity Instance: DoublePulse:DoublePulse4
+ 15. Parameter Settings for User Entity Instance: rs232:rs232
+ 16. Parameter Settings for User Entity Instance: rs232:rs232|uart_rx:uart_rx_inst
+ 17. Parameter Settings for User Entity Instance: rs232:rs232|uart_tx:uart_tx_inst
+ 18. Parameter Settings for User Entity Instance: err_high_detect:err1
+ 19. Parameter Settings for User Entity Instance: err_high_detect:err2
+ 20. Parameter Settings for User Entity Instance: err_high_detect:err3
+ 21. Parameter Settings for User Entity Instance: err_high_detect:err4
+ 22. Port Connectivity Checks: "err_high_detect:err4"
+ 23. Port Connectivity Checks: "err_high_detect:err3"
+ 24. Port Connectivity Checks: "err_high_detect:err2"
+ 25. Port Connectivity Checks: "err_high_detect:err1"
+ 26. Port Connectivity Checks: "DoublePulse:DoublePulse4"
+ 27. Port Connectivity Checks: "DoublePulse:DoublePulse1"
+ 28. Analysis & Synthesis Messages
 
 
 
@@ -53,13 +60,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Wed Nov 06 11:29:41 2024       ;
+; Analysis & Synthesis Status ; Successful - Mon Dec 23 10:28:07 2024       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; UNIT_FINAL                                  ;
 ; Top-level Entity Name       ; UNIT_FINAL                                  ;
 ; Family                      ; MAX II                                      ;
-; Total logic elements        ; 283                                         ;
-; Total pins                  ; 17                                          ;
+; Total logic elements        ; 330                                         ;
+; Total pins                  ; 25                                          ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
@@ -141,8 +148,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 20          ;
-; Maximum allowed            ; 14          ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -152,18 +159,19 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                           ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                             ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
-; rs232.v                          ; yes             ; User Verilog HDL File  ; D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/rs232.v       ;         ;
-; uart_tx.v                        ; yes             ; User Verilog HDL File  ; D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/uart_tx.v     ;         ;
-; uart_rx.v                        ; yes             ; User Verilog HDL File  ; D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/uart_rx.v     ;         ;
-; DoublePulse.v                    ; yes             ; User Verilog HDL File  ; D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/DoublePulse.v ;         ;
-; ad.v                             ; yes             ; User Verilog HDL File  ; D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/ad.v          ;         ;
-; UNIT_FINAL.v                     ; yes             ; User Verilog HDL File  ; D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.v  ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
+; err_high_detect.v                ; yes             ; User Verilog HDL File  ; D:/GRWorkshop/.Item/GR202300909TEST_code/err_high_detect.v ;         ;
+; rs232.v                          ; yes             ; User Verilog HDL File  ; D:/GRWorkshop/.Item/GR202300909TEST_code/rs232.v           ;         ;
+; uart_tx.v                        ; yes             ; User Verilog HDL File  ; D:/GRWorkshop/.Item/GR202300909TEST_code/uart_tx.v         ;         ;
+; uart_rx.v                        ; yes             ; User Verilog HDL File  ; D:/GRWorkshop/.Item/GR202300909TEST_code/uart_rx.v         ;         ;
+; DoublePulse.v                    ; yes             ; User Verilog HDL File  ; D:/GRWorkshop/.Item/GR202300909TEST_code/DoublePulse.v     ;         ;
+; ad.v                             ; yes             ; User Verilog HDL File  ; D:/GRWorkshop/.Item/GR202300909TEST_code/ad.v              ;         ;
+; UNIT_FINAL.v                     ; yes             ; User Verilog HDL File  ; D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v      ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -171,131 +179,93 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 283   ;
-;     -- Combinational with no register       ; 98    ;
-;     -- Register only                        ; 54    ;
-;     -- Combinational with a register        ; 131   ;
+; Total logic elements                        ; 330   ;
+;     -- Combinational with no register       ; 113   ;
+;     -- Register only                        ; 55    ;
+;     -- Combinational with a register        ; 162   ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 81    ;
-;     -- 3 input functions                    ; 21    ;
-;     -- 2 input functions                    ; 118   ;
-;     -- 1 input functions                    ; 8     ;
+;     -- 4 input functions                    ; 88    ;
+;     -- 3 input functions                    ; 24    ;
+;     -- 2 input functions                    ; 144   ;
+;     -- 1 input functions                    ; 18    ;
 ;     -- 0 input functions                    ; 1     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 182   ;
-;     -- arithmetic mode                      ; 101   ;
+;     -- normal mode                          ; 207   ;
+;     -- arithmetic mode                      ; 123   ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 105   ;
+;     -- synchronous clear/load mode          ; 133   ;
 ;     -- asynchronous clear/load mode         ; 61    ;
 ;                                             ;       ;
-; Total registers                             ; 185   ;
-; Total logic cells in carry chains           ; 109   ;
-; I/O pins                                    ; 17    ;
+; Total registers                             ; 217   ;
+; Total logic cells in carry chains           ; 137   ;
+; I/O pins                                    ; 25    ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 185   ;
-; Total fan-out                               ; 1137  ;
-; Average fan-out                             ; 3.79  ;
+; Maximum fan-out                             ; 217   ;
+; Total fan-out                               ; 1323  ;
+; Average fan-out                             ; 3.73  ;
 +---------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                            ;
-+-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node    ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                          ; Entity Name ; Library Name ;
-+-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------+-------------+--------------+
-; |UNIT_FINAL                   ; 283 (75)    ; 185          ; 0          ; 17   ; 0            ; 98 (35)      ; 54 (0)            ; 131 (40)         ; 109 (36)        ; 0 (0)      ; |UNIT_FINAL                                  ; UNIT_FINAL  ; work         ;
-;    |DoublePulse:DoublePulse1| ; 54 (54)     ; 38           ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 38 (38)          ; 32 (32)         ; 0 (0)      ; |UNIT_FINAL|DoublePulse:DoublePulse1         ; DoublePulse ; work         ;
-;    |DoublePulse:DoublePulse4| ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |UNIT_FINAL|DoublePulse:DoublePulse4         ; DoublePulse ; work         ;
-;    |ad:ad|                    ; 61 (61)     ; 45           ; 0          ; 0    ; 0            ; 16 (16)      ; 32 (32)           ; 13 (13)          ; 11 (11)         ; 0 (0)      ; |UNIT_FINAL|ad:ad                            ; ad          ; work         ;
-;    |rs232:rs232|              ; 92 (0)      ; 61           ; 0          ; 0    ; 0            ; 31 (0)       ; 21 (0)            ; 40 (0)           ; 30 (0)          ; 0 (0)      ; |UNIT_FINAL|rs232:rs232                      ; rs232       ; work         ;
-;       |uart_rx:uart_rx_inst|  ; 55 (55)     ; 41           ; 0          ; 0    ; 0            ; 14 (14)      ; 21 (21)           ; 20 (20)          ; 17 (17)         ; 0 (0)      ; |UNIT_FINAL|rs232:rs232|uart_rx:uart_rx_inst ; uart_rx     ; work         ;
-;       |uart_tx:uart_tx_inst|  ; 37 (37)     ; 20           ; 0          ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 20 (20)          ; 13 (13)         ; 0 (0)      ; |UNIT_FINAL|rs232:rs232|uart_tx:uart_tx_inst ; uart_tx     ; work         ;
-+-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------+-------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node    ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                          ; Entity Name     ; Library Name ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------+-----------------+--------------+
+; |UNIT_FINAL                   ; 330 (76)    ; 217          ; 0          ; 25   ; 0            ; 113 (36)     ; 55 (0)            ; 162 (40)         ; 137 (36)        ; 0 (0)      ; |UNIT_FINAL                                  ; UNIT_FINAL      ; work         ;
+;    |DoublePulse:DoublePulse1| ; 39 (39)     ; 25           ; 0          ; 0    ; 0            ; 14 (14)      ; 0 (0)             ; 25 (25)          ; 24 (24)         ; 0 (0)      ; |UNIT_FINAL|DoublePulse:DoublePulse1         ; DoublePulse     ; work         ;
+;    |DoublePulse:DoublePulse4| ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |UNIT_FINAL|DoublePulse:DoublePulse4         ; DoublePulse     ; work         ;
+;    |ad:ad|                    ; 61 (61)     ; 45           ; 0          ; 0    ; 0            ; 16 (16)      ; 32 (32)           ; 13 (13)          ; 11 (11)         ; 0 (0)      ; |UNIT_FINAL|ad:ad                            ; ad              ; work         ;
+;    |err_high_detect:err1|     ; 15 (15)     ; 11           ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 11 (11)          ; 9 (9)           ; 0 (0)      ; |UNIT_FINAL|err_high_detect:err1             ; err_high_detect ; work         ;
+;    |err_high_detect:err2|     ; 15 (15)     ; 11           ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 11 (11)          ; 9 (9)           ; 0 (0)      ; |UNIT_FINAL|err_high_detect:err2             ; err_high_detect ; work         ;
+;    |err_high_detect:err3|     ; 15 (15)     ; 11           ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 11 (11)          ; 9 (9)           ; 0 (0)      ; |UNIT_FINAL|err_high_detect:err3             ; err_high_detect ; work         ;
+;    |err_high_detect:err4|     ; 15 (15)     ; 11           ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 11 (11)          ; 9 (9)           ; 0 (0)      ; |UNIT_FINAL|err_high_detect:err4             ; err_high_detect ; work         ;
+;    |rs232:rs232|              ; 92 (0)      ; 61           ; 0          ; 0    ; 0            ; 31 (0)       ; 21 (0)            ; 40 (0)           ; 30 (0)          ; 0 (0)      ; |UNIT_FINAL|rs232:rs232                      ; rs232           ; work         ;
+;       |uart_rx:uart_rx_inst|  ; 55 (55)     ; 41           ; 0          ; 0    ; 0            ; 14 (14)      ; 21 (21)           ; 20 (20)          ; 17 (17)         ; 0 (0)      ; |UNIT_FINAL|rs232:rs232|uart_rx:uart_rx_inst ; uart_rx         ; work         ;
+;       |uart_tx:uart_tx_inst|  ; 37 (37)     ; 20           ; 0          ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 20 (20)          ; 13 (13)         ; 0 (0)      ; |UNIT_FINAL|rs232:rs232|uart_tx:uart_tx_inst ; uart_tx         ; work         ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------+
-; State Machine - |UNIT_FINAL|DoublePulse:DoublePulse4|state                                    ;
-+-------------------+-------------------+-----------------+------------------+------------------+
-; Name              ; state.HIGH2_STATE ; state.LOW_STATE ; state.HIGH_STATE ; state.IDLE_STATE ;
-+-------------------+-------------------+-----------------+------------------+------------------+
-; state.IDLE_STATE  ; 0                 ; 0               ; 0                ; 0                ;
-; state.HIGH_STATE  ; 0                 ; 0               ; 1                ; 1                ;
-; state.LOW_STATE   ; 0                 ; 1               ; 0                ; 1                ;
-; state.HIGH2_STATE ; 1                 ; 0               ; 0                ; 1                ;
-+-------------------+-------------------+-----------------+------------------+------------------+
-
-
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------+
-; State Machine - |UNIT_FINAL|DoublePulse:DoublePulse1|state                                    ;
-+-------------------+-------------------+-----------------+------------------+------------------+
-; Name              ; state.HIGH2_STATE ; state.LOW_STATE ; state.HIGH_STATE ; state.IDLE_STATE ;
-+-------------------+-------------------+-----------------+------------------+------------------+
-; state.IDLE_STATE  ; 0                 ; 0               ; 0                ; 0                ;
-; state.HIGH_STATE  ; 0                 ; 0               ; 1                ; 1                ;
-; state.LOW_STATE   ; 0                 ; 1               ; 0                ; 1                ;
-; state.HIGH2_STATE ; 1                 ; 0               ; 0                ; 1                ;
-+-------------------+-------------------+-----------------+------------------+------------------+
-
-
-+-----------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                  ;
-+--------------------------------------------+--------------------------------------------------------+
-; Register name                              ; Reason for Removal                                     ;
-+--------------------------------------------+--------------------------------------------------------+
-; DoublePulse:DoublePulse4|K2                ; Stuck at GND due to stuck port clock_enable            ;
-; DoublePulse:DoublePulse1|K2                ; Stuck at GND due to stuck port clock_enable            ;
-; DoublePulse:DoublePulse1|TEM_prev1         ; Merged with DoublePulse:DoublePulse4|TEM_prev1         ;
-; DoublePulse:DoublePulse4|risingflg         ; Merged with DoublePulse:DoublePulse1|risingflg         ;
-; LED5_reg                                   ; Stuck at VCC due to stuck port data_in                 ;
-; DoublePulse:DoublePulse4|state~6           ; Lost fanout                                            ;
-; DoublePulse:DoublePulse4|state~7           ; Lost fanout                                            ;
-; DoublePulse:DoublePulse1|state~6           ; Lost fanout                                            ;
-; DoublePulse:DoublePulse1|state~7           ; Lost fanout                                            ;
-; DoublePulse:DoublePulse4|K1                ; Merged with DoublePulse:DoublePulse1|K1                ;
-; DoublePulse:DoublePulse4|dblcount[31]      ; Merged with DoublePulse:DoublePulse1|dblcount[31]      ;
-; DoublePulse:DoublePulse4|dblcount[30]      ; Merged with DoublePulse:DoublePulse1|dblcount[30]      ;
-; DoublePulse:DoublePulse4|dblcount[29]      ; Merged with DoublePulse:DoublePulse1|dblcount[29]      ;
-; DoublePulse:DoublePulse4|dblcount[28]      ; Merged with DoublePulse:DoublePulse1|dblcount[28]      ;
-; DoublePulse:DoublePulse4|dblcount[27]      ; Merged with DoublePulse:DoublePulse1|dblcount[27]      ;
-; DoublePulse:DoublePulse4|dblcount[26]      ; Merged with DoublePulse:DoublePulse1|dblcount[26]      ;
-; DoublePulse:DoublePulse4|dblcount[25]      ; Merged with DoublePulse:DoublePulse1|dblcount[25]      ;
-; DoublePulse:DoublePulse4|dblcount[24]      ; Merged with DoublePulse:DoublePulse1|dblcount[24]      ;
-; DoublePulse:DoublePulse4|dblcount[23]      ; Merged with DoublePulse:DoublePulse1|dblcount[23]      ;
-; DoublePulse:DoublePulse4|dblcount[22]      ; Merged with DoublePulse:DoublePulse1|dblcount[22]      ;
-; DoublePulse:DoublePulse4|dblcount[21]      ; Merged with DoublePulse:DoublePulse1|dblcount[21]      ;
-; DoublePulse:DoublePulse4|dblcount[20]      ; Merged with DoublePulse:DoublePulse1|dblcount[20]      ;
-; DoublePulse:DoublePulse4|dblcount[19]      ; Merged with DoublePulse:DoublePulse1|dblcount[19]      ;
-; DoublePulse:DoublePulse4|dblcount[18]      ; Merged with DoublePulse:DoublePulse1|dblcount[18]      ;
-; DoublePulse:DoublePulse4|dblcount[17]      ; Merged with DoublePulse:DoublePulse1|dblcount[17]      ;
-; DoublePulse:DoublePulse4|dblcount[16]      ; Merged with DoublePulse:DoublePulse1|dblcount[16]      ;
-; DoublePulse:DoublePulse4|dblcount[15]      ; Merged with DoublePulse:DoublePulse1|dblcount[15]      ;
-; DoublePulse:DoublePulse4|dblcount[14]      ; Merged with DoublePulse:DoublePulse1|dblcount[14]      ;
-; DoublePulse:DoublePulse4|dblcount[13]      ; Merged with DoublePulse:DoublePulse1|dblcount[13]      ;
-; DoublePulse:DoublePulse4|dblcount[12]      ; Merged with DoublePulse:DoublePulse1|dblcount[12]      ;
-; DoublePulse:DoublePulse4|dblcount[11]      ; Merged with DoublePulse:DoublePulse1|dblcount[11]      ;
-; DoublePulse:DoublePulse4|dblcount[10]      ; Merged with DoublePulse:DoublePulse1|dblcount[10]      ;
-; DoublePulse:DoublePulse4|dblcount[9]       ; Merged with DoublePulse:DoublePulse1|dblcount[9]       ;
-; DoublePulse:DoublePulse4|dblcount[8]       ; Merged with DoublePulse:DoublePulse1|dblcount[8]       ;
-; DoublePulse:DoublePulse4|dblcount[7]       ; Merged with DoublePulse:DoublePulse1|dblcount[7]       ;
-; DoublePulse:DoublePulse4|dblcount[6]       ; Merged with DoublePulse:DoublePulse1|dblcount[6]       ;
-; DoublePulse:DoublePulse4|dblcount[4]       ; Merged with DoublePulse:DoublePulse1|dblcount[4]       ;
-; DoublePulse:DoublePulse4|dblcount[5]       ; Merged with DoublePulse:DoublePulse1|dblcount[5]       ;
-; DoublePulse:DoublePulse4|state.IDLE_STATE  ; Merged with DoublePulse:DoublePulse1|state.IDLE_STATE  ;
-; DoublePulse:DoublePulse4|state.HIGH_STATE  ; Merged with DoublePulse:DoublePulse1|state.HIGH_STATE  ;
-; DoublePulse:DoublePulse4|state.LOW_STATE   ; Merged with DoublePulse:DoublePulse1|state.LOW_STATE   ;
-; DoublePulse:DoublePulse4|state.HIGH2_STATE ; Merged with DoublePulse:DoublePulse1|state.HIGH2_STATE ;
-; DoublePulse:DoublePulse4|dblcount[3]       ; Merged with DoublePulse:DoublePulse1|dblcount[3]       ;
-; DoublePulse:DoublePulse4|dblcount[2]       ; Merged with DoublePulse:DoublePulse1|dblcount[2]       ;
-; DoublePulse:DoublePulse4|dblcount[1]       ; Merged with DoublePulse:DoublePulse1|dblcount[1]       ;
-; DoublePulse:DoublePulse4|dblcount[0]       ; Merged with DoublePulse:DoublePulse1|dblcount[0]       ;
-; Total Number of Removed Registers = 46     ;                                                        ;
-+--------------------------------------------+--------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                              ;
++------------------------------------------+------------------------------------------------------+
+; Register name                            ; Reason for Removal                                   ;
++------------------------------------------+------------------------------------------------------+
+; DoublePulse:DoublePulse4|K2              ; Merged with DoublePulse:DoublePulse4|K1              ;
+; DoublePulse:DoublePulse1|sigin_syn[0]    ; Merged with DoublePulse:DoublePulse4|sigin_syn[0]    ;
+; DoublePulse:DoublePulse1|sigin_syn[1]    ; Merged with DoublePulse:DoublePulse4|sigin_syn[1]    ;
+; DoublePulse:DoublePulse1|K2              ; Merged with DoublePulse:DoublePulse1|K1              ;
+; DoublePulse:DoublePulse4|K1              ; Merged with DoublePulse:DoublePulse1|K1              ;
+; DoublePulse:DoublePulse4|cnt_lowshake[7] ; Merged with DoublePulse:DoublePulse1|cnt_lowshake[7] ;
+; DoublePulse:DoublePulse4|cnt_lowshake[6] ; Merged with DoublePulse:DoublePulse1|cnt_lowshake[6] ;
+; DoublePulse:DoublePulse4|cnt_lowshake[5] ; Merged with DoublePulse:DoublePulse1|cnt_lowshake[5] ;
+; DoublePulse:DoublePulse4|cnt_lowshake[4] ; Merged with DoublePulse:DoublePulse1|cnt_lowshake[4] ;
+; DoublePulse:DoublePulse4|cnt_lowshake[3] ; Merged with DoublePulse:DoublePulse1|cnt_lowshake[3] ;
+; DoublePulse:DoublePulse4|cnt_lowshake[2] ; Merged with DoublePulse:DoublePulse1|cnt_lowshake[2] ;
+; DoublePulse:DoublePulse4|cnt_lowshake[1] ; Merged with DoublePulse:DoublePulse1|cnt_lowshake[1] ;
+; DoublePulse:DoublePulse4|cnt_lowshake[0] ; Merged with DoublePulse:DoublePulse1|cnt_lowshake[0] ;
+; DoublePulse:DoublePulse4|cnt_shake[7]    ; Merged with DoublePulse:DoublePulse1|cnt_shake[7]    ;
+; DoublePulse:DoublePulse4|cnt_shake[6]    ; Merged with DoublePulse:DoublePulse1|cnt_shake[6]    ;
+; DoublePulse:DoublePulse4|cnt_shake[5]    ; Merged with DoublePulse:DoublePulse1|cnt_shake[5]    ;
+; DoublePulse:DoublePulse4|cnt_shake[4]    ; Merged with DoublePulse:DoublePulse1|cnt_shake[4]    ;
+; DoublePulse:DoublePulse4|cnt_shake[3]    ; Merged with DoublePulse:DoublePulse1|cnt_shake[3]    ;
+; DoublePulse:DoublePulse4|cnt_shake[2]    ; Merged with DoublePulse:DoublePulse1|cnt_shake[2]    ;
+; DoublePulse:DoublePulse4|cnt_shake[1]    ; Merged with DoublePulse:DoublePulse1|cnt_shake[1]    ;
+; DoublePulse:DoublePulse4|cnt_shake[0]    ; Merged with DoublePulse:DoublePulse1|cnt_shake[0]    ;
+; DoublePulse:DoublePulse4|cnt_1us[6]      ; Merged with DoublePulse:DoublePulse1|cnt_1us[6]      ;
+; DoublePulse:DoublePulse4|cnt_1us[5]      ; Merged with DoublePulse:DoublePulse1|cnt_1us[5]      ;
+; DoublePulse:DoublePulse4|cnt_1us[1]      ; Merged with DoublePulse:DoublePulse1|cnt_1us[1]      ;
+; DoublePulse:DoublePulse4|cnt_1us[0]      ; Merged with DoublePulse:DoublePulse1|cnt_1us[0]      ;
+; DoublePulse:DoublePulse4|cnt_1us[7]      ; Merged with DoublePulse:DoublePulse1|cnt_1us[7]      ;
+; DoublePulse:DoublePulse4|cnt_1us[4]      ; Merged with DoublePulse:DoublePulse1|cnt_1us[4]      ;
+; DoublePulse:DoublePulse4|cnt_1us[3]      ; Merged with DoublePulse:DoublePulse1|cnt_1us[3]      ;
+; DoublePulse:DoublePulse4|cnt_1us[2]      ; Merged with DoublePulse:DoublePulse1|cnt_1us[2]      ;
+; LED5_reg                                 ; Stuck at VCC due to stuck port data_in               ;
+; Total Number of Removed Registers = 30   ;                                                      ;
++------------------------------------------+------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -303,12 +273,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 185   ;
-; Number of registers using Synchronous Clear  ; 80    ;
+; Total registers                              ; 217   ;
+; Number of registers using Synchronous Clear  ; 108   ;
 ; Number of registers using Synchronous Load   ; 25    ;
 ; Number of registers using Asynchronous Clear ; 61    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 87    ;
+; Number of registers using Clock Enable       ; 107   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -338,37 +308,50 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UNIT_FINAL|rs232:rs232|uart_tx:uart_tx_inst|bit_cnt[0] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |UNIT_FINAL|DoublePulse:DoublePulse1|cnt_1us[3]         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |UNIT_FINAL|DoublePulse:DoublePulse1|cnt_lowshake[0]    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |UNIT_FINAL|DoublePulse:DoublePulse1|cnt_shake[6]       ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |UNIT_FINAL|ad:ad|clk_div[2]                            ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |UNIT_FINAL|tri_200us[0]                                ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|ad:ad|ad_count[2]                           ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |UNIT_FINAL|DoublePulse:DoublePulse4|dblcount[6]        ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |UNIT_FINAL|DoublePulse:DoublePulse1|dblcount[25]       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |UNIT_FINAL|tri_200us[2]                                ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |UNIT_FINAL|err_high_detect:err4|count[5]               ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |UNIT_FINAL|err_high_detect:err3|count[3]               ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |UNIT_FINAL|err_high_detect:err2|count[0]               ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |UNIT_FINAL|err_high_detect:err1|count[3]               ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |UNIT_FINAL|ad:ad|ad_count[3]                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |UNIT_FINAL ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; COUNT_1US      ; 39    ; Signed Integer                                    ;
+; COUNT_1MS      ; 999   ; Signed Integer                                    ;
+; COUNT_100NS    ; 3     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: DoublePulse:DoublePulse1 ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; IDLE_STATE     ; 00    ; Unsigned Binary                              ;
-; HIGH_STATE     ; 01    ; Unsigned Binary                              ;
-; LOW_STATE      ; 10    ; Unsigned Binary                              ;
-; HIGH2_STATE    ; 11    ; Unsigned Binary                              ;
-+----------------+-------+----------------------------------------------+
++------------------+-------+--------------------------------------------+
+; Parameter Name   ; Value ; Type                                       ;
++------------------+-------+--------------------------------------------+
+; SHAKE_TIMES      ; 2     ; Signed Integer                             ;
+; WORK_DELAY_TIMES ; 249   ; Signed Integer                             ;
++------------------+-------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: DoublePulse:DoublePulse4 ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; IDLE_STATE     ; 00    ; Unsigned Binary                              ;
-; HIGH_STATE     ; 01    ; Unsigned Binary                              ;
-; LOW_STATE      ; 10    ; Unsigned Binary                              ;
-; HIGH2_STATE    ; 11    ; Unsigned Binary                              ;
-+----------------+-------+----------------------------------------------+
++------------------+-------+--------------------------------------------+
+; Parameter Name   ; Value ; Type                                       ;
++------------------+-------+--------------------------------------------+
+; SHAKE_TIMES      ; 2     ; Signed Integer                             ;
+; WORK_DELAY_TIMES ; 249   ; Signed Integer                             ;
++------------------+-------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -405,6 +388,90 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: err_high_detect:err1 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; DEBOUNCE_TIME  ; 4     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: err_high_detect:err2 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; DEBOUNCE_TIME  ; 4     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: err_high_detect:err3 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; DEBOUNCE_TIME  ; 4     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: err_high_detect:err4 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; DEBOUNCE_TIME  ; 4     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "err_high_detect:err4"                                                                                                                                                                           ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port              ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; delay_tims        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (14 bits) it drives.  The 18 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; delay_tims[13..1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; delay_tims[0]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "err_high_detect:err3"                                                                                                                                                                           ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port              ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; delay_tims        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (14 bits) it drives.  The 18 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; delay_tims[13..1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; delay_tims[0]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "err_high_detect:err2"                                                                                                                                                                           ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port              ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; delay_tims        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (14 bits) it drives.  The 18 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; delay_tims[13..1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; delay_tims[0]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "err_high_detect:err1"                                                                                                                                                                           ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port              ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; delay_tims        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (14 bits) it drives.  The 18 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; delay_tims[13..1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; delay_tims[0]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "DoublePulse:DoublePulse4"                                                                                                                                                               ;
 +------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -431,48 +498,68 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Nov 06 11:29:34 2024
+    Info: Processing started: Mon Dec 23 10:28:02 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UNIT_FINAL -c UNIT_FINAL
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file err_high_detect.v
+    Info (12023): Found entity 1: err_high_detect File: D:/GRWorkshop/.Item/GR202300909TEST_code/err_high_detect.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file rs232.v
-    Info (12023): Found entity 1: rs232 File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/rs232.v Line: 20
+    Info (12023): Found entity 1: rs232 File: D:/GRWorkshop/.Item/GR202300909TEST_code/rs232.v Line: 20
 Info (12021): Found 1 design units, including 1 entities, in source file uart_tx.v
-    Info (12023): Found entity 1: uart_tx File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/uart_tx.v Line: 20
+    Info (12023): Found entity 1: uart_tx File: D:/GRWorkshop/.Item/GR202300909TEST_code/uart_tx.v Line: 20
 Info (12021): Found 1 design units, including 1 entities, in source file uart_rx.v
-    Info (12023): Found entity 1: uart_rx File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/uart_rx.v Line: 20
+    Info (12023): Found entity 1: uart_rx File: D:/GRWorkshop/.Item/GR202300909TEST_code/uart_rx.v Line: 20
 Info (12021): Found 1 design units, including 1 entities, in source file doublepulse.v
-    Info (12023): Found entity 1: DoublePulse File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/DoublePulse.v Line: 1
+    Info (12023): Found entity 1: DoublePulse File: D:/GRWorkshop/.Item/GR202300909TEST_code/DoublePulse.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file k1module.v
-    Info (12023): Found entity 1: K1Module File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/K1Module.v Line: 276
+    Info (12023): Found entity 1: K1Module File: D:/GRWorkshop/.Item/GR202300909TEST_code/K1Module.v Line: 276
 Info (12021): Found 1 design units, including 1 entities, in source file tb_unit_final.v
-    Info (12023): Found entity 1: tb_UNIT_FINAL File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/tb_UNIT_FINAL.v Line: 3
+    Info (12023): Found entity 1: tb_UNIT_FINAL File: D:/GRWorkshop/.Item/GR202300909TEST_code/tb_UNIT_FINAL.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file ad.v
-    Info (12023): Found entity 1: ad File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/ad.v Line: 7
+    Info (12023): Found entity 1: ad File: D:/GRWorkshop/.Item/GR202300909TEST_code/ad.v Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file unit_final.v
-    Info (12023): Found entity 1: UNIT_FINAL File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.v Line: 1
+    Info (12023): Found entity 1: UNIT_FINAL File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at UNIT_FINAL.v(232): created implicit net for "rst_n" File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 232
+Warning (10236): Verilog HDL Implicit Net warning at UNIT_FINAL.v(234): created implicit net for "reset_unit" File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 234
 Info (12127): Elaborating entity "UNIT_FINAL" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at UNIT_FINAL.v(30): object "EnableOut" assigned a value but never read File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.v Line: 30
-Info (12128): Elaborating entity "ad" for hierarchy "ad:ad" File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.v Line: 87
-Info (12128): Elaborating entity "DoublePulse" for hierarchy "DoublePulse:DoublePulse1" File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.v Line: 154
-Info (12128): Elaborating entity "rs232" for hierarchy "rs232:rs232" File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.v Line: 172
-Info (12128): Elaborating entity "uart_rx" for hierarchy "rs232:rs232|uart_rx:uart_rx_inst" File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/rs232.v Line: 57
-Info (12128): Elaborating entity "uart_tx" for hierarchy "rs232:rs232|uart_tx:uart_tx_inst" File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/rs232.v Line: 73
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (10036): Verilog HDL or VHDL warning at UNIT_FINAL.v(37): object "EnableOut" assigned a value but never read File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 37
+Warning (10036): Verilog HDL or VHDL warning at UNIT_FINAL.v(189): object "time_1us" assigned a value but never read File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 189
+Warning (10036): Verilog HDL or VHDL warning at UNIT_FINAL.v(190): object "time_1ms" assigned a value but never read File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 190
+Info (12128): Elaborating entity "ad" for hierarchy "ad:ad" File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 102
+Info (12128): Elaborating entity "DoublePulse" for hierarchy "DoublePulse:DoublePulse1" File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 169
+Info (12128): Elaborating entity "rs232" for hierarchy "rs232:rs232" File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 187
+Info (12128): Elaborating entity "uart_rx" for hierarchy "rs232:rs232|uart_rx:uart_rx_inst" File: D:/GRWorkshop/.Item/GR202300909TEST_code/rs232.v Line: 57
+Info (12128): Elaborating entity "uart_tx" for hierarchy "rs232:rs232|uart_tx:uart_tx_inst" File: D:/GRWorkshop/.Item/GR202300909TEST_code/rs232.v Line: 73
+Info (12128): Elaborating entity "err_high_detect" for hierarchy "err_high_detect:err1" File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 238
+Warning (10230): Verilog HDL assignment warning at err_high_detect.v(64): truncated value with size 32 to match size of target (9) File: D:/GRWorkshop/.Item/GR202300909TEST_code/err_high_detect.v Line: 64
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "rst_n" is missing source, defaulting to GND File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 232
+    Warning (12110): Net "reset_unit" is missing source, defaulting to GND File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 234
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "rst_n" is missing source, defaulting to GND File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 232
+    Warning (12110): Net "reset_unit" is missing source, defaulting to GND File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 234
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "rst_n" is missing source, defaulting to GND File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 232
+    Warning (12110): Net "reset_unit" is missing source, defaulting to GND File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 234
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "rst_n" is missing source, defaulting to GND File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 232
+    Warning (12110): Net "reset_unit" is missing source, defaulting to GND File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 234
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "rst_n" is missing source, defaulting to GND File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 232
+    Warning (12110): Net "reset_unit" is missing source, defaulting to GND File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 234
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "K_2" is stuck at GND File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.v Line: 12
-    Warning (13410): Pin "K_4" is stuck at GND File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.v Line: 14
-    Warning (13410): Pin "LED5" is stuck at VCC File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/UNIT_FINAL.v Line: 22
-Info (18000): Registers with preset signals will power-up high File: D:/temp/unit_test/GR202300909PCB_TEST/GR202300909TEST_code/uart_tx.v Line: 32
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
-Info (21057): Implemented 300 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 283 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4705 megabytes
-    Info: Processing ended: Wed Nov 06 11:29:41 2024
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:08
+    Warning (13410): Pin "LED5" is stuck at VCC File: D:/GRWorkshop/.Item/GR202300909TEST_code/UNIT_FINAL.v Line: 22
+Info (18000): Registers with preset signals will power-up high File: D:/GRWorkshop/.Item/GR202300909TEST_code/uart_tx.v Line: 32
+Info (21057): Implemented 355 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 330 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 4703 megabytes
+    Info: Processing ended: Mon Dec 23 10:28:07 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:13
 
 
